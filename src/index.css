@@ -8,7 +8,7 @@ body {
   background-size: 56.57px 56.57px;
   color: #dfdfdf;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -75,7 +75,7 @@ body {
   text-align: center;
   display: block;
   font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .recipe-input {
@@ -232,7 +232,7 @@ li span:last-child {
   text-align: right;
 }
 
-.unreleased {
+.unavailable {
   position: relative;
   color: rgba(255, 255, 255, 0.4);
   text-shadow: none;
@@ -259,7 +259,7 @@ li span:last-child {
   padding: 0.5em;
   border: 1px solid #fa0;
   border-bottom: 0;
-  font-size: 16px;
+  font-size: 14px;
   text-align: left;
 }
 

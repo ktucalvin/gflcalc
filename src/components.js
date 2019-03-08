@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Servers from './server-bitfields.js'
 
 class ProductionCalculator extends Component {
   constructor (props) {
@@ -57,15 +58,21 @@ class Category extends Component {
     const recipe = this.props.recipe
     let hidden = 0
     const result = this.props.dolls.map((doll) => {
-      if (recipe.sum < 4000 && doll.standard && verifyRecipe(recipe, doll.standard)) {
-        return <Doll key={doll.name} doll={doll} unsure={(doll.unsure && doll.unsure[0]) || ''} />
-      } else if (recipe.sum >= 4000 && doll.heavy && verifyRecipe(recipe, doll.heavy)) {
-        return <Doll key={doll.name} doll={doll} unsure={(doll.unsure && doll.unsure[1]) || ''} />
+      let classes = ''
+      if (doll.unsure && ((recipe.sum < 4000 ? doll.unsure[0] : doll.unsure[1]))) {
+        classes += ' unsure '
+      }
+      if (verifyRecipe(recipe, doll, doll.availability)) {
+        return <Doll key={doll.name} doll={doll} classes={classes} />
+      } else if (recipe.showAll && verifyRecipe(recipe, doll, undefined)) { // check again against all servers
+        classes += ' unavailable '
       } else {
         hidden++
-        return <Doll key={doll.name} doll={doll} flat='flat' />
+        classes += ' flat '
       }
+      return <Doll key={doll.name} doll={doll} classes={classes} />
     })
+
     if (hidden !== this.props.dolls.length) {
       return <td><ul>{result}</ul></td>
     } else {
@@ -77,10 +84,8 @@ class Category extends Component {
 class Doll extends Component {
   render () {
     const doll = this.props.doll
-    let classes = `${this.props.flat}`
-    if (this.props.unsure) { classes += ' unsure' }
     return (
-      <li className={classes}>
+      <li className={this.props.classes}>
         <span>{doll.name}</span>
         <span>{doll.time}</span>
       </li>
@@ -94,12 +99,15 @@ class None extends Component {
   }
 }
 
-function verifyRecipe (recipe, requirements) {
+function verifyRecipe (recipe, doll, availability) {
+  const requirements = recipe.sum < 4000 ? doll.standard : doll.heavy
+  if (!requirements) return false
   return recipe.manpower >= requirements[0] &&
          recipe.ammunition >= requirements[1] &&
          recipe.rations >= requirements[2] &&
          recipe.parts >= requirements[3] &&
-         (requirements[4] ? requirements[4](recipe.sum) : true)
+         (requirements[4] ? requirements[4](recipe.sum) : true) &&
+         (availability === undefined || Servers[recipe.server] & availability)
 }
 
 export default ProductionCalculator

@@ -17,7 +17,8 @@ $(function () {
     ammunition: 30,
     rations: 30,
     parts: 30,
-    sum: 120
+    sum: 120,
+    server: 'EN'
   }
   let calculator
 
@@ -66,6 +67,16 @@ $(function () {
     }
     ['manpower', 'ammunition', 'rations', 'parts'].map(str => updateDisplay(str))
     recipe.sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
+    calculator.setState(recipe)
+  })
+
+  $('#server-id').change(function (e) {
+    recipe.server = $(this).find(':selected').val()
+    calculator.setState(recipe)
+  })
+
+  $('#toggle-unavailable').change(function () {
+    recipe.showAll = this.checked
     calculator.setState(recipe)
   })
 })
