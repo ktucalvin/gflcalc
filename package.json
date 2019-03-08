@@ -1,0 +1,30 @@
+{
+  "name": "productioncalculator",
+  "version": "0.0.1",
+  "description": "A T-doll production calculator for the popular mobile game Girl's Frontline.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "devserver": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development",
+    "build": "node ./node_modules/webpack/bin/webpack.js -p",
+    "clean": "rm -rf dist/"
+  },
+  "author": "lvra",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "dependencies": {}
+}

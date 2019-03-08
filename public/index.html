@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Production Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+  noscript {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #E53935;
+    color: #fff;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <div id="recipe">
+    <div class="ingredient">
+      <div class="ingredient-name">
+        <img src="./res/manpower.png" />
+        <span>MANPOWER</span>
+      </div>
+      <div class="recipe-input manpower">
+        <button class="up heavy hidden" data-value="1000"></button>
+        <button class="up" data-value="100"></button>
+        <button class="up" data-value="10"></button>
+        <button class="up" data-value="1"></button>
+        <p class="heavy thousands hidden">1</p>
+        <p class="hundreds">0</p>
+        <p class="tens">3</p>
+        <p class="ones">0</p>
+        <button class="down heavy hidden" data-value="-1000"></button>
+        <button class="down" data-value="-100"></button>
+        <button class="down" data-value="-10"></button>
+        <button class="down" data-value="-1"></button>
+      </div>
+    </div>
+
+    <div class="ingredient">
+      <div class="ingredient-name">
+        <img src="./res/ammo.png" />
+        <span>AMMUNITION</span>
+      </div>
+      <div class="recipe-input ammunition">
+        <button class="up heavy hidden" data-value="1000"></button>
+        <button class="up" data-value="100"></button>
+        <button class="up" data-value="10"></button>
+        <button class="up" data-value="1"></button>
+        <p class="heavy thousands hidden">1</p>
+        <p class="hundreds">0</p>
+        <p class="tens">3</p>
+        <p class="ones">0</p>
+        <button class="down heavy hidden" data-value="-1000"></button>
+        <button class="down" data-value="-100"></button>
+        <button class="down" data-value="-10"></button>
+        <button class="down" data-value="-1"></button>
+      </div>
+    </div>
+
+    <div class="ingredient">
+      <div class="ingredient-name">
+        <img src="./res/rations.png" />
+        <span>RATIONS</span>
+      </div>
+      <div class="recipe-input rations">
+        <button class="up heavy hidden" data-value="1000"></button>
+        <button class="up" data-value="100"></button>
+        <button class="up" data-value="10"></button>
+        <button class="up" data-value="1"></button>
+        <p class="heavy thousands hidden">1</p>
+        <p class="hundreds">0</p>
+        <p class="tens">3</p>
+        <p class="ones">0</p>
+        <button class="down heavy hidden" data-value="-1000"></button>
+        <button class="down" data-value="-100"></button>
+        <button class="down" data-value="-10"></button>
+        <button class="down" data-value="-1"></button>
+      </div>
+    </div>
+
+    <div class="ingredient">
+      <div class="ingredient-name">
+        <img src="./res/parts.png" />
+        <span>PARTS</span>
+      </div>
+      <div class="recipe-input parts">
+        <button class="up heavy hidden" data-value="1000"></button>
+        <button class="up" data-value="100"></button>
+        <button class="up" data-value="10"></button>
+        <button class="up" data-value="1"></button>
+        <p class="heavy thousands hidden">1</p>
+        <p class="hundreds">0</p>
+        <p class="tens">3</p>
+        <p class="ones">0</p>
+        <button class="down heavy hidden" data-value="-1000"></button>
+        <button class="down" data-value="-100"></button>
+        <button class="down" data-value="-10"></button>
+        <button class="down" data-value="-1"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrapper">
+    <div id="controls">
+      <div id="server-id">
+        <label for="server-id">Server: </label>
+        <select>
+          <option>EN</option>
+          <option>KR</option>
+          <option>CN</option>
+          <option>TW</option>
+          <option>JP</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="switch">
+          <input id="toggle-heavy" type="checkbox" />
+          <span></span>
+        </label>
+        <span>Toggle Heavy Production</span>
+      </div>
+      <p>(?) indicates speculated minimum requirements</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Rarity</th>
+        <th class="HG">HG</th>
+        <th>SMG</th>
+        <th>AR</th>
+        <th>RF</th>
+        <th>MG</th>
+        <th class="heavy hidden">SG</th>
+      </tr>
+      <tbody id="root"></tbody>
+    </table>
+  </div>
+
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../dist/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,374 @@
+@font-face {
+  font-family: 'Mohave Regular';
+  src: url('./res/MohaveRegular.otf') format('opentype');
+}
+
+body {
+  background-image: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%);
+  background-size: 56.57px 56.57px;
+  color: #dfdfdf;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+/*
+================
+  Recipe
+================
+*/
+
+#recipe {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 1em;
+  border: 1px solid #90c231;
+  padding: 1em;
+  background-color: rgba(46, 46, 46, 0.5);
+  font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 1350px) {
+  #recipe {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ingredient {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0.4em;
+  padding: 1.5em 0;
+  border: 1px solid #90c231;
+  -webkit-box-shadow: inset 0 0 35px -7px #90c231;
+  box-shadow: inset 0 0 35px -7px #90c231;
+}
+
+.ingredient-name {
+  margin: 1em;
+  display: inline-block;
+  text-align: center;
+  width: 4em;
+}
+
+.ingredient-name img {
+  display: block;
+}
+
+.ingredient-name span {
+  text-align: center;
+  display: block;
+  font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.recipe-input {
+  display: inline-grid;
+  margin-right: 1em;
+  height: 100%;
+  grid-gap: 0.3em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: [up] 3fr [number] 5fr 3fr [down];
+}
+
+.recipe-input button {
+  width: 3.5em;
+  color: #363734;
+  background-color: #90c231;
+  border: none;
+  cursor: pointer;
+}
+
+.recipe-input button:active,
+.recipe-input button:focus {
+  outline: none;
+  background-color: #c3f564;
+}
+
+.down::after,
+.up::after {
+  display: block;
+  content: '»';
+  font-size: 2em;
+  pointer-events: none;
+}
+
+.up::after {
+  -webkit-transform: rotate(-90deg) scale(1.4, 2) translateY(-0.08em);
+  transform: rotate(-90deg) scale(1.4, 2) translateY(-0.08em);
+}
+
+.down::after {
+  -webkit-transform: rotate(90deg) scale(1.4, -2) translateY(-0.08em);
+  transform: rotate(90deg) scale(1.4, -2) translateY(-0.08em);
+}
+
+.recipe-input p {
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-items: center;
+  font-size: 2em;
+  margin: 0.15em 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(145, 194, 51, 0.8);
+}
+
+.heavy-style {
+  border-color: #d6571f !important;
+}
+
+.heavy-style div.ingredient {
+  border-color: #d6571f !important;
+  -webkit-box-shadow: inset 0 0 35px -7px #d6571f;
+  box-shadow: inset 0 0 35px -7px #d6571f;
+  background-color: rgba(94, 30, 2, 0.3);
+}
+
+.heavy-style .recipe-input p {
+  border: 1px solid rgba(214, 87, 31, 0.8);
+}
+
+.heavy-style .recipe-input button {
+  background-color: #d6571f;
+}
+
+.heavy-style .recipe-input button:active,
+.heavy-style .recipe-input button:focus {
+  background-color: #f07139;
+}
+
+/*
+=================
+  Results Table
+=================
+*/
+
+.table-wrapper {
+  display: inline-block;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+table {
+  margin: 0 auto;
+  border-top: 1px solid #fa0;
+  border-left: 1px solid #fa0;
+  border-spacing: 0;
+  background-color: rgba(46, 46, 46, 0.5);
+  text-align: left;
+}
+
+#three-star {
+  color: #6bdfce;
+  text-shadow: 0 0 3px #6bdfce;
+}
+
+#four-star {
+  color: #d6e35a;
+  text-shadow: 0 0 3px #d6e35a;
+}
+
+#five-star {
+  color: #ffcd4a;
+  text-shadow: 0 0 3px #ffcd4a;
+}
+
+td {
+  padding: 0.5em;
+  border-right: 1px solid #fa0;
+  border-bottom: 1px solid #fa0;
+  vertical-align: top;
+  height: 10em;
+}
+
+th {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-right: 1px solid #fa0;
+  border-bottom: 1px solid #fa0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  clear: both;
+  list-style-type: none;
+}
+
+li.flat {
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+li span:first-child {
+  padding-right: 2em;
+}
+
+li span:last-child {
+  float: right;
+  text-align: right;
+}
+
+.unreleased {
+  position: relative;
+  color: rgba(255, 255, 255, 0.4);
+  text-shadow: none;
+}
+
+.unsure::after {
+  content: '(?)';
+  margin-left: -1.6em;
+  margin-right: 1em;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/*
+=================
+  Controls Menu
+=================
+*/
+
+#controls {
+  padding: 0.5em;
+  border: 1px solid #fa0;
+  border-bottom: 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+#controls > div {
+  margin-top: 0.3em;
+}
+
+#controls > div::after {
+  content: ' ';
+  clear: both;
+  display: table;
+}
+
+#server-id {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#server-id select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #fa0;
+  padding: 0 1em;
+  padding-right: 1.5em;
+  text-align: center;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#server-id::after {
+  content: ' ';
+  display: inline-block !important;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0.45em;
+  right: 0.25em;
+  border-left: 0.2em solid transparent;
+  border-right: 0.2em solid transparent;
+  border-top: 0.4em solid #fff;
+  pointer-events: none;
+}
+
+#server-id option {
+  color: #000;
+}
+
+label.switch {
+  float: left;
+}
+
+label.switch + span {
+  float: left;
+  text-align: left;
+  padding-left: 1em;
+  margin-top: -1px;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 2em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.switch input {
+  visibility: hidden;
+}
+
+label.switch span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(180, 180, 180);
+  border-radius: 10px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+label.switch span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  content: ' ';
+  background-color: white;
+  height: 1em;
+  width: 1em;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+label.switch input:checked + span::before {
+  -webkit-transform: translateX(1em);
+  transform: translateX(1em);
+}
+
+label.switch input:checked + span {
+  background-color: rgb(240, 170, 40);
+}
+
+#controls p {
+  margin: 0.2em 0;
+}
