@@ -63,20 +63,20 @@ class Category extends Component {
         classes += ' unsure '
       }
       if (verifyRecipe(recipe, doll, doll.availability)) {
-        return <Doll key={doll.name} doll={doll} classes={classes} />
+        return <Doll key={doll.nameEN} doll={doll} classes={classes} server={recipe.server} />
       } else if (recipe.showAll && verifyRecipe(recipe, doll, undefined)) { // check again against all servers
         classes += ' unavailable '
       } else {
         hidden++
         classes += ' flat '
       }
-      return <Doll key={doll.name} doll={doll} classes={classes} />
+      return <Doll key={doll.nameEN} doll={doll} classes={classes} server={recipe.server} />
     })
 
     if (hidden !== this.props.dolls.length) {
       return <td><ul>{result}</ul></td>
     } else {
-      return <td><ul><None />{result}</ul></td>
+      return <td><ul><None server={recipe.server} />{result}</ul></td>
     }
   }
 }
@@ -84,9 +84,11 @@ class Category extends Component {
 class Doll extends Component {
   render () {
     const doll = this.props.doll
+    let name = doll['name' + this.props.server]
+    if (!name) { name = doll.nameEN }
     return (
       <li className={this.props.classes}>
-        <span>{doll.name}</span>
+        <span>{name}</span>
         <span>{doll.time}</span>
       </li>
     )
