@@ -6,7 +6,7 @@
 body {
   background-image: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%);
   background-size: 56.57px 56.57px;
-  color: #dfdfdf;
+  color: #e5e5e5;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 15px;
   text-align: center;
@@ -264,39 +264,46 @@ li span:last-child {
   text-align: left;
 }
 
-#controls > div {
-  margin-top: 0.3em;
-}
-
-#controls > div::after {
+.toggle {
+  margin-top: 0.4em;
   content: ' ';
   clear: both;
   display: table;
 }
 
-#server-id {
+.selection {
   display: inline-block;
   position: relative;
   cursor: pointer;
 }
 
-#server-id select {
+.selection label {
+  margin-right: 1em;
+}
+
+.selection select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
   border: none;
-  border-bottom: 2px solid #fa0;
+  border-bottom: 2px solid #c70;
   padding: 0 1em;
   padding-right: 1.5em;
-  text-align: center;
   background: transparent;
   color: white;
   cursor: pointer;
   font-size: 14px;
 }
 
-#server-id::after {
+.selection select:active,
+.selection select:focus,
+.selection select:hover {
+  border-color: #fa0;
+  outline: none;
+}
+
+.selection::after {
   content: ' ';
   display: inline-block !important;
   position: absolute;
@@ -310,7 +317,7 @@ li span:last-child {
   pointer-events: none;
 }
 
-#server-id option {
+.selection option {
   color: #000;
 }
 

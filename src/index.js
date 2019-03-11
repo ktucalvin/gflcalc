@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ProductionCalculator from './components.js'
 import Dolls from './dolls.js'
+import { PresetSelect, standardPresets, heavyPresets } from './presets.js'
 import './index.css'
 
 $(function () {
@@ -20,12 +21,15 @@ $(function () {
     sum: 120,
     server: 'EN'
   }
-  let calculator
+  let calculator, presetSelect
+  let superPreset = standardPresets
 
   ReactDOM.render(
-    <ProductionCalculator dolls={Dolls} recipe={recipe} ref={calc => { calculator = calc }} />,
+    <ProductionCalculator dolls={Dolls} recipe={recipe} ref={r => { calculator = r }} />,
     document.getElementById('root')
   )
+
+  ReactDOM.render(<PresetSelect ref={r => { presetSelect = r }} />, document.getElementById('preset-select'))
 
   function updateDisplay (ingredient) {
     let val = recipe[ingredient] + ''
@@ -48,6 +52,22 @@ $(function () {
     setTimeout(() => $(this).blur(), 150)
   })
 
+  $('#server-id').change(function (e) {
+    recipe.server = $(this).find(':selected').val()
+    calculator.setState(recipe)
+  })
+
+  $('#preset-select').change(function (e) {
+    const preset = superPreset[$(this).find(':selected').val()].preset
+    recipe.manpower = preset[0]
+    recipe.ammunition = preset[1]
+    recipe.rations = preset[2]
+    recipe.parts = preset[3]
+    recipe.sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
+    calculator.setState(recipe);
+    ['manpower', 'ammunition', 'rations', 'parts'].map(str => updateDisplay(str))
+  })
+
   $('#toggle-heavy').change(function () {
     if (this.checked) {
       $('.heavy').show()
@@ -57,6 +77,8 @@ $(function () {
       $('th.HG').hide()
       recipe.min = recipe.manpower = recipe.ammunition = recipe.rations = recipe.parts = 1000
       recipe.max = 9999
+      superPreset = heavyPresets
+      presetSelect.setState({ presets: heavyPresets })
     } else {
       $('.heavy').hide()
       $('th.HG').show()
@@ -64,14 +86,11 @@ $(function () {
       $('#recipe').removeClass('heavy-style')
       recipe.min = recipe.manpower = recipe.ammunition = recipe.rations = recipe.parts = 30
       recipe.max = 999
+      superPreset = standardPresets
+      presetSelect.setState({ presets: standardPresets })
     }
     ['manpower', 'ammunition', 'rations', 'parts'].map(str => updateDisplay(str))
     recipe.sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
-    calculator.setState(recipe)
-  })
-
-  $('#server-id').change(function (e) {
-    recipe.server = $(this).find(':selected').val()
     calculator.setState(recipe)
   })
 

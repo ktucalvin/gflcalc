@@ -5,7 +5,6 @@
   <title>IOP Production Calculator</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <style>noscript{display:block;position:absolute;top:0;left:0;right:0;padding:1em;background-color:#E53935;color:#fff;font-family:'Helvetica','Arial','sans-serif';font-weight:bold;font-size:20px;text-align:center;}</style>
 </head>
 
 <body>
@@ -99,18 +98,23 @@
 
   <div class="table-wrapper">
     <div id="controls">
-      <div id="server-id">
-        <label for="server-id">Server: </label>
-        <select>
-          <option>EN</option>
-          <option>KR</option>
-          <option>CN</option>
-          <option>TW</option>
-          <option>JP</option>
-        </select>
+      <div style="margin: 0 auto;">
+        <div class="selection">
+          <label for="server-id">Server: </label>
+          <select id="server-id">
+            <option>EN</option>
+            <option>KR</option>
+            <option>CN</option>
+            <option>TW</option>
+            <option>JP</option>
+          </select>
+        </div>
       </div>
 
-      <div>
+      <div id="preset-select" class="selection">
+      </div>
+
+      <div class="toggle">
         <label class="switch">
           <input id="toggle-heavy" type="checkbox" />
           <span></span>
@@ -118,7 +122,7 @@
         <span>Toggle Heavy Production</span>
       </div>
 
-      <div>
+      <div class="toggle">
         <label class="switch">
           <input id="toggle-unavailable" type="checkbox" />
           <span></span>
@@ -143,12 +147,27 @@
     </table>
   </div>
 
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <style>
+    noscript {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1em;
+      background-color: #E53935;
+      color: #fff;
+      font-family: 'Helvetica', 'Arial', 'sans-serif';
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 
 </html>
