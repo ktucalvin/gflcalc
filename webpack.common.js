@@ -1,5 +1,7 @@
 'use strict'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -23,7 +25,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/favicon' }
+    ])
   ],
   output: {
     path: __dirname,

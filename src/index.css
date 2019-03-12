@@ -12,6 +12,10 @@ body {
   text-align: center;
 }
 
+footer span {
+  margin: 1em;
+}
+
 /*
 ================
   Recipe
@@ -264,8 +268,11 @@ li span:last-child {
   text-align: left;
 }
 
-.toggle {
+#controls > div {
   margin-top: 0.4em;
+}
+
+.toggle {
   content: ' ';
   clear: both;
   display: table;
@@ -279,6 +286,12 @@ li span:last-child {
 
 .selection label {
   margin-right: 1em;
+}
+
+.toggle label:nth-child(2) {
+  display: inline-block;
+  margin-left: 1em;
+  cursor: pointer;
 }
 
 .selection select {
@@ -323,6 +336,7 @@ li span:last-child {
 
 label.switch {
   float: left;
+  margin-top: 0.1em;
 }
 
 label.switch + span {
@@ -379,4 +393,26 @@ label.switch input:checked + span {
 
 #controls p {
   margin: 0.2em 0;
+}
+
+/*
+=================
+  Miscellaneous
+=================
+*/
+#reference {
+  text-align: center;
+}
+
+#reference a {
+  color: #fff;
+  margin: 0 0.4em;
+}
+
+#reference a:hover {
+  color: #fa0;
+}
+
+#reference a:visited {
+  color: #c70;
 }

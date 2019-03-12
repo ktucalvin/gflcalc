@@ -5,6 +5,13 @@
   <title>IOP Production Calculator</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffaa00">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -119,7 +126,7 @@
           <input id="toggle-heavy" type="checkbox" />
           <span></span>
         </label>
-        <span>Toggle Heavy Production</span>
+        <label for="toggle-heavy">Toggle Heavy Production</label>
       </div>
 
       <div class="toggle">
@@ -127,7 +134,7 @@
           <input id="toggle-unavailable" type="checkbox" />
           <span></span>
         </label>
-        <span>Show Dolls In Other Servers</span>
+        <label for="toggle-unavailable">Show Dolls In Other Servers</label>
       </div>
 
       <p>(?) indicates speculated minimum requirements</p>
@@ -145,10 +152,22 @@
       </tr>
       <tbody id="root"></tbody>
     </table>
-  </div>
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <div id="reference">
+      <h2>Community Wiki Links</h2>
+      <a href="https://en.gfwiki.com/wiki/Girls%27_Frontline_Wiki">EN Server</a>
+      <a href="https://zh.moegirl.org/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF">CN Server</a>
+      <a href="https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0">KR Server</a>
+      <a href="https://gf.fws.tw/">TW Server</a>
+      <a href="https://wiki.gamerclub.jp/dfwiki/index.php">JP Server</a>
+    </div>
+  </div>
+  <footer>
+    <span>Last Updated March 11, 2019</span><span>Contact: Lvra#3505</span>
+  </footer>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <style>
