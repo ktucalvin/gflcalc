@@ -32,6 +32,7 @@ const heavyPresets = {
   mgset2: { preset: [6000, 6000, 1000, 3000], text: 'MG Set #2' },
   sgset1: { preset: [4000, 1000, 6000, 3000], text: 'SG Set #1' },
   sgset2: { preset: [6000, 1000, 6000, 4000], text: 'SG Set #2' },
+  sgMica: { preset: [8000, 1000, 8000, 4000], text: 'SG MICA Recommended' },
   voodoo: { preset: [6000, 2000, 6000, 4000], text: 'SG Voodoo (recommended)' },
   all: { preset: [6000, 6000, 6000, 4000], text: 'All (not recommended!)' }
 }
