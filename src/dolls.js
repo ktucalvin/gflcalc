@@ -545,7 +545,6 @@ const fourStar = {
     {
       nameEN: 'K5',
       time: '53:00',
-      availability: CN | TW | KR | JP,
       standard: HGSet2
     },
     {
@@ -623,7 +622,7 @@ const fourStar = {
     {
       nameEN: 'XM8',
       time: '3:25:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: ARSet1,
       heavy: HeavySet1111
     },
@@ -912,13 +911,12 @@ const fiveStar = {
       unsure: [1, 1]
     },
     {
-      nameEN: 'Type 100',
+      nameEN: '100 Shiki',
       nameCN: '樱花',
       nameKR: '100식',
       nameTW: '一〇〇式',
       nameJP: '一〇〇式',
       time: '2:19:00',
-      availability: CN | TW | KR | JP,
       standard: SMGSet2,
       heavy: HeavySet4411,
       unsure: [1, 1]
@@ -936,7 +934,7 @@ const fiveStar = {
     {
       nameEN: 'C-MS',
       time: '2:28:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411,
       unsure: [0, 1]
@@ -1036,7 +1034,7 @@ const fiveStar = {
     {
       nameEN: 'MDR',
       time: '3:53:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     },
