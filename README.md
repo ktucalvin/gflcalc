@@ -12,11 +12,11 @@ The easiest way to correct an error or update the calculator is to contact me on
 
 If you want to contribute the relevant files are:
 
-* `components.js` - The code for the production calculator table.
+* `src/components.js` - The code for the production calculator table.
 
-* `dolls.js` - The central list of all T-doll data.
+* `src/dolls.js` - The central list of all T-doll data.
 
-* `presets.js` - Recipe presets and its React component.
+* `src/presets.js` - Recipe presets and its React component.
 
 ## License
 

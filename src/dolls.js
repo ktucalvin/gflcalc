@@ -580,8 +580,8 @@ const fourStar = {
       nameCN: '希普卡',
       nameKR: '시프카',
       nameTW: '希普卡',
+      nameJP: 'シプカ',
       time: '2:18:00',
-      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -688,7 +688,6 @@ const fourStar = {
     {
       nameEN: 'T-5000',
       time: '4:10:00',
-      availability: EN | CN | TW | KR,
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -769,7 +768,6 @@ const fourStar = {
       nameTW: '80式',
       nameJP: '80式',
       time: '6:15:00',
-      availability: EN | CN | TW | KR,
       standard: MGSet2,
       heavy: HeavySet6613,
       unsure: [0, 1]
@@ -979,7 +977,6 @@ const fiveStar = {
       nameTW: '79式',
       nameJP: '79式',
       time: '2:35:00',
-      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -1077,7 +1074,6 @@ const fiveStar = {
     {
       nameEN: 'Zas M21',
       time: '4:05:00',
-      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     },
