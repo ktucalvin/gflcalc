@@ -97,7 +97,7 @@ class Doll extends Component {
 
 class None extends Component {
   render () {
-    return (<ul><li><span>NONE</span><span>-:--:--</span></li></ul>)
+    return (<li><span>NONE</span><span>-:--:--</span></li>)
   }
 }
 

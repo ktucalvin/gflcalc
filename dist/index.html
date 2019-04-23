@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>IOP Production Calculator</title>
+  <title>Girl's Frontline Recipe Calculator</title>
   <meta charset="UTF-8" />
+  <meta name="description" content="Production calculator for the popular mobile game Girl's Frontline. Shows all the T-dolls a given recipe can produce and their corresponding timers. Supports multiple servers and recipe presets.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -19,7 +20,7 @@
     <div id="recipe">
       <div class="ingredient">
         <div class="ingredient-name">
-          <img src="6ec8892c482740646195ec48f29924ee.png" />
+          <img src="6ec8892c482740646195ec48f29924ee.png" alt="Manpower Icon"/>
           <span>MANPOWER</span>
         </div>
         <div class="recipe-input manpower">
@@ -40,7 +41,7 @@
 
       <div class="ingredient">
         <div class="ingredient-name">
-          <img src="efacbaf68ad011012e6809f2884b7d7d.png" />
+          <img src="efacbaf68ad011012e6809f2884b7d7d.png" alt="Ammo Icon"/>
           <span>AMMUNITION</span>
         </div>
         <div class="recipe-input ammunition">
@@ -61,7 +62,7 @@
 
       <div class="ingredient">
         <div class="ingredient-name">
-          <img src="a6fc11dd0d36276a2495dc716e8331d0.png" />
+          <img src="a6fc11dd0d36276a2495dc716e8331d0.png" alt="Rations Icon"/>
           <span>RATIONS</span>
         </div>
         <div class="recipe-input rations">
@@ -82,7 +83,7 @@
 
       <div class="ingredient">
         <div class="ingredient-name">
-          <img src="cf7c7acb204dd653cee575056cb8f85f.png" />
+          <img src="cf7c7acb204dd653cee575056cb8f85f.png" alt="Parts Icon"/>
           <span>PARTS</span>
         </div>
         <div class="recipe-input parts">
@@ -152,7 +153,9 @@
       </tr>
       <tbody id="root"></tbody>
     </table>
+  </div>
 
+  <footer>
     <div id="reference">
       <h2>Community Wiki Links</h2>
       <a href="https://en.gfwiki.com/wiki/Girls%27_Frontline_Wiki">EN Server</a>
@@ -161,9 +164,8 @@
       <a href="https://gf.fws.tw/">TW Server</a>
       <a href="https://wiki.gamerclub.jp/dfwiki/index.php">JP Server</a>
     </div>
-  </div>
-  <footer>
-    <span>Last Updated March 11, 2019</span><span>Contact: Lvra#3505</span>
+    <br />
+    <span>Last Updated April 21, 2019</span><span>Contact: Lvra#3505</span>
   </footer>
 
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
