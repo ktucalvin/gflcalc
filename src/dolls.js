@@ -502,7 +502,7 @@ const threeStar = {
     {
       nameEN: 'M1897',
       time: '7:30:00',
-      availability: CN | TW | KR,
+      availability: CN | TW | KR | JP,
       heavy: HeavySet6164
     }
   ]
@@ -1116,7 +1116,7 @@ const fiveStar = {
     {
       nameEN: 'M200',
       time: '4:32:00',
-      availability: EN,
+      availability: EN | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [1, 1]
