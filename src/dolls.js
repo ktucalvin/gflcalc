@@ -887,7 +887,7 @@ const fiveStar = {
     {
       nameEN: 'NZ75',
       time: '1:05:00',
-      standard: HGSet2
+      standard: HGSet1
     },
     {
       nameEN: 'Grizzly',
@@ -896,7 +896,7 @@ const fiveStar = {
       nameTW: '灰熊MkⅤ',
       nameJP: 'グリズリー',
       time: '1:10:00',
-      standard: HGSet2
+      standard: HGSet1
     }
   ],
   smg: [
