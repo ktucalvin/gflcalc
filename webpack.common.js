@@ -28,7 +28,8 @@ module.exports = {
       template: 'src/index.html'
     }),
     new CopyWebpackPlugin([
-      { from: 'src/favicon' }
+      { from: 'src/favicon' },
+      { from: 'src/res' }
     ])
   ],
   output: {
@@ -38,7 +39,6 @@ module.exports = {
   },
   externals: {
     'react': 'React',
-    'react-dom': 'ReactDOM',
-    'jquery': 'jQuery'
+    'react-dom': 'ReactDOM'
   }
 }

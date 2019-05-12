@@ -22,6 +22,10 @@ footer span {
   margin: 1em;
 }
 
+.center {
+  margin: 0 auto;
+}
+
 /*
 ================
   Recipe
@@ -83,6 +87,7 @@ footer span {
 }
 
 .ingredient-name span {
+  text-transform: uppercase;
   text-align: center;
   display: block;
   font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
@@ -253,11 +258,6 @@ li span:last-child {
   content: '(?)';
   margin-left: -1.6em;
   margin-right: 1em;
-}
-
-.hidden {
-  display: none !important;
-  visibility: hidden !important;
 }
 
 /*

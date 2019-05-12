@@ -10,13 +10,7 @@ The site is hosted at https://gflcalc.netlify.com/
 
 The easiest way to correct an error or update the calculator is to contact me on Discord at `Lvra#3505`.
 
-If you want to contribute the relevant files are:
-
-* `src/components.js` - The code for the production calculator table.
-
-* `src/dolls.js` - The central list of all T-doll data.
-
-* `src/presets.js` - Recipe presets and its React component.
+`src/dolls.js` contains all the T-doll availability information.
 
 ## License
 

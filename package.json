@@ -1,6 +1,6 @@
 {
-  "name": "productioncalculator",
-  "version": "0.0.1",
+  "name": "gflcalc",
+  "version": "0.5.0",
   "description": "A T-doll production calculator for the popular mobile game Girl's Frontline.",
   "private": true,
   "scripts": {

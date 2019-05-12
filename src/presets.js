@@ -37,20 +37,26 @@ const heavyPresets = {
   all: { preset: [6000, 6000, 6000, 4000], text: 'All (not recommended!)' }
 }
 
-export class PresetSelect extends Component {
+export class PresetSelector extends Component {
   constructor (props) {
     super(props)
-    this.state = { presets: standardPresets }
+    this.updatePreset = this.updatePreset.bind(this)
   }
+
+  updatePreset (event) {
+    this.props.changePreset(event)
+    this.props.selected = event.target.value
+  }
+
   render () {
     let options = []
-    for (const preset in this.state.presets) {
-      options.push(<option key={preset} value={preset}>{this.state.presets[preset].text}</option>)
+    for (const preset in this.props.presets) {
+      options.push(<option key={preset} value={preset}>{this.props.presets[preset].text}</option>)
     }
     return (
       <>
-        <label htmlFor='recipe-preset'>Recipe Preset: </label>
-        <select id='recipe-preset' defaultValue={options[0].props.children} key={Math.random() * 1000}>
+        <label for='recipe-preset'>Recipe Preset: </label>
+        <select id='recipe-preset' value={this.props.selected} onChange={this.updatePreset}>
           {options}
         </select>
       </>)
