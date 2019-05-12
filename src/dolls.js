@@ -897,6 +897,12 @@ const fiveStar = {
       nameJP: 'グリズリー',
       time: '1:10:00',
       standard: HGSet1
+    },
+    {
+      nameEN: 'PA-15',
+      time: '1:15:00',
+      availability: CN | KR,
+      standard: HGSet1
     }
   ],
   smg: [
@@ -1116,7 +1122,7 @@ const fiveStar = {
     {
       nameEN: 'M200',
       time: '4:32:00',
-      availability: EN | KR,
+      availability: EN | CN | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [1, 1]
@@ -1152,6 +1158,14 @@ const fiveStar = {
       time: '4:45:00',
       standard: RFSet1,
       heavy: HeavySet3131
+    },
+    {
+      nameEN: 'QBU-88',
+      time: '4:48:00',
+      availability: CN | KR,
+      standard: RFSet2,
+      heavy: HeavySet4141,
+      unsure: [1, 1]
     },
     {
       nameEN: 'WA2000',

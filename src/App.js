@@ -22,13 +22,9 @@ class App extends Component {
     }
 
     this.updateRecipe = this.updateRecipe.bind(this)
-
     this.changeServer = this.changeServer.bind(this)
-
     this.changePreset = this.changePreset.bind(this)
-
     this.toggleHeavy = this.toggleHeavy.bind(this)
-
     this.toggleShowAll = this.toggleShowAll.bind(this)
   }
 
