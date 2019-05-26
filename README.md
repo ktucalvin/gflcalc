@@ -1,6 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d1567a64-40f1-4569-bed1-240767c8eeed/deploy-status)](https://app.netlify.com/sites/iop-calculator/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/80e9faca-5b4e-452c-9039-d0aa380ccfd1/deploy-status)](https://app.netlify.com/sites/gflcalc/deploys)
 
-# IOP Production Calculator
+# GFLCalc
 
 A production calculator built on React that shows all the T-dolls a given recipe can produce and their corresponding timers for the popular mobile game Girls' Frontline. Supports multiple servers and recipe presets.
 

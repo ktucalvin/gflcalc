@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Servers from './server-bitfields.js'
-import Dolls from './dolls.js'
+import { Dolls, Servers } from './dolls.js'
 
 export default
 class ProductionCalculator extends Component {

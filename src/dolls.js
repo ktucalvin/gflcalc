@@ -1,12 +1,13 @@
 'use strict'
-import Servers from './server-bitfields.js'
 
-// unpack bitfields into scope
-const EN = Servers.EN
-const KR = Servers.KR
-const CN = Servers.CN
-const TW = Servers.TW
-const JP = Servers.JP
+// use the OR (|) operator to join servers
+// use the AND (&) operator to check for availability
+// `availability === undefined` implies all servers
+const EN = 0b00001
+const KR = 0b00010
+const CN = 0b00100
+const TW = 0b01000
+const JP = 0b10000
 
 // Sets: Manpower, Ammo, Rations, Parts, Sum
 const HGSet1 = [30, 30, 30, 30, sum => sum <= 920]
@@ -1274,4 +1275,5 @@ const fiveStar = {
   ]
 }
 
-export default { twoStar, threeStar, fourStar, fiveStar }
+export const Dolls = { twoStar, threeStar, fourStar, fiveStar }
+export const Servers = { EN, KR, CN, TW, JP }
