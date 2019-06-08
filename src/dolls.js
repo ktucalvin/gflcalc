@@ -517,7 +517,7 @@ const fourStar = {
       nameKR: '제리코',
       nameTW: '杰里科',
       time: '49:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: HGSet2
     },
     {
@@ -701,7 +701,7 @@ const fourStar = {
     {
       nameEN: 'SPR A3G',
       time: '4:15:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [0, 1]
@@ -1031,7 +1031,6 @@ const fiveStar = {
     {
       nameEN: 'K2',
       time: '3:52:00',
-      availability: CN | TW | KR | JP,
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1085,13 +1084,12 @@ const fiveStar = {
       heavy: HeavySet1441
     },
     {
-      nameEN: 'Howa Type 64',
+      nameEN: '64 Shiki',
       nameCN: '64式自',
       nameKR: '64식 소총',
       nameTW: '64式自',
       nameJP: '64式自',
       time: '4:06:00',
-      availability: CN | TW | KR | JP,
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [1, 1]
@@ -1106,7 +1104,7 @@ const fiveStar = {
     {
       nameEN: 'K11',
       time: '4:11:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [0, 1]
