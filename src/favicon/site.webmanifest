@@ -1,6 +1,6 @@
 {
-    "name": "IOP Calculator",
-    "short_name": "IOP Calculator",
+    "name": "Girls' Frontline Production Calculator",
+    "short_name": "gflcalc",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

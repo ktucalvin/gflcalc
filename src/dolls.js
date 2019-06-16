@@ -540,7 +540,6 @@ const fourStar = {
     {
       nameEN: 'Spitfire',
       time: '52:00',
-      availability: EN | CN | TW | KR,
       standard: HGSet2
     },
     {
@@ -589,7 +588,6 @@ const fourStar = {
     {
       nameEN: 'PP-19-01',
       time: '2:18:00',
-      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -719,7 +717,7 @@ const fourStar = {
       availability: CN | TW | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Gr PSG-1',
@@ -783,7 +781,6 @@ const fourStar = {
     {
       nameEN: 'Mk48',
       time: '6:20:00',
-      availability: EN | CN | TW | KR,
       standard: MGSet2,
       heavy: HeavySet6613
     },
@@ -940,7 +937,7 @@ const fiveStar = {
       time: '2:19:00',
       standard: SMGSet2,
       heavy: HeavySet4411,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Suomi',
@@ -966,7 +963,7 @@ const fiveStar = {
       availability: CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Gr G36C',
@@ -1020,7 +1017,6 @@ const fiveStar = {
     {
       nameEN: 'T91',
       time: '3:48:00',
-      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1108,7 +1104,7 @@ const fiveStar = {
       time: '4:06:00',
       standard: ARSet2,
       heavy: HeavySet1441,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'AN-94',
@@ -1190,7 +1186,6 @@ const fiveStar = {
     {
       nameEN: 'IWS 2000',
       time: '4:52:00',
-      availability: EN | CN | TW | KR,
       standard: RFSet2,
       heavy: HeavySet4141
     },
