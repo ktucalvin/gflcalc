@@ -4,7 +4,8 @@
 <head>
   <title>Girls' Frontline Recipe Calculator</title>
   <meta charset="UTF-8" />
-  <meta name="description" content="Production calculator for the popular mobile game Girl's Frontline. Shows all the T-dolls a given recipe can produce and their corresponding timers. Supports multiple servers and recipe presets.">
+  <meta name="description"
+    content="Production calculator for the popular mobile game Girl's Frontline. Shows all the T-dolls a given recipe can produce and their corresponding timers. Supports multiple servers and recipe presets.">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -16,7 +17,476 @@
 </head>
 
 <body>
+  <style>
+    noscript {
+      display: block;
+      width: 100vw;
+      padding: 1em;
+      background-color: #e53935;
+      color: #fff;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+    }
+  </style>
+  <noscript>You need to enable JavaScript to enable recipe input. Otherwise this site only provides the following
+    reference table.</noscript>
   <main id="root">
+    <div class="table-wrapper">
+      <h2>Standard Production</h2>
+      <table>
+        <tr>
+          <th>Rarity</th>
+          <th>HG</th>
+          <th>SMG</th>
+          <th>AR</th>
+          <th>RF</th>
+          <th>MG</th>
+        </tr>
+        <tbody>
+          <tr>
+            <td class="rarity">2★</td>
+            <td>
+              <ul>
+                <li><span>M1911</span><span>20:00</span></li>
+                <li><span>M1895</span><span>20:00</span></li>
+                <li><span>P38</span><span>20:00</span></li>
+                <li><span>PPK</span><span>22:00</span></li>
+                <li><span>FF FNP9</span><span>25:00</span></li>
+                <li><span>MP-446</span><span>25:00</span></li>
+                <li><span>Gr USP Compact</span><span>28:00</span></li>
+                <li><span>Bren Ten</span><span>28:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>IDW</span><span>1:10:00</span></li>
+                <li><span>PP-2000</span><span>1:10:00</span></li>
+                <li><span>m45</span><span>1:20:00</span></li>
+                <li><span>Spectre M4</span><span>1:20:00</span></li>
+                <li><span>Type 64</span><span>1:25:00</span></li>
+                <li><span>M38</span><span>1:30:00</span></li>
+                <li><span>M3</span><span>1:30:00</span></li>
+                <li><span>MP40</span><span>1:30:00</span></li>
+                <li><span>PPSh-41</span><span>1:50:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Galil</span><span>2:40:00</span></li>
+                <li><span>SIG-510</span><span>2:40:00</span></li>
+                <li><span>FF F2000</span><span>2:45:00</span></li>
+                <li><span>Type 63</span><span>2:45:00</span></li>
+                <li><span>Gr G3</span><span>2:50:00</span></li>
+                <li><span>L85A1</span><span>2:50:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>G43</span><span>3:10:00</span></li>
+                <li><span>FF FN49</span><span>3:10:00</span></li>
+                <li><span>VM59</span><span>3:20:00</span></li>
+                <li><span>SVT-38</span><span>3:30:00</span></li>
+                <li><span>SKS</span><span>3:30:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>AAT-52</span><span>4:50:00</span></li>
+                <li><span>FG42</span><span>4:50:00</span></li>
+                <li><span>MG34</span><span>5:00:00</span></li>
+                <li><span>DP28</span><span>5:00:00</span></li>
+                <li><span>LWMMG</span><span>5:10:00</span></li>
+              </ul>
+            </td>
+          </tr>
+          <tr id="three-star">
+            <td class="rarity">3★</td>
+            <td>
+              <ul>
+                <li><span>C96</span><span>30:00</span></li>
+                <li><span>P08</span><span>30:00</span></li>
+                <li><span>P99</span><span>35:00</span></li>
+                <li><span>Type 92</span><span>35:00</span></li>
+                <li><span>Astra</span><span>40:00</span></li>
+                <li><span>M9</span><span>40:00</span></li>
+                <li><span>Makarov</span><span>40:00</span></li>
+                <li><span>Tokarev</span><span>45:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Sten MkII</span><span>1:40:00</span></li>
+                <li><span>Micro Uzi</span><span>1:40:00</span></li>
+                <li><span>F1</span><span>1:50:00</span></li>
+                <li><span>Ingram</span><span>2:00:00</span></li>
+                <li><span>Skorpion</span><span>2:00:00</span></li>
+                <li><span>Z-62</span><span>2:05:00</span></li>
+                <li><span>PPS-43</span><span>2:10:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>StG44</span><span>3:00:00</span></li>
+                <li><span>OTs-12</span><span>3:10:00</span></li>
+                <li><span>ARX-160</span><span>3:15:00</span></li>
+                <li><span>AK-47</span><span>3:20:00</span></li>
+                <li><span>FF FNC</span><span>3:20:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>M14</span><span>3:40:00</span></li>
+                <li><span>SV-98</span><span>3:40:00</span></li>
+                <li><span>Type88</span><span>3:50:00</span></li>
+                <li><span>OTs-44</span><span>3:50:00</span></li>
+                <li><span>M1 Garand</span><span>4:00:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Bren</span><span>5:20:00</span></li>
+                <li><span>M1919A4</span><span>5:40:00</span></li>
+                <li><span>MG42</span><span>5:50:00</span></li>
+                <li><span>M2HB</span><span>6:10:00</span></li>
+              </ul>
+            </td>
+          </tr>
+          <tr id="four-star">
+            <td class="rarity">4★</td>
+            <td>
+              <ul>
+                <li><span>Jericho</span><span>49:00</span></li>
+                <li><span>SAA</span><span>50:00</span></li>
+                <li><span>Gr Mk23</span><span>50:00</span></li>
+                <li><span>Spitfire</span><span>52:00</span></li>
+                <li><span>K5</span><span>53:00</span></li>
+                <li><span>Stechkin</span><span>55:00</span></li>
+                <li><span>P7</span><span>55:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>UMP9</span><span>2:15:00</span></li>
+                <li><span>UMP45</span><span>2:15:00</span></li>
+                <li><span>Shipka</span><span>2:18:00</span></li>
+                <li><span>PP-19-01</span><span>2:18:00</span></li>
+                <li><span>Gr MP5</span><span>2:20:00</span></li>
+                <li><span>PP-90</span><span>2:20:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Type56-1</span><span>3:25:00</span></li>
+                <li><span>XM8</span><span>3:25:00</span></li>
+                <li><span>SAR-21</span><span>3:25:00</span></li>
+                <li><span>AS Val</span><span>3:30:00</span></li>
+                <li><span>FAMAS</span><span>3:30:00</span></li>
+                <li><span>TAR-21</span><span>3:30:00</span></li>
+                <li><span>9A-91</span><span>3:35:00</span></li>
+                <li><span>EM-2</span><span>3:35:00</span></li>
+                <li><span>G36</span><span>3:40:00</span></li>
+                <li><span>Ribeyrolles</span><span>3:40:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Mosin-Nagant</span><span>4:10:00</span></li>
+                <li><span>T-5000</span><span>4:10:00</span></li>
+                <li><span>SVD</span><span>4:15:00</span></li>
+                <li><span>SPR A3G</span><span>4:15:00</span></li>
+                <li><span>K31</span><span>4:15:00</span></li>
+                <li><span>Gr PSG-1</span><span>4:10:00</span></li>
+                <li><span>Gr G28</span><span>4:10:00</span></li>
+                <li><span>Springfield</span><span>4:25:00</span></li>
+                <li><span>PTRD</span><span>4:30:00</span></li>
+                <li><span>PzB39</span><span>4:30:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>M60</span><span>6:10:00</span></li>
+                <li><span>Type 80</span><span>6:15:00</span></li>
+                <li><span>Mk48</span><span>6:20:00</span></li>
+                <li><span>AEK-999</span><span>6:20:00</span></li>
+                <li><span>M1918</span><span>6:25:00</span></li>
+                <li><span>Ameli</span><span>6:25:00</span></li>
+                <li><span>Chauchat M1915</span><span>6:25:00</span></li>
+                <li><span>PK</span><span>6:30:00</span></li>
+                <li><span>MG3</span><span>6:30:00</span></li>
+              </ul>
+            </td>
+          </tr>
+          <tr id="five-star">
+            <td class="rarity">5★</td>
+            <td>
+              <ul>
+                <li><span>Welrod MkII</span><span>1:00:00</span></li>
+                <li><span>Contender</span><span>1:02:00</span></li>
+                <li><span>Px4 Storm</span><span>1:04:00</span></li>
+                <li><span>M950A</span><span>1:05:00</span></li>
+                <li><span>NZ75</span><span>1:05:00</span></li>
+                <li><span>Grizzly</span><span>1:10:00</span></li>
+                <li><span>PA-15</span><span>1:15:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>MP7</span><span>2:18:00</span></li>
+                <li><span>100 Shiki</span><span>2:19:00</span></li>
+                <li><span>Suomi</span><span>2:25:00</span></li>
+                <li><span>C-MS</span><span>2:28:00</span></li>
+                <li><span>P90</span><span>2:29:00</span></li>
+                <li><span>Gr G36C</span><span>2:30:00</span></li>
+                <li><span>Thompson</span><span>2:30:00</span></li>
+                <li><span>SR-3MP</span><span>2:33:00</span></li>
+                <li><span>Type 79</span><span>2:35:00</span></li>
+                <li><span>Vector</span><span>2:35:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>FAL</span><span>3:45:00</span></li>
+                <li><span>T91</span><span>3:48:00</span></li>
+                <li><span>Type 95</span><span>3:50:00</span></li>
+                <li><span>Type 97</span><span>3:50:00</span></li>
+                <li><span>K2</span><span>3:52:00</span></li>
+                <li><span>MDR</span><span>3:53:00</span></li>
+                <li><span>416</span><span>3:55:00</span></li>
+                <li><span>Am RFB</span><span>3:58:00</span></li>
+                <li><span>Gr G11</span><span>4:04:00</span></li>
+                <li><span>Gr G41</span><span>4:05:00</span></li>
+                <li><span>Zas M21</span><span>4:05:00</span></li>
+                <li><span>64 Shiki</span><span>4:06:00</span></li>
+                <li><span>AN-94</span><span>4:09:00</span></li>
+                <li><span>K11</span><span>4:11:00</span></li>
+                <li><span>AK-12</span><span>4:12:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>M200</span><span>4:32:00</span></li>
+                <li><span>Carcano M1891</span><span>4:38:00</span></li>
+                <li><span>Kar98k</span><span>4:40:00</span></li>
+                <li><span>Carcano M91/38</span><span>4:42:00</span></li>
+                <li><span>NTW-20</span><span>4:45:00</span></li>
+                <li><span>QBU-88</span><span>4:48:00</span></li>
+                <li><span>WA2000</span><span>4:50:00</span></li>
+                <li><span>IWS 2000</span><span>4:52:00</span></li>
+                <li><span>M99</span><span>4:55:00</span></li>
+                <li><span>Lee Enfield</span><span>5:00:00</span></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><span>Type 88</span><span>6:28:00</span></li>
+                <li><span>Negev</span><span>6:35:00</span></li>
+                <li><span>MG36</span><span>6:36:00</span></li>
+                <li><span>MG4</span><span>6:40:00</span></li>
+                <li><span>MG5</span><span>6:45:00</span></li>
+                <li><span>PKP</span><span>6:50:00</span></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Heavy Production</h2>
+      <table>
+          <tr>
+            <th>Rarity</th>
+            <th>SMG</th>
+            <th>AR</th>
+            <th>RF</th>
+            <th>MG</th>
+            <th>SG</th>
+          </tr>
+          <tbody>
+            <tr id="three-star">
+              <td class="rarity">3★</td>
+              <td>
+                <ul>
+                  <li><span>Sten MkII</span><span>1:40:00</span></li>
+                  <li><span>Micro Uzi</span><span>1:40:00</span></li>
+                  <li><span>F1</span><span>1:50:00</span></li>
+                  <li><span>Ingram</span><span>2:00:00</span></li>
+                  <li><span>Skorpion</span><span>2:00:00</span></li>
+                  <li><span>Z-62</span><span>2:05:00</span></li>
+                  <li><span>PPS-43</span><span>2:10:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>StG44</span><span>3:00:00</span></li>
+                  <li><span>OTs-12</span><span>3:10:00</span></li>
+                  <li><span>ARX-160</span><span>3:15:00</span></li>
+                  <li><span>AK-47</span><span>3:20:00</span></li>
+                  <li><span>FF FNC</span><span>3:20:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>M14</span><span>3:40:00</span></li>
+                  <li><span>SV-98</span><span>3:40:00</span></li>
+                  <li><span>Type88</span><span>3:50:00</span></li>
+                  <li><span>OTs-44</span><span>3:50:00</span></li>
+                  <li><span>M1 Garand</span><span>4:00:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>Bren</span><span>5:20:00</span></li>
+                  <li><span>M1919A4</span><span>5:40:00</span></li>
+                  <li><span>MG42</span><span>5:50:00</span></li>
+                  <li><span>M2HB</span><span>6:10:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>NS2000</span><span>7:15:00</span></li>
+                  <li><span>M500</span><span>7:20:00</span></li>
+                  <li><span>KS-23</span><span>7:25:00</span></li>
+                  <li><span>RMB-93</span><span>7:30:00</span></li>
+                  <li><span>M1897</span><span>7:30:00</span></li>
+                </ul>
+              </td>
+            </tr>
+            <tr id="four-star">
+              <td class="rarity">4★</td>
+              <td>
+                <ul>
+                  <li><span>UMP9</span><span>2:15:00</span></li>
+                  <li><span>UMP45</span><span>2:15:00</span></li>
+                  <li><span>Shipka</span><span>2:18:00</span></li>
+                  <li><span>PP-19-01</span><span>2:18:00</span></li>
+                  <li><span>Gr MP5</span><span>2:20:00</span></li>
+                  <li><span>PP-90</span><span>2:20:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>Type56-1</span><span>3:25:00</span></li>
+                  <li><span>XM8</span><span>3:25:00</span></li>
+                  <li><span>SAR-21</span><span>3:25:00</span></li>
+                  <li><span>AS Val</span><span>3:30:00</span></li>
+                  <li><span>FAMAS</span><span>3:30:00</span></li>
+                  <li><span>TAR-21</span><span>3:30:00</span></li>
+                  <li><span>9A-91</span><span>3:35:00</span></li>
+                  <li><span>EM-2</span><span>3:35:00</span></li>
+                  <li><span>G36</span><span>3:40:00</span></li>
+                  <li><span>Ribeyrolles</span><span>3:40:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>Mosin-Nagant</span><span>4:10:00</span></li>
+                  <li><span>T-5000</span><span>4:10:00</span></li>
+                  <li><span>SVD</span><span>4:15:00</span></li>
+                  <li><span>SPR A3G</span><span>4:15:00</span></li>
+                  <li><span>K31</span><span>4:15:00</span></li>
+                  <li><span>Gr PSG-1</span><span>4:10:00</span></li>
+                  <li><span>Gr G28</span><span>4:10:00</span></li>
+                  <li><span>Springfield</span><span>4:25:00</span></li>
+                  <li><span>PTRD</span><span>4:30:00</span></li>
+                  <li><span>PzB39</span><span>4:30:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>M60</span><span>6:10:00</span></li>
+                  <li><span>Type 80</span><span>6:15:00</span></li>
+                  <li><span>Mk48</span><span>6:20:00</span></li>
+                  <li><span>AEK-999</span><span>6:20:00</span></li>
+                  <li><span>M1918</span><span>6:25:00</span></li>
+                  <li><span>Ameli</span><span>6:25:00</span></li>
+                  <li><span>Chauchat M1915</span><span>6:25:00</span></li>
+                  <li><span>PK</span><span>6:30:00</span></li>
+                  <li><span>MG3</span><span>6:30:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>M1014</span><span>7:14:00</span></li>
+                  <li><span>M590</span><span>7:40:00</span></li>
+                  <li><span>SPAS-12</span><span>7:40:00</span></li>
+                  <li><span>M37</span><span>7:45:00</span></li>
+                  <li><span>Super-Shorty</span><span>7:50:00</span></li>
+                  <li><span>USAS-12</span><span>7:55:00</span></li>
+                </ul>
+              </td>
+            </tr>
+            <tr id="five-star">
+              <td class="rarity">5★</td>
+              <td>
+                <ul>
+                  <li><span>MP7</span><span>2:18:00</span></li>
+                  <li><span>100 Shiki</span><span>2:19:00</span></li>
+                  <li><span>Suomi</span><span>2:25:00</span></li>
+                  <li><span>C-MS</span><span>2:28:00</span></li>
+                  <li><span>P90</span><span>2:29:00</span></li>
+                  <li><span>Gr G36C</span><span>2:30:00</span></li>
+                  <li><span>Thompson</span><span>2:30:00</span></li>
+                  <li><span>SR-3MP</span><span>2:33:00</span></li>
+                  <li><span>Type 79</span><span>2:35:00</span></li>
+                  <li><span>Vector</span><span>2:35:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>FAL</span><span>3:45:00</span></li>
+                  <li><span>T91</span><span>3:48:00</span></li>
+                  <li><span>Type 95</span><span>3:50:00</span></li>
+                  <li><span>Type 97</span><span>3:50:00</span></li>
+                  <li><span>K2</span><span>3:52:00</span></li>
+                  <li><span>MDR</span><span>3:53:00</span></li>
+                  <li><span>416</span><span>3:55:00</span></li>
+                  <li><span>Am RFB</span><span>3:58:00</span></li>
+                  <li><span>Gr G11</span><span>4:04:00</span></li>
+                  <li><span>Gr G41</span><span>4:05:00</span></li>
+                  <li><span>Zas M21</span><span>4:05:00</span></li>
+                  <li><span>64 Shiki</span><span>4:06:00</span></li>
+                  <li><span>AN-94</span><span>4:09:00</span></li>
+                  <li><span>K11</span><span>4:11:00</span></li>
+                  <li><span>AK-12</span><span>4:12:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>M200</span><span>4:32:00</span></li>
+                  <li><span>Carcano M1891</span><span>4:38:00</span></li>
+                  <li><span>Kar98k</span><span>4:40:00</span></li>
+                  <li><span>Carcano M91/38</span><span>4:42:00</span></li>
+                  <li><span>NTW-20</span><span>4:45:00</span></li>
+                  <li><span>QBU-88</span><span>4:48:00</span></li>
+                  <li><span>WA2000</span><span>4:50:00</span></li>
+                  <li><span>IWS 2000</span><span>4:52:00</span></li>
+                  <li><span>M99</span><span>4:55:00</span></li>
+                  <li><span>Lee Enfield</span><span>5:00:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>Type 88</span><span>6:28:00</span></li>
+                  <li><span>Negev</span><span>6:35:00</span></li>
+                  <li><span>MG36</span><span>6:36:00</span></li>
+                  <li><span>MG4</span><span>6:40:00</span></li>
+                  <li><span>MG5</span><span>6:45:00</span></li>
+                  <li><span>PKP</span><span>6:50:00</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><span>Am KSG</span><span>8:00:00</span></li>
+                  <li><span>Saiga-12</span><span>8:05:00</span></li>
+                  <li><span>FP-6</span><span>8:06:00</span></li>
+                  <li><span>S.A.T.8</span><span>8:10:00</span></li>
+                  <li><span>AA-12</span><span>8:12:00</span></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
   </main>
 
   <footer>
@@ -29,29 +499,11 @@
       <a href="https://wiki.gamerclub.jp/dfwiki/index.php">JP Server</a>
     </div>
     <br />
-    <span>Last Updated June 9th, 2019</span><span>Contact: Lvra#3505</span>
+    <span>Last Updated June 15th, 2019</span><span>Contact: Lvra#3505</span>
   </footer>
 
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-
-  <style>
-    noscript {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 1em;
-      background-color: #E53935;
-      color: #fff;
-      font-family: 'Helvetica', 'Arial', 'sans-serif';
-      font-weight: bold;
-      font-size: 20px;
-      text-align: center;
-    }
-  </style>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
 </body>
 
 </html>
