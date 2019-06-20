@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 @font-face {
   font-family: 'Mohave Regular';
   font-display: swap;
@@ -9,7 +11,7 @@ body {
   background-image: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%);
   background-size: 56.57px 56.57px;
   color: #eee;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 15px;
   text-align: center;
 }
@@ -23,19 +25,16 @@ footer h2 {
   margin-bottom: 0.2em;
 }
 
+footer a {
+  display: inline-block;
+  padding: 0.3em;
+}
+
 footer span {
   margin: 1em;
 }
 
-.center {
-  margin: 0 auto;
-}
-
-/*
-================
-  Recipe
-================
-*/
+/* Recipe */
 
 #recipe {
   display: -webkit-inline-box;
@@ -56,13 +55,6 @@ footer span {
   background-color: rgba(46, 46, 46, 0.5);
   font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
   touch-action: manipulation;
-}
-
-@media screen and (max-width: 1350px) {
-  #recipe {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .ingredient {
@@ -116,10 +108,11 @@ footer span {
   cursor: pointer;
 }
 
+.recipe-input button:hover,
 .recipe-input button:active,
 .recipe-input button:focus {
   outline: none;
-  background-color: #c3f564;
+  color: #eee;
 }
 
 .down::after,
@@ -173,14 +166,10 @@ footer span {
 
 .heavy-style .recipe-input button:active,
 .heavy-style .recipe-input button:focus {
-  background-color: #f07139;
+  color: #eee;
 }
 
-/*
-=================
-  Results Table
-=================
-*/
+/* Results Table */
 
 .table-wrapper {
   display: inline-block;
@@ -265,28 +254,20 @@ li span:last-child {
   margin-right: 1em;
 }
 
-/*
-=================
-  Controls Menu
-=================
-*/
+/* Controls Menu */
 
 #controls {
-  padding: 0.5em;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  padding: 0 0.5em;
   border: 1px solid #fa0;
   border-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
   text-align: left;
 }
 
-#controls > div {
-  margin-top: 0.4em;
-}
-
-.toggle {
-  content: ' ';
-  clear: both;
-  display: table;
+.ctlgroup > div {
+  margin-top: 0.5em;
 }
 
 .selection {
@@ -299,12 +280,6 @@ li span:last-child {
   margin-right: 1em;
 }
 
-.toggle label:nth-child(2) {
-  display: inline-block;
-  margin-left: 1em;
-  cursor: pointer;
-}
-
 .selection select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -312,7 +287,6 @@ li span:last-child {
   border-radius: 0;
   border: none;
   border-bottom: 2px solid #c70;
-  padding: 0 1em;
   padding-right: 1.5em;
   background: transparent;
   color: white;
@@ -324,6 +298,7 @@ li span:last-child {
 .selection select:focus,
 .selection select:hover {
   border-color: #fa0;
+  font-weight: bold;
   outline: none;
 }
 
@@ -345,6 +320,11 @@ li span:last-child {
   color: #000;
 }
 
+.toggle div {
+  display: inline-flex;
+  align-items: baseline;
+}
+
 label.switch {
   float: left;
   margin-top: 0.1em;
@@ -360,13 +340,13 @@ label.switch + span {
 .switch {
   display: inline-block;
   position: relative;
-  width: 2em;
-  height: 1em;
+  width: 34px;
+  height: 18px;
   cursor: pointer;
 }
 
 .switch input {
-  visibility: hidden;
+  opacity: 0;
 }
 
 label.switch span {
@@ -382,20 +362,54 @@ label.switch span {
 
 label.switch span::before {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1px;
+  left: 2px;
   border-radius: 50%;
   content: ' ';
   background-color: white;
-  height: 1em;
-  width: 1em;
+  height: 16px;
+  width: 16px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  z-index: 1;
+}
+
+@keyframes focusknob {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(2.3);
+  }
+}
+
+.knobfocus::after {
+  content: ' ';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: rgba(200, 150, 100, 0.5);
+  height: 16px;
+  width: 16px;
+  z-index: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(2.3);
+  transform: scale(2.3);
+  animation: focusknob 0.3s ease-out;
+}
+
+label.switch input:focus:checked + span::after,
+label.switch input:active:checked + span::after {
+  -webkit-transform: translateX(14px) scale(2.3);
+  transform: translateX(14px) scale(2.3);
 }
 
 label.switch input:checked + span::before {
-  -webkit-transform: translateX(1em);
-  transform: translateX(1em);
+  -webkit-transform: translateX(14px);
+  transform: translateX(14px);
 }
 
 label.switch input:checked + span {
@@ -403,14 +417,10 @@ label.switch input:checked + span {
 }
 
 #controls p {
-  margin: 0.2em 0;
+  margin: 0.5em 0;
 }
 
-/*
-=================
-  Miscellaneous
-=================
-*/
+/* Reference */
 #reference {
   text-align: center;
 }
@@ -426,4 +436,21 @@ label.switch input:checked + span {
 
 #reference a:visited {
   color: #c70;
+}
+
+@media screen and (max-width: 1350px) {
+  #recipe {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #recipe {
+    padding: 0;
+  }
+
+  .ingredient {
+    margin: 0;
+  }
 }

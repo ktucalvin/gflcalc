@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { PresetSelector, standardPresets, heavyPresets } from './presets.js'
 import Ingredient from './Ingredient.js'
 import ProductionCalculator from './ProductionCalculator.js'
+import ToggleSwitch from './ToggleSwitch.js'
 
 export default
 class App extends Component {
@@ -68,29 +69,27 @@ class App extends Component {
       recipe.presets = standardPresets
       recipe.selectedPreset = 'hgset1'
     }
-    this.setState(this.state)
+    this.setState(recipe)
   }
 
   toggleShowAll (event) {
-    this.state.showAll = event.target.checked
-    this.setState(this.state)
+    this.setState({ showAll: event.target.checked })
   }
 
   render () {
     return (
       <>
-        <div class='center'>
-          <div id='recipe' class={this.state.sum >= 4000 ? 'heavy-style' : ''} >
-            <Ingredient name='manpower' updateRecipe={x => this.updateRecipe('manpower', x)} ingredient={this.state.manpower} />
-            <Ingredient name='ammunition' updateRecipe={x => this.updateRecipe('ammunition', x)} ingredient={this.state.ammunition} />
-            <Ingredient name='rations' updateRecipe={x => this.updateRecipe('rations', x)} ingredient={this.state.rations} />
-            <Ingredient name='parts' updateRecipe={x => this.updateRecipe('parts', x)} ingredient={this.state.parts} />
-          </div>
+        <div id='recipe' class={this.state.sum >= 4000 ? 'heavy-style' : ''} >
+          <Ingredient name='manpower' updateRecipe={x => this.updateRecipe('manpower', x)} ingredient={this.state.manpower} />
+          <Ingredient name='ammunition' updateRecipe={x => this.updateRecipe('ammunition', x)} ingredient={this.state.ammunition} />
+          <Ingredient name='rations' updateRecipe={x => this.updateRecipe('rations', x)} ingredient={this.state.rations} />
+          <Ingredient name='parts' updateRecipe={x => this.updateRecipe('parts', x)} ingredient={this.state.parts} />
         </div>
 
         <div class='table-wrapper'>
           <div id='controls'>
-            <div class='center'>
+            <div class='ctlgroup'>
+
               <div class='selection'>
                 <label for='server-id'>Server: </label>
                 <select id='server-id' value={this.state.server} onChange={this.changeServer}>
@@ -101,26 +100,17 @@ class App extends Component {
                   <option value='JP'>JP</option>
                 </select>
               </div>
+
+              <br />
+
+              <div id='preset-select' class='selection' >
+                <PresetSelector changePreset={this.changePreset} presets={this.state.presets} selected={this.state.selectedPreset} />
+              </div>
             </div>
 
-            <div id='preset-select' class='selection' >
-              <PresetSelector changePreset={this.changePreset} presets={this.state.presets} selected={this.state.selectedPreset} />
-            </div>
-
-            <div class='toggle'>
-              <label class='switch'>
-                <input id='toggle-heavy' type='checkbox' onChange={this.toggleHeavy} />
-                <span />
-              </label>
-              <label for='toggle-heavy'>Toggle Heavy Production</label>
-            </div>
-
-            <div class='toggle'>
-              <label class='switch'>
-                <input id='toggle-unavailable' type='checkbox' onChange={this.toggleShowAll} />
-                <span />
-              </label>
-              <label for='toggle-unavailable'>Show Dolls In Other Servers</label>
+            <div class='ctlgroup'>
+              <ToggleSwitch name={'toggle-heavy'} update={this.toggleHeavy}>Toggle Heavy Production</ToggleSwitch>
+              <ToggleSwitch name={'toggle-unavailable'} update={this.toggleShowAll}>Show Dolls in Other Servers</ToggleSwitch>
             </div>
 
             <p>(?) indicates speculated minimum requirements</p>
@@ -136,7 +126,7 @@ class App extends Component {
               <th>MG</th>
               {this.state.sum >= 4000 && <th>SG</th>}
             </tr>
-            <tbody >
+            <tbody>
               <ProductionCalculator recipe={this.state} />
             </tbody>
           </table>

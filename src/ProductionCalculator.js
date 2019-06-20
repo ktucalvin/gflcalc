@@ -67,14 +67,26 @@ class Category extends Component {
   }
 }
 
+// TODO this method doesn't work for some dolls whose name are EN no matter what
+// if doll['name' + this.props.server] !== doll.nameEN
+
+const serverToIso = {
+  EN: 'en',
+  CN: 'zh-CN',
+  TW: 'zh-TW',
+  KR: 'ko',
+  JP: 'ja'
+}
+
 class Doll extends Component {
   render () {
     const doll = this.props.doll
     let name = doll['name' + this.props.server]
     if (!name) { name = doll.nameEN }
+    const lang = name !== doll.nameEN ? serverToIso[this.props.server] : 'en'
     return (
       <li className={this.props.classes}>
-        <span>{name}</span>
+        <span lang={lang}>{name}</span>
         <span>{doll.time}</span>
       </li>
     )
