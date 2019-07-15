@@ -538,6 +538,13 @@ const fourStar = {
       standard: HGSet1
     },
     {
+      nameEN: 'P30',
+      time: '50:00',
+      availability: KR,
+      standard: HGSet2,
+      unsure: [1, 0]
+    },
+    {
       nameEN: 'Spitfire',
       time: '52:00',
       standard: HGSet2
@@ -681,6 +688,15 @@ const fourStar = {
     }
   ],
   rf: [
+    {
+      nameEN: 'Type 4 Rifle',
+      nameKR: '4식',
+      time: '4:04:00',
+      availability: KR,
+      standard: RFSet2,
+      heavy: HeavySet4141,
+      unsure: [1, 1]
+    },
     {
       nameEN: 'Mosin-Nagant',
       nameCN: '莫辛-纳甘',
@@ -1059,6 +1075,14 @@ const fiveStar = {
       time: '3:55:00',
       standard: ARSet1,
       heavy: HeavySet1111
+    },
+    {
+      nameEN: 'ADS',
+      time: '3:55:00',
+      availability: KR,
+      standard: ARSet2,
+      heavy: HeavySet1441,
+      unsure: [1, 1]
     },
     {
       nameEN: 'Am RFB',
