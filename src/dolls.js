@@ -516,8 +516,8 @@ const fourStar = {
       nameCN: '杰里科',
       nameKR: '제리코',
       nameTW: '杰里科',
+      nameJP: 'ジェリコ',
       time: '49:00',
-      availability: EN | CN | TW | KR,
       standard: HGSet2
     },
     {
@@ -674,8 +674,8 @@ const fourStar = {
       nameCN: '利贝罗勒',
       nameKR: '리베롤',
       nameTW: '利貝羅勒',
+      nameJP: 'リベロール',
       time: '3:40:00',
-      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     }
@@ -714,7 +714,7 @@ const fourStar = {
     {
       nameEN: 'K31',
       time: '4:15:00',
-      availability: CN | TW | KR,
+      availability: CN | TW | KR | JP,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [0, 1]
@@ -952,7 +952,6 @@ const fiveStar = {
     {
       nameEN: 'C-MS',
       time: '2:28:00',
-      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411,
       unsure: [0, 1]
@@ -1049,7 +1048,6 @@ const fiveStar = {
     {
       nameEN: 'MDR',
       time: '3:53:00',
-      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     },
