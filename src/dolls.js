@@ -540,7 +540,7 @@ const fourStar = {
     {
       nameEN: 'P30',
       time: '50:00',
-      availability: KR,
+      availability: CN | KR,
       standard: HGSet2,
       unsure: [1, 0]
     },
@@ -692,7 +692,7 @@ const fourStar = {
       nameEN: 'Type 4 Rifle',
       nameKR: '4식',
       time: '4:04:00',
-      availability: KR,
+      availability: CN | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [1, 1]
@@ -1079,7 +1079,7 @@ const fiveStar = {
     {
       nameEN: 'ADS',
       time: '3:55:00',
-      availability: KR,
+      availability: CN | KR,
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [1, 1]

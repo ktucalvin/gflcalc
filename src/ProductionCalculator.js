@@ -67,9 +67,8 @@ class Category extends Component {
   }
 }
 
-// TODO this method doesn't work for some dolls whose name are EN no matter what
-// if doll['name' + this.props.server] !== doll.nameEN
-
+// Note this method doesn't work if the doll's
+// name is in a different language to its server
 const serverToIso = {
   EN: 'en',
   CN: 'zh-CN',
