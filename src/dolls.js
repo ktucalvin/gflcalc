@@ -873,7 +873,6 @@ const fourStar = {
     {
       nameEN: 'USAS-12',
       time: '7:55:00',
-      availability: EN | CN | TW | KR,
       heavy: HeavySet6164
     }
   ]
@@ -1300,7 +1299,6 @@ const fiveStar = {
     {
       nameEN: 'S.A.T.8',
       time: '8:10:00',
-      availability: EN | CN | TW | KR,
       heavy: HeavySet6164
     },
     {
