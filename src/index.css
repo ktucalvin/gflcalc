@@ -37,38 +37,24 @@ footer p {
 /* Recipe */
 
 #recipe {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 1em;
   border: 1px solid #90c231;
   padding: 1em;
-  background-color: rgba(46, 46, 46, 0.5);
+  background-color: rgba(0, 0, 0, 0.35);
   font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
   touch-action: manipulation;
 }
 
 .ingredient {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   margin: 0.4em;
   padding: 1.5em 0;
   border: 1px solid #90c231;
-  -webkit-box-shadow: inset 0 0 35px -7px #90c231;
   box-shadow: inset 0 0 35px -7px #90c231;
 }
 
@@ -124,19 +110,15 @@ footer p {
 }
 
 .up::after {
-  -webkit-transform: rotate(-90deg) scale(1.4, 2) translateY(-0.08em);
   transform: rotate(-90deg) scale(1.4, 2) translateY(-0.08em);
 }
 
 .down::after {
-  -webkit-transform: rotate(90deg) scale(1.4, -2) translateY(-0.08em);
   transform: rotate(90deg) scale(1.4, -2) translateY(-0.08em);
 }
 
 .recipe-input p {
   display: grid;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   justify-items: center;
   font-size: 2em;
@@ -151,7 +133,6 @@ footer p {
 
 .heavy-style div.ingredient {
   border-color: #d6571f !important;
-  -webkit-box-shadow: inset 0 0 35px -7px #d6571f;
   box-shadow: inset 0 0 35px -7px #d6571f;
   background-color: rgba(94, 30, 2, 0.3);
 }
@@ -175,6 +156,7 @@ footer p {
   display: inline-block;
   margin-top: 1%;
   margin-bottom: 5%;
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 table {
@@ -182,7 +164,6 @@ table {
   border-top: 1px solid #fa0;
   border-left: 1px solid #fa0;
   border-spacing: 0;
-  background-color: rgba(46, 46, 46, 0.5);
   text-align: left;
 }
 
@@ -258,7 +239,7 @@ li span:last-child {
 
 #controls {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   padding: 0 0.5em;
   border: 1px solid #fa0;
   border-bottom: 0;
@@ -281,8 +262,6 @@ li span:last-child {
 }
 
 .selection select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   border-radius: 0;
   border: none;
@@ -356,7 +335,6 @@ label.switch span {
   height: 100%;
   background-color: rgb(180, 180, 180);
   border-radius: 10px;
-  -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
@@ -369,7 +347,6 @@ label.switch span::before {
   background-color: white;
   height: 16px;
   width: 16px;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
   z-index: 1;
 }
@@ -394,21 +371,17 @@ label.switch span::before {
   height: 16px;
   width: 16px;
   z-index: 0;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
-  -webkit-transform: scale(2.3);
   transform: scale(2.3);
   animation: focusknob 0.3s ease-out;
 }
 
 label.switch input:focus:checked + span::after,
 label.switch input:active:checked + span::after {
-  -webkit-transform: translateX(14px) scale(2.3);
   transform: translateX(14px) scale(2.3);
 }
 
 label.switch input:checked + span::before {
-  -webkit-transform: translateX(14px);
   transform: translateX(14px);
 }
 
@@ -418,6 +391,7 @@ label.switch input:checked + span {
 
 #controls p {
   margin: 0.5em 0;
+  font-size: 14px;
 }
 
 /* Reference */
@@ -438,14 +412,14 @@ label.switch input:checked + span {
   color: #c70;
 }
 
-@media screen and (max-width: 1350px) {
+@media all and (max-width: 1350px) {
   #recipe {
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media all and (max-width: 540px) {
   #recipe {
     padding: 0;
   }

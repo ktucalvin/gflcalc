@@ -67,7 +67,7 @@ const Doll = ({ doll, server, classes }) => {
   if (!name) { name = doll.nameEN }
   const lang = name !== doll.nameEN ? serverToIso[server] : 'en'
   return (
-    <li className={classes}>
+    <li className={classes || null}>
       <span lang={lang}>{name}</span>
       <span>{doll.time}</span>
     </li>

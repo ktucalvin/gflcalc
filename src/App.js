@@ -93,11 +93,11 @@ class App extends Component {
               <div class='selection'>
                 <label for='server-id'>Server: </label>
                 <select id='server-id' value={this.state.server} onChange={this.changeServer}>
-                  <option value='EN'>EN</option>
-                  <option value='KR'>KR</option>
-                  <option value='CN'>CN</option>
-                  <option value='TW'>TW</option>
-                  <option value='JP'>JP</option>
+                  <option value='EN'>EN (Sunborn)</option>
+                  <option value='KR'>KR (X.D. Global)</option>
+                  <option value='CN'>CN (Bilibili/Digital Sky)</option>
+                  <option value='TW'>TW (Tianxia Game)</option>
+                  <option value='JP'>JP (Sunborn)</option>
                 </select>
               </div>
 
