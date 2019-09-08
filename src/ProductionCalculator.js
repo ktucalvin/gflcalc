@@ -16,9 +16,9 @@ const rarityClassNames = {
   '5': 'five-star'
 }
 
-const Rarity = ({ recipe, dolls, rarity }) => (
+const Rarity = ({ rarity, dolls, recipe }) => (
   <tr id={rarityClassNames[rarity]}>
-    <td className='rarity'>{rarity}★</td>
+    {window.innerWidth >= 360 && <td className='rarity'>{rarity}★</td>}
     { recipe.sum < 4000 && <Category dolls={dolls.hg} recipe={recipe} />}
     <Category dolls={dolls.smg} recipe={recipe} />
     <Category dolls={dolls.ar} recipe={recipe} />
@@ -28,22 +28,23 @@ const Rarity = ({ recipe, dolls, rarity }) => (
   </tr>
 )
 
-const Category = ({ recipe, dolls }) => {
+const Category = ({ dolls, recipe }) => {
   let hidden = 0
   const result = dolls.map(doll => {
+    let unsure = false
     let classes = ''
     if (doll.unsure && ((recipe.sum < 4000 ? doll.unsure[0] : doll.unsure[1]))) {
-      classes += 'unsure '
+      unsure = true
     }
     if (verifyRecipe(recipe, doll, doll.availability)) {
-      return <Doll key={doll.nameEN} doll={doll} classes={classes} server={recipe.server} />
+      return <Doll key={doll.nameEN} doll={doll} server={recipe.server} classes={classes} unsure={unsure} />
     } else if (recipe.showAll && verifyRecipe(recipe, doll, undefined)) { // check again against all servers
       classes += 'unavailable '
     } else {
       hidden++
       classes += 'flat'
     }
-    return <Doll key={doll.nameEN} doll={doll} classes={classes} server={recipe.server} />
+    return <Doll key={doll.nameEN} doll={doll} server={recipe.server} classes={classes} unsure={unsure} />
   })
 
   if (hidden !== dolls.length) {
@@ -62,14 +63,14 @@ const serverToIso = {
   JP: 'ja'
 }
 
-const Doll = ({ doll, server, classes }) => {
+const Doll = ({ doll, server, classes, unsure }) => {
   let name = doll['name' + server]
   if (!name) { name = doll.nameEN }
   const lang = name !== doll.nameEN ? serverToIso[server] : 'en'
   return (
     <li className={classes || null}>
       <span lang={lang}>{name}</span>
-      <span>{doll.time}</span>
+      <span>{doll.time}{unsure && ' (?)'}</span>
     </li>
   )
 }

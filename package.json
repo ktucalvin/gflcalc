@@ -10,6 +10,12 @@
   },
   "author": "lvra",
   "license": "MIT",
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "no-descending-specificity": null
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
@@ -26,6 +32,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
     "terser-webpack-plugin": "^1.2.3",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",

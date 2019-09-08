@@ -118,7 +118,7 @@ class App extends Component {
 
           <table>
             <tr>
-              <th>Rarity</th>
+              {window.innerWidth >= 360 && <th>Rarity</th>}
               {this.state.sum < 4000 && <th>HG</th>}
               <th>SMG</th>
               <th>AR</th>
