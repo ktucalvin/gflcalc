@@ -512,8 +512,9 @@
     </div>
   </footer>
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <% const src = process.env.NODE_ENV === 'development' ? 'development' : 'production.min' %>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.<%= src %>.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.<%= src %>.js"></script>
 </body>
 
 </html>

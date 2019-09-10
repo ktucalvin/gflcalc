@@ -1,11 +1,11 @@
 'use strict'
 import React, { Component } from 'react'
-import { PresetSelector, standardPresets, heavyPresets } from './presets.js'
-import Ingredient from './Ingredient.js'
-import ProductionCalculator from './ProductionCalculator.js'
-import ToggleSwitch from './ToggleSwitch.js'
+import { standardPresets, heavyPresets } from './data/presets.js'
+import Ingredient from './components/Ingredient.js'
+import ProductionTable from './components/ProductionTable.js'
+import ToggleSwitch from './components/ToggleSwitch.js'
+import PresetSelector from './components/PresetSelector'
 
-export default
 class App extends Component {
   constructor (props) {
     super(props)
@@ -79,19 +79,19 @@ class App extends Component {
   render () {
     return (
       <>
-        <div id='recipe' class={this.state.sum >= 4000 ? 'heavy-style' : ''} >
+        <div id='recipe' className={this.state.sum >= 4000 ? 'heavy-style' : ''} >
           <Ingredient name='manpower' updateRecipe={x => this.updateRecipe('manpower', x)} ingredient={this.state.manpower} />
           <Ingredient name='ammunition' updateRecipe={x => this.updateRecipe('ammunition', x)} ingredient={this.state.ammunition} />
           <Ingredient name='rations' updateRecipe={x => this.updateRecipe('rations', x)} ingredient={this.state.rations} />
           <Ingredient name='parts' updateRecipe={x => this.updateRecipe('parts', x)} ingredient={this.state.parts} />
         </div>
 
-        <div class='table-wrapper'>
+        <div className='table-wrapper'>
           <div id='controls'>
-            <div class='ctlgroup'>
+            <div className='ctlgroup'>
 
-              <div class='selection'>
-                <label for='server-id'>Server: </label>
+              <div className='selection'>
+                <label htmlFor='server-id'>Server: </label>
                 <select id='server-id' value={this.state.server} onChange={this.changeServer}>
                   <option value='EN'>EN (Sunborn)</option>
                   <option value='KR'>KR (X.D. Global)</option>
@@ -103,12 +103,12 @@ class App extends Component {
 
               <br />
 
-              <div id='preset-select' class='selection' >
+              <div id='preset-select' className='selection' >
                 <PresetSelector changePreset={this.changePreset} presets={this.state.presets} selected={this.state.selectedPreset} />
               </div>
             </div>
 
-            <div class='ctlgroup'>
+            <div className='ctlgroup'>
               <ToggleSwitch name={'toggle-heavy'} update={this.toggleHeavy}>Toggle Heavy Production</ToggleSwitch>
               <ToggleSwitch name={'toggle-unavailable'} update={this.toggleShowAll}>Show Dolls in Other Servers</ToggleSwitch>
             </div>
@@ -117,17 +117,19 @@ class App extends Component {
           </div>
 
           <table>
-            <tr>
-              {window.innerWidth >= 360 && <th>Rarity</th>}
-              {this.state.sum < 4000 && <th>HG</th>}
-              <th>SMG</th>
-              <th>AR</th>
-              <th>RF</th>
-              <th>MG</th>
-              {this.state.sum >= 4000 && <th>SG</th>}
-            </tr>
+            <thead>
+              <tr>
+                {window.innerWidth >= 360 && <th>Rarity</th>}
+                {this.state.sum < 4000 && <th>HG</th>}
+                <th>SMG</th>
+                <th>AR</th>
+                <th>RF</th>
+                <th>MG</th>
+                {this.state.sum >= 4000 && <th>SG</th>}
+              </tr>
+            </thead>
             <tbody>
-              <ProductionCalculator recipe={this.state} />
+              <ProductionTable recipe={this.state} />
             </tbody>
           </table>
         </div>
@@ -135,3 +137,5 @@ class App extends Component {
     )
   }
 }
+
+export default App

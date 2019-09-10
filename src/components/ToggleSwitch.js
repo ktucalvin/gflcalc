@@ -1,7 +1,6 @@
 'use strict'
 import React, { Component } from 'react'
 
-export default
 class ToggleSwitch extends Component {
   constructor (props) {
     super(props)
@@ -21,9 +20,9 @@ class ToggleSwitch extends Component {
 
   render () {
     return (
-      <div class='toggle'>
+      <div className='toggle'>
         <div>
-          <label class='switch' for={this.props.name}>
+          <label className='switch' htmlFor={this.props.name}>
             <input
               id={this.props.name}
               type='checkbox'
@@ -32,7 +31,7 @@ class ToggleSwitch extends Component {
               onBlur={() => this.setState({ inFocus: false })}
               aria-label={this.props.children}
             />
-            <span class={this.state.inFocus ? 'knobfocus' : ''} />
+            <span className={this.state.inFocus ? 'knobfocus' : ''} />
           </label>
           <span>{this.props.children}</span>
         </div>
@@ -40,3 +39,5 @@ class ToggleSwitch extends Component {
     )
   }
 }
+
+export default ToggleSwitch

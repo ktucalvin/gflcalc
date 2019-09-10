@@ -10,7 +10,7 @@ The site is hosted at https://gflcalc.netlify.com/
 
 The easiest way to correct an error or update the calculator is to contact me on Discord at `Lvra#3505`. Pull requests are open too.
 
-`src/dolls.js` contains all the T-doll availability information.
+`src/data/dolls.js` contains all the T-doll availability information.
 
 ## License
 

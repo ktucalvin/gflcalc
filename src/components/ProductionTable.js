@@ -1,7 +1,7 @@
 import React from 'react'
-import { Dolls, Servers } from './dolls.js'
+import { Dolls, Servers } from '../data/dolls.js'
 
-const ProductionCalculator = ({ recipe }) => (
+const ProductionTable = ({ recipe }) => (
   <>
     {recipe.sum < 4000 && <Rarity rarity={2} dolls={Dolls.twoStar} recipe={recipe} />}
     <Rarity rarity={3} dolls={Dolls.threeStar} recipe={recipe} />
@@ -88,4 +88,4 @@ function verifyRecipe (recipe, doll, availability) {
          (availability === undefined || Servers[recipe.server] & availability) // check server availability
 }
 
-export default ProductionCalculator
+export default ProductionTable

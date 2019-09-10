@@ -1,5 +1,4 @@
 'use strict'
-import React, { Component } from 'react'
 
 // Manpower, Ammo, Rations, Parts
 const standardPresets = {
@@ -36,32 +35,6 @@ const heavyPresets = {
   sgMica: { preset: [8000, 1000, 8000, 4000], text: 'SG MICA Recommended' },
   voodoo: { preset: [6000, 2000, 6000, 4000], text: 'SG Voodoo' },
   all: { preset: [6000, 6000, 6000, 4000], text: 'All (not recommended!)' }
-}
-
-export class PresetSelector extends Component {
-  constructor (props) {
-    super(props)
-    this.updatePreset = this.updatePreset.bind(this)
-  }
-
-  updatePreset (event) {
-    this.props.changePreset(event)
-    this.props.selected = event.target.value
-  }
-
-  render () {
-    let options = []
-    for (const preset in this.props.presets) {
-      options.push(<option key={preset} value={preset}>{this.props.presets[preset].text}</option>)
-    }
-    return (
-      <>
-        <label for='recipe-preset'>Recipe Preset: </label>
-        <select id='recipe-preset' value={this.props.selected} onChange={this.updatePreset}>
-          {options}
-        </select>
-      </>)
-  }
 }
 
 export { standardPresets, heavyPresets }
