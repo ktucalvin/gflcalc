@@ -1,6 +1,5 @@
 'use strict'
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
@@ -24,19 +23,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.ejs'
+    new CleanWebpackPlugin({
+      verbose: true
     }),
     new CopyWebpackPlugin([
       { from: 'src/favicon' },
       { from: 'src/res' }
     ])
   ],
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
-    filename: 'bundle.js'
-  },
   externals: {
     'react': 'React',
     'react-dom': 'ReactDOM'

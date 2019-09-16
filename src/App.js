@@ -1,4 +1,5 @@
 'use strict'
+import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
 import { standardPresets, heavyPresets } from './data/presets.js'
 import Ingredient from './components/Ingredient.js'
@@ -138,4 +139,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default hot(App)
