@@ -363,7 +363,7 @@ const threeStar = {
     {
       nameEN: 'Z-62',
       time: '2:05:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       heavy: HeavySet1111
     },
     {
@@ -389,7 +389,7 @@ const threeStar = {
     {
       nameEN: 'ARX-160',
       time: '3:15:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       heavy: HeavySet1111
     },
     {
@@ -740,7 +740,7 @@ const fourStar = {
       nameKR: 'PSG-1',
       nameTW: 'PSG-1',
       time: '4:10:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       heavy: HeavySet4141
     },
     {
