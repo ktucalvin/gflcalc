@@ -6,6 +6,7 @@ import Ingredient from './components/Ingredient.js'
 import ProductionTable from './components/ProductionTable.js'
 import ToggleSwitch from './components/ToggleSwitch.js'
 import PresetSelector from './components/PresetSelector'
+import ServerSelector from './components/ServerSelector'
 
 class App extends Component {
   constructor (props) {
@@ -24,8 +25,8 @@ class App extends Component {
     }
 
     this.updateRecipe = this.updateRecipe.bind(this)
-    this.changeServer = this.changeServer.bind(this)
-    this.changePreset = this.changePreset.bind(this)
+    this.handleServerChange = this.handleServerChange.bind(this)
+    this.handlePresetChange = this.handlePresetChange.bind(this)
     this.toggleHeavy = this.toggleHeavy.bind(this)
     this.toggleShowAll = this.toggleShowAll.bind(this)
   }
@@ -37,12 +38,12 @@ class App extends Component {
     this.setState(recipe)
   }
 
-  changeServer (event) {
+  handleServerChange (event) {
     this.state.server = event.target.value
     this.setState(this.state)
   }
 
-  changePreset (event) {
+  handlePresetChange (event) {
     const { preset } = this.state.presets[event.target.value]
     const recipe = this.state
     recipe.manpower = preset[0]
@@ -56,7 +57,7 @@ class App extends Component {
 
   toggleHeavy (event) {
     const isHeavy = event.target.checked
-    let recipe = this.state
+    const recipe = this.state
     if (isHeavy) {
       recipe.max = 9999
       recipe.min = recipe.manpower = recipe.ammunition = recipe.rations = recipe.parts = 1000
@@ -80,7 +81,7 @@ class App extends Component {
   render () {
     return (
       <>
-        <div id='recipe' className={this.state.sum >= 4000 ? 'heavy-style' : ''} >
+        <div id='recipe' className={this.state.sum >= 4000 ? 'heavy-style' : null}>
           <Ingredient name='manpower' updateRecipe={x => this.updateRecipe('manpower', x)} ingredient={this.state.manpower} />
           <Ingredient name='ammunition' updateRecipe={x => this.updateRecipe('ammunition', x)} ingredient={this.state.ammunition} />
           <Ingredient name='rations' updateRecipe={x => this.updateRecipe('rations', x)} ingredient={this.state.rations} />
@@ -90,49 +91,19 @@ class App extends Component {
         <div className='table-wrapper'>
           <div id='controls'>
             <div className='ctlgroup'>
-
-              <div className='selection'>
-                <label htmlFor='server-id'>Server: </label>
-                <select id='server-id' value={this.state.server} onChange={this.changeServer}>
-                  <option value='EN'>EN (Sunborn)</option>
-                  <option value='KR'>KR (X.D. Global)</option>
-                  <option value='CN'>CN (Bilibili/Digital Sky)</option>
-                  <option value='TW'>TW (Tianxia Game)</option>
-                  <option value='JP'>JP (Sunborn)</option>
-                </select>
-              </div>
-
-              <br />
-
-              <div id='preset-select' className='selection' >
-                <PresetSelector changePreset={this.changePreset} presets={this.state.presets} selected={this.state.selectedPreset} />
-              </div>
+              <ServerSelector onChange={this.handleServerChange} selected={this.state.server} />
+              <PresetSelector onChange={this.handlePresetChange} selected={this.state.selectedPreset} presets={this.state.presets} />
             </div>
 
             <div className='ctlgroup'>
-              <ToggleSwitch name={'toggle-heavy'} update={this.toggleHeavy}>Toggle Heavy Production</ToggleSwitch>
-              <ToggleSwitch name={'toggle-unavailable'} update={this.toggleShowAll}>Show Dolls in Other Servers</ToggleSwitch>
+              <ToggleSwitch name='toggle-heavy' update={this.toggleHeavy}>Toggle Heavy Production</ToggleSwitch>
+              <ToggleSwitch name='toggle-unavailable' update={this.toggleShowAll}>Show Dolls in Other Servers</ToggleSwitch>
             </div>
 
             <p>(?) indicates speculated minimum requirements</p>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                {window.innerWidth >= 360 && <th>Rarity</th>}
-                {this.state.sum < 4000 && <th>HG</th>}
-                <th>SMG</th>
-                <th>AR</th>
-                <th>RF</th>
-                <th>MG</th>
-                {this.state.sum >= 4000 && <th>SG</th>}
-              </tr>
-            </thead>
-            <tbody>
-              <ProductionTable recipe={this.state} />
-            </tbody>
-          </table>
+          <ProductionTable recipe={this.state} />
         </div>
       </>
     )

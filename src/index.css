@@ -263,8 +263,7 @@ li span:last-child {
 }
 
 .selection {
-  display: inline-block;
-  position: relative;
+  display: block;
   cursor: pointer;
 }
 
@@ -292,18 +291,9 @@ li span:last-child {
   outline: none;
 }
 
-.selection::after {
-  content: ' ';
-  display: inline-block !important;
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 0.45em;
-  right: 0.25em;
-  border-left: 0.2em solid transparent;
-  border-right: 0.2em solid transparent;
-  border-top: 0.4em solid #fff;
-  pointer-events: none;
+.select-dropdown {
+  margin-left: -1.25em;
+  font-size: 10px;
 }
 
 .selection option {
@@ -382,7 +372,7 @@ label.switch span::before {
   z-index: 0;
   transition: 0.4s;
   transform: scale(2.3);
-  animation: focusknob 0.3s ease-out;
+  animation: focusknob 0.2s ease-out;
 }
 
 label.switch input:focus:checked + span::after,
@@ -547,10 +537,6 @@ footer p {
 
   label.switch {
     margin-top: 0.3em;
-  }
-
-  .selection::after {
-    border: 0;
   }
 
   table li {

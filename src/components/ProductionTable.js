@@ -1,25 +1,39 @@
+'use strict'
 import React from 'react'
 import { Dolls, Servers } from '../data/dolls.js'
 
 const ProductionTable = ({ recipe }) => (
-  <>
-    {recipe.sum < 4000 && <Rarity rarity={2} dolls={Dolls.twoStar} recipe={recipe} />}
-    <Rarity rarity={3} dolls={Dolls.threeStar} recipe={recipe} />
-    <Rarity rarity={4} dolls={Dolls.fourStar} recipe={recipe} />
-    <Rarity rarity={5} dolls={Dolls.fiveStar} recipe={recipe} />
-  </>
+  <table>
+    <thead>
+      <tr>
+        {window.innerWidth >= 360 && <th>Rarity</th>}
+        {recipe.sum < 4000 && <th>HG</th>}
+        <th>SMG</th>
+        <th>AR</th>
+        <th>RF</th>
+        <th>MG</th>
+        {recipe.sum >= 4000 && <th>SG</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {recipe.sum < 4000 && <Rarity rarity={2} dolls={Dolls.twoStar} recipe={recipe} />}
+      <Rarity rarity={3} dolls={Dolls.threeStar} recipe={recipe} />
+      <Rarity rarity={4} dolls={Dolls.fourStar} recipe={recipe} />
+      <Rarity rarity={5} dolls={Dolls.fiveStar} recipe={recipe} />
+    </tbody>
+  </table>
 )
 
 const rarityClassNames = {
-  '3': 'three-star',
-  '4': 'four-star',
-  '5': 'five-star'
+  3: 'three-star',
+  4: 'four-star',
+  5: 'five-star'
 }
 
 const Rarity = ({ rarity, dolls, recipe }) => (
   <tr id={rarityClassNames[rarity]}>
     {window.innerWidth >= 360 && <td className='rarity'>{rarity}★</td>}
-    { recipe.sum < 4000 && <Category dolls={dolls.hg} recipe={recipe} />}
+    {recipe.sum < 4000 && <Category dolls={dolls.hg} recipe={recipe} />}
     <Category dolls={dolls.smg} recipe={recipe} />
     <Category dolls={dolls.ar} recipe={recipe} />
     <Category dolls={dolls.rf} recipe={recipe} />

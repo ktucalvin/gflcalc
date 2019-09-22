@@ -1,29 +1,16 @@
 'use strict'
-import React, { Component } from 'react'
-
-class PresetSelector extends Component {
-  constructor (props) {
-    super(props)
-    this.updatePreset = this.updatePreset.bind(this)
-  }
-
-  updatePreset (event) {
-    this.props.changePreset(event)
-  }
-
-  render () {
-    let options = []
-    for (const preset in this.props.presets) {
-      options.push(<option key={preset} value={preset}>{this.props.presets[preset].text}</option>)
-    }
-    return (
-      <>
-        <label htmlFor='recipe-preset'>Recipe Preset: </label>
-        <select id='recipe-preset' value={this.props.selected} onChange={this.updatePreset}>
-          {options}
-        </select>
-      </>)
-  }
-}
+const PresetSelector = ({ presets, selected, onChange }) => (
+  <div id='preset-select' className='selection'>
+    <label htmlFor='recipe-preset'>Recipe Preset: </label>
+    <select id='recipe-preset' value={selected} onChange={onChange}>
+      {
+        Object.keys(presets).map(name =>
+          <option key={name} value={name}>{presets[name].text}</option>
+        )
+      }
+    </select>
+    <span className='select-dropdown'>▼</span>
+  </div>
+)
 
 export default PresetSelector

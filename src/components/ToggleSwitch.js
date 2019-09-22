@@ -7,12 +7,12 @@ class ToggleSwitch extends Component {
     this.state = {
       inFocus: false
     }
-    this.focus = this.focus.bind(this)
+    this.handleKeyUp = this.handleKeyUp.bind(this)
   }
 
   // Ensures css style only applies when focus
   // is gained through keyboard, not mouse
-  focus (e) {
+  handleKeyUp (e) {
     if (e.key === 'Tab') {
       this.setState({ inFocus: true })
     }
@@ -27,11 +27,11 @@ class ToggleSwitch extends Component {
               id={this.props.name}
               type='checkbox'
               onChange={this.props.update.bind(this)}
-              onKeyUp={this.focus}
+              onKeyUp={this.handleKeyUp}
               onBlur={() => this.setState({ inFocus: false })}
               aria-label={this.props.children}
             />
-            <span className={this.state.inFocus ? 'knobfocus' : ''} />
+            <span className={this.state.inFocus ? 'knobfocus' : null} />
           </label>
           <span>{this.props.children}</span>
         </div>
