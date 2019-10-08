@@ -399,10 +399,8 @@ const threeStar = {
       heavy: HeavySet1111
     },
     {
-      nameEN: 'FF FNC',
-      nameCN: 'FNC',
-      nameKR: 'FNC',
-      nameTW: 'FNC',
+      nameEN: 'FNC',
+      nameJP: 'FF FNC',
       time: '3:20:00',
       standard: ARSet1,
       heavy: HeavySet1111

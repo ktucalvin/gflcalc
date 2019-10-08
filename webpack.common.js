@@ -17,7 +17,7 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        test: /\.(otf|png)$/,
+        test: /\.(otf|png|jpg)$/,
         loader: 'file-loader'
       }
     ]
@@ -32,7 +32,7 @@ module.exports = {
     ])
   ],
   externals: {
-    'react': 'React',
+    react: 'React',
     'react-dom': 'ReactDOM'
   }
 }

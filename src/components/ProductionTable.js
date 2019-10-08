@@ -6,7 +6,7 @@ const ProductionTable = ({ recipe }) => (
   <table>
     <thead>
       <tr>
-        {window.innerWidth >= 360 && <th>Rarity</th>}
+        <th className='rarity'>Rarity</th>
         {recipe.sum < 4000 && <th>HG</th>}
         <th>SMG</th>
         <th>AR</th>
@@ -32,7 +32,7 @@ const rarityClassNames = {
 
 const Rarity = ({ rarity, dolls, recipe }) => (
   <tr id={rarityClassNames[rarity]}>
-    {window.innerWidth >= 360 && <td className='rarity'>{rarity}★</td>}
+    <td className='rarity'>{rarity}★</td>
     {recipe.sum < 4000 && <Category dolls={dolls.hg} recipe={recipe} />}
     <Category dolls={dolls.smg} recipe={recipe} />
     <Category dolls={dolls.ar} recipe={recipe} />

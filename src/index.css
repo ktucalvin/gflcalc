@@ -8,8 +8,9 @@
 
 body {
   margin: 0;
-  background-image: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%);
-  background-size: 56.57px 56.57px;
+  background: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%) top left / 56.57px 56.57px;
+  background: #121212 url('./res/bg.jpg') top left fixed / cover no-repeat;
+  background-color: #121212;
   color: #eee;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -52,7 +53,7 @@ a:visited {
   margin-top: 1em;
   border: 1px solid #90c231;
   padding: 1em;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.6);
   font-family: 'Mohave Regular', Helvetica, Arial, sans-serif;
   touch-action: manipulation;
 }
@@ -63,7 +64,7 @@ a:visited {
   margin: 0.4em;
   padding: 1.5em 0;
   border: 1px solid #90c231;
-  box-shadow: inset 0 0 35px -7px #90c231;
+  box-shadow: inset 0 0 30px -7px #90c231;
 }
 
 .ingredient-name {
@@ -141,7 +142,7 @@ a:visited {
 
 .heavy-style div.ingredient {
   border-color: #d6571f !important;
-  box-shadow: inset 0 0 35px -7px #d6571f;
+  box-shadow: inset 0 0 30px -7px #d6571f;
   background-color: rgba(50, 15, 0, 0.3);
 }
 
@@ -163,7 +164,7 @@ a:visited {
 .table-wrapper {
   display: inline-block;
   margin-top: 1%;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 table {
@@ -192,6 +193,9 @@ table {
 
 .rarity {
   text-align: center;
+}
+
+td.rarity {
   font-size: 16px;
   padding-top: 0.5em;
 }
@@ -278,7 +282,7 @@ li span:last-child {
   border-bottom: 2px solid #c70;
   padding-right: 1.1em;
   background: transparent;
-  color: white;
+  color: #fff;
   cursor: pointer;
   font-size: 14px;
 }
@@ -343,7 +347,7 @@ label.switch span::before {
   left: 2px;
   border-radius: 50%;
   content: ' ';
-  background-color: white;
+  background-color: #fff;
   height: 16px;
   width: 16px;
   transition: 0.4s;
@@ -399,7 +403,7 @@ footer {
   display: flex;
   align-items: center;
   margin-top: 2px;
-  background-color: #121212;
+  background-color: #040404;
   padding: 1em;
   text-align: left;
 }
@@ -452,6 +456,10 @@ footer p {
 }
 
 @media all and (max-width: 700px) {
+  table {
+    width: 100vw;
+  }
+
   #controls,
   .selection select,
   body {
@@ -560,5 +568,11 @@ footer p {
 
   footer div {
     margin: 0;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .rarity {
+    display: none;
   }
 }

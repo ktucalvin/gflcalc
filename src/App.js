@@ -20,6 +20,7 @@ class App extends Component {
       parts: 30,
       sum: 120,
       server: 'EN',
+      selectedPreset: 'hgset1',
       showAll: false,
       presets: standardPresets
     }
