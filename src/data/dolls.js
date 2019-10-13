@@ -626,7 +626,6 @@ const fourStar = {
     {
       nameEN: 'XM8',
       time: '3:25:00',
-      availability: EN | CN | TW | KR,
       standard: ARSet1,
       heavy: HeavySet1111
     },
@@ -720,7 +719,6 @@ const fourStar = {
     {
       nameEN: 'SPR A3G',
       time: '4:15:00',
-      availability: EN | CN | TW | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [0, 1]
@@ -901,8 +899,8 @@ const fiveStar = {
       nameCN: 'Px4 风暴',
       nameKR: 'Px4 스톰',
       nameTW: 'Px4 風暴',
+      nameJP: 'Px4ストーム',
       time: '1:04:00',
-      availability: EN | CN | TW | KR,
       standard: HGSet1
     },
     {
@@ -1151,7 +1149,7 @@ const fiveStar = {
     {
       nameEN: 'M200',
       time: '4:32:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | JP,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [1, 1]
@@ -1232,7 +1230,6 @@ const fiveStar = {
       nameTW: '88式',
       nameJP: '88式',
       time: '6:28:00',
-      availability: EN | CN | TW | KR,
       standard: MGSet2,
       heavy: HeavySet6613
     },
