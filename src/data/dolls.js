@@ -1125,7 +1125,7 @@ const fiveStar = {
     {
       nameEN: 'AN-94',
       time: '4:09:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1140,7 +1140,7 @@ const fiveStar = {
     {
       nameEN: 'AK-12',
       time: '4:12:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: ARSet2,
       heavy: HeavySet1441
     }
