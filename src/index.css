@@ -280,6 +280,7 @@ li span:last-child {
   border-radius: 0;
   border: none;
   border-bottom: 2px solid #c70;
+  padding: 0.3em;
   padding-right: 1.1em;
   background: transparent;
   color: #fff;
@@ -290,8 +291,8 @@ li span:last-child {
 .selection select:active,
 .selection select:focus,
 .selection select:hover {
-  border-color: #fa0;
-  font-weight: bold;
+  border-color: rgb(255, 195, 0);
+  background-color: rgba(204, 119, 0, 0.5);
   outline: none;
 }
 
