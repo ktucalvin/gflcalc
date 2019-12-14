@@ -480,7 +480,6 @@ const threeStar = {
     {
       nameEN: 'NS2000',
       time: '7:15:00',
-      availability: EN | CN | TW | KR,
       heavy: HeavySet6164
     },
     {
@@ -501,7 +500,6 @@ const threeStar = {
     {
       nameEN: 'M1897',
       time: '7:30:00',
-      availability: CN | TW | KR | JP,
       heavy: HeavySet6164
     }
   ]
@@ -1282,13 +1280,11 @@ const fiveStar = {
     {
       nameEN: 'Saiga-12',
       time: '8:05:00',
-      availability: CN | TW | KR,
       heavy: HeavySet6164
     },
     {
       nameEN: 'FP-6',
       time: '8:06:00',
-      availability: CN | TW | KR,
       heavy: HeavySet6164
     },
     {
