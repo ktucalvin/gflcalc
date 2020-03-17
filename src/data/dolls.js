@@ -534,9 +534,11 @@ const fourStar = {
       standard: HGSet1
     },
     {
-      nameEN: 'P30',
+      nameEN: 'Gr P30',
+      nameCN: 'P30',
+      nameKR: 'P30',
       time: '50:00',
-      availability: CN | KR,
+      availability: EN | CN | KR,
       standard: HGSet2,
       unsure: [1, 0]
     },
@@ -684,10 +686,10 @@ const fourStar = {
   ],
   rf: [
     {
-      nameEN: 'Type 4 Rifle',
+      nameEN: '4 Shiki',
       nameKR: '4식',
       time: '4:04:00',
-      availability: CN | KR,
+      availability: EN | CN | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [1, 1]
@@ -1071,7 +1073,7 @@ const fiveStar = {
     {
       nameEN: 'ADS',
       time: '3:55:00',
-      availability: CN | KR,
+      availability: EN | CN | KR,
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [1, 1]
@@ -1185,7 +1187,7 @@ const fiveStar = {
     {
       nameEN: 'QBU-88',
       time: '4:48:00',
-      availability: CN | KR,
+      availability: EN | CN | KR,
       standard: RFSet2,
       heavy: HeavySet4141
     },
