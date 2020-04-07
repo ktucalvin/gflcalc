@@ -934,7 +934,7 @@ const fiveStar = {
     {
       nameEN: 'MP7',
       time: '2:18:00',
-      availability: CN | TW | KR,
+      availability: EN | CN | TW | KR,
       standard: SMGSet2,
       heavy: HeavySet4411,
       unsure: [1, 1]
