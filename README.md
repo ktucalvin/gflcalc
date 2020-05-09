@@ -4,11 +4,13 @@
 
 A SPA recipe calculator built on React that shows all the T-dolls a given recipe can produce and their timers for the popular mobile game Girls' Frontline. Supports all servers and offers recipe presets.
 
-The site is hosted at https://gflcalc.netlify.com/
+The site is hosted at https://gflcalc.netlify.app/
 
 ## Contributing
 
 The easiest way to correct an error or update the calculator is to contact me on Discord at `Lvra#3505`. Pull requests are open too.
+
+Looking for foreign players to ensure production accuracy for other servers.
 
 `src/data/dolls.js` contains all the T-doll availability information.
 

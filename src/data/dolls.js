@@ -539,8 +539,7 @@ const fourStar = {
       nameKR: 'P30',
       time: '50:00',
       availability: EN | CN | KR,
-      standard: HGSet2,
-      unsure: [1, 0]
+      standard: HGSet2
     },
     {
       nameEN: 'Spitfire',
@@ -692,7 +691,7 @@ const fourStar = {
       availability: EN | CN | KR,
       standard: RFSet2,
       heavy: HeavySet4141,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Mosin-Nagant',
@@ -935,9 +934,8 @@ const fiveStar = {
       nameEN: 'MP7',
       time: '2:18:00',
       availability: EN | CN | TW | KR,
-      standard: SMGSet2,
       heavy: HeavySet4411,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: '100 Shiki',
@@ -1076,7 +1074,7 @@ const fiveStar = {
       availability: EN | CN | KR,
       standard: ARSet2,
       heavy: HeavySet1441,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Am RFB',
@@ -1150,7 +1148,7 @@ const fiveStar = {
       availability: EN | CN | KR | JP,
       standard: RFSet2,
       heavy: HeavySet4141,
-      unsure: [1, 1]
+      unsure: [0, 1]
     },
     {
       nameEN: 'Carcano M1891',
