@@ -302,6 +302,7 @@ li span:last-child {
 }
 
 .selection option {
+  background-color: #fff;
   color: #000;
 }
 
@@ -402,7 +403,7 @@ label.switch input:checked + span {
 footer {
   display: flex;
   align-items: center;
-  margin-top: 2px;
+  margin-top: 3%;
   background-color: #040404;
   padding: 1em;
   text-align: left;

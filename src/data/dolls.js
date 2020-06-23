@@ -662,7 +662,7 @@ const fourStar = {
     {
       nameEN: 'EM-2',
       time: '3:35:00',
-      availability: JP | CN | KR,
+      availability: EN | JP | CN | KR,
       standard: ARSet1,
       heavy: HeavySet1111
     },
@@ -816,12 +816,12 @@ const fourStar = {
       heavy: HeavySet6613
     },
     {
-      nameEN: 'Chauchat M1915',
+      nameEN: 'Chauchat',
       nameCN: '绍沙',
       nameKR: '쇼샤',
       nameJP: 'ショーシャ',
       time: '6:25:00',
-      availability: JP | CN | KR,
+      availability: EN | JP | CN | KR,
       standard: MGSet2,
       heavy: HeavySet6613
     },
@@ -925,7 +925,7 @@ const fiveStar = {
     {
       nameEN: 'PA-15',
       time: '1:15:00',
-      availability: JP | CN | KR,
+      availability: EN | JP | CN | KR,
       standard: HGSet1
     }
   ],
@@ -1240,9 +1240,11 @@ const fiveStar = {
       heavy: HeavySet6613
     },
     {
-      nameEN: 'MG36',
+      nameEN: 'Gr MG36',
+      nameCN: 'MG36',
+      nameKR: 'MG36',
       time: '6:36:00',
-      availability: CN | KR,
+      availability: EN | CN | KR,
       standard: MGSet2,
       heavy: HeavySet6613,
       unsure: [1, 1]
