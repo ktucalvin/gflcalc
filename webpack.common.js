@@ -26,10 +26,12 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: true
     }),
-    new CopyWebpackPlugin([
-      { from: 'src/favicon' },
-      { from: 'src/res' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/favicon' },
+        { from: 'src/res' }
+      ]
+    })
   ],
   externals: {
     react: 'React',
