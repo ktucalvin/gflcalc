@@ -43,6 +43,13 @@ a:visited {
   color: #c70;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+}
+
 /* Recipe */
 
 #recipe {
@@ -61,6 +68,7 @@ a:visited {
 .ingredient {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   margin: 0.4em;
   padding: 1.5em 0;
   border: 1px solid #90c231;
@@ -96,8 +104,11 @@ a:visited {
 }
 
 .recipe-input button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 3.5em;
-  color: #363734;
+  fill: #363734;
   background-color: #90c231;
   border: none;
   cursor: pointer;
@@ -107,23 +118,11 @@ a:visited {
 .recipe-input button:active,
 .recipe-input button:focus {
   outline: none;
-  color: #eee;
+  fill: #eee;
 }
 
-.down::after,
-.up::after {
-  display: block;
-  content: '»';
-  font-size: 2em;
-  pointer-events: none;
-}
-
-.up::after {
-  transform: rotate(-90deg) scale(1.4, 2) translateY(-0.08em);
-}
-
-.down::after {
-  transform: rotate(90deg) scale(1.4, -2) translateY(-0.08em);
+.up {
+  transform: rotate(180deg);
 }
 
 .recipe-input p {
@@ -404,7 +403,7 @@ footer {
   display: flex;
   align-items: center;
   margin-top: 3%;
-  background-color: #040404;
+  background-color: #121212;
   padding: 1em;
   text-align: left;
 }
@@ -442,6 +441,28 @@ footer p {
   padding: 0.2em;
 }
 
+@media all and (min-width: 2560px) {
+  #controls,
+  .selection select,
+  body {
+    font-size: 20px;
+  }
+
+  th {
+    font-size: 20px;
+  }
+
+  .ingredient-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ingredient-name span {
+    font-size: initial;
+  }
+}
+
 @media all and (min-width: 1350px) {
   table,
   .table-wrapper {
@@ -457,6 +478,32 @@ footer p {
 }
 
 @media all and (max-width: 700px) {
+  #recipe.heavy-style {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    width: 100%;
+  }
+
+  .heavy-style .ingredient {
+    margin: 0;
+  }
+
+  .heavy-style .ingredient-name {
+    margin: 0.25em;
+  }
+
+  .heavy-style .ingredient img {
+    margin: 0;
+    width: 50px;
+    height: 50px;
+  }
+
+  .heavy-style div.ingredient {
+    box-shadow: none;
+  }
+
   table {
     width: 100vw;
   }
@@ -464,7 +511,7 @@ footer p {
   #controls,
   .selection select,
   body {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   th {
@@ -480,8 +527,7 @@ footer p {
   }
 }
 
-/* turn your phone landscape please */
-@media all and (max-width: 500px) {
+@media all and (max-width: 550px) {
   #recipe {
     margin: 0;
     padding: 0;
@@ -502,6 +548,11 @@ footer p {
     align-items: center;
     box-shadow: none;
     background-color: rgba(0, 0, 0, 0.35);
+  }
+
+  .ingredient-name span {
+    display: flex;
+    align-self: center;
   }
 
   .recipe-input p {
@@ -527,10 +578,6 @@ footer p {
   .ingredient img {
     width: 20px;
     height: 20px;
-  }
-
-  .heavy-style div.ingredient {
-    box-shadow: none;
   }
 
   .toggle div {
@@ -572,8 +619,39 @@ footer p {
   }
 }
 
-@media all and (max-width: 360px) {
+@media all and (max-width: 470px) {
+  #recipe.heavy-style {
+    grid-template-columns: 1fr;
+  }
+
+  .heavy-style .ingredient {
+    flex-direction: row;
+  }
+
+  .heavy-style .ingredient-name {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .heavy-style .recipe-input {
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 400px) {
   .rarity {
     display: none;
+  }
+
+  #recipe {
+    width: 100vw;
+    border: 1px solid #90c231;
+    box-sizing: border-box;
+  }
+
+  .ingredient {
+    margin: 0;
+    padding: 1em 0.25em;
+    border-collapse: collapse;
   }
 }
