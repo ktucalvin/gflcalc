@@ -17,7 +17,7 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        test: /\.(otf|png|jpg)$/,
+        test: /\.(otf|png|jpg|webp)$/,
         loader: 'file-loader'
       }
     ]

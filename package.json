@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
-  "author": "lvra",
+  "author": "ktucalvin",
   "license": "MIT",
   "stylelint": {
     "extends": "stylelint-config-standard",

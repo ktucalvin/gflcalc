@@ -31,7 +31,10 @@ const Ingredient = (props) => {
   return (
     <div className='ingredient'>
       <div className='ingredient-name'>
-        <img src={`${name}.png`} alt={`${name} icon`} />
+        <picture>
+          <source srcSet={`${name}.webp`} type='image/webp' />
+          <img src={`${name}.png`} alt={`${name} icon`} />
+        </picture>
         <span>{name}</span>
       </div>
       <div className={`recipe-input ${name}`} style={{ gridTemplateColumns }}>
