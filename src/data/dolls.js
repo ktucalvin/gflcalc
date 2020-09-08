@@ -538,7 +538,7 @@ const fourStar = {
       nameCN: 'P30',
       nameKR: 'P30',
       time: '50:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | TW,
       standard: HGSet2
     },
     {
@@ -609,6 +609,12 @@ const fourStar = {
       time: '2:20:00',
       standard: SMGSet2,
       heavy: HeavySet4411
+    },
+    {
+      nameEN: 'KAC-PDW',
+      time: '2:20:00',
+      availability: EN | CN | TW | KR,
+      standard: SMGSet2
     }
   ],
   ar: [
@@ -662,9 +668,15 @@ const fourStar = {
     {
       nameEN: 'EM-2',
       time: '3:35:00',
-      availability: EN | JP | CN | KR,
+      availability: ~JP,
       standard: ARSet1,
       heavy: HeavySet1111
+    },
+    {
+      nameEN: 'CR-21',
+      time: '3:35:00',
+      availability: EN | CN | TW | KR,
+      standard: ARSet2
     },
     {
       nameEN: 'G36',
@@ -686,12 +698,14 @@ const fourStar = {
   rf: [
     {
       nameEN: '4 Shiki',
+      nameCN: '四式',
       nameKR: '4식',
+      nameTW: '四式',
+      nameJP: '四式',
       time: '4:04:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | TW,
       standard: RFSet2,
-      heavy: HeavySet4141,
-      unsure: [0, 1]
+      heavy: HeavySet4141
     },
     {
       nameEN: 'Mosin-Nagant',
@@ -743,7 +757,7 @@ const fourStar = {
       nameCN: 'G28',
       nameKR: 'G28',
       nameTW: 'G28',
-      time: '4:10:00',
+      time: '4:20:00',
       availability: CN | TW | KR,
       heavy: HeavySet4141
     },
@@ -819,9 +833,9 @@ const fourStar = {
       nameEN: 'Chauchat',
       nameCN: '绍沙',
       nameKR: '쇼샤',
+      nameTW: '紹沙',
       nameJP: 'ショーシャ',
       time: '6:25:00',
-      availability: EN | JP | CN | KR,
       standard: MGSet2,
       heavy: HeavySet6613
     },
@@ -914,6 +928,12 @@ const fiveStar = {
       standard: HGSet1
     },
     {
+      nameEN: 'C-93',
+      time: '1:09:00',
+      availability: EN | CN | TW | KR,
+      standard: HGSet1
+    },
+    {
       nameEN: 'Grizzly',
       nameCN: '灰熊Mk Ⅴ',
       nameKR: '그리즐리 MkV',
@@ -925,7 +945,6 @@ const fiveStar = {
     {
       nameEN: 'PA-15',
       time: '1:15:00',
-      availability: EN | JP | CN | KR,
       standard: HGSet1
     }
   ],
@@ -1071,10 +1090,17 @@ const fiveStar = {
     {
       nameEN: 'ADS',
       time: '3:55:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | TW,
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [0, 1]
+    },
+    {
+      nameEN: 'SIG-556',
+      time: '3:56:00',
+      availability: EN | CN | KR | TW,
+      standard: ARSet2,
+      heavy: HeavySet1441
     },
     {
       nameEN: 'Am RFB',
@@ -1145,7 +1171,6 @@ const fiveStar = {
     {
       nameEN: 'M200',
       time: '4:32:00',
-      availability: EN | CN | KR | JP,
       standard: RFSet2,
       heavy: HeavySet4141,
       unsure: [0, 1]
@@ -1185,7 +1210,7 @@ const fiveStar = {
     {
       nameEN: 'QBU-88',
       time: '4:48:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | TW,
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1243,8 +1268,9 @@ const fiveStar = {
       nameEN: 'Gr MG36',
       nameCN: 'MG36',
       nameKR: 'MG36',
+      nameTW: 'MG36',
       time: '6:36:00',
-      availability: EN | CN | KR,
+      availability: EN | CN | KR | TW,
       standard: MGSet2,
       heavy: HeavySet6613,
       unsure: [1, 1]
