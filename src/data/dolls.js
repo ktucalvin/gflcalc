@@ -875,6 +875,12 @@ const fourStar = {
       heavy: HeavySet6164
     },
     {
+      nameEN: 'Liberator',
+      time: '7:45:00',
+      heavy: HeavySet6164,
+      unsure: [0, 1]
+    },
+    {
       nameEN: 'Super-Shorty',
       time: '7:50:00',
       availability: EN | CN | TW | KR,
@@ -1323,6 +1329,18 @@ const fiveStar = {
       time: '8:12:00',
       availability: EN | CN | TW | KR,
       heavy: HeavySet6164
+    },
+    {
+      nameEN: 'DP-12',
+      time: '8:13:00',
+      heavy: HeavySet6164,
+      unsure: [0, 1]
+    },
+    {
+      nameEN: 'CAWS',
+      time: '8:15:00',
+      heavy: HeavySet6164,
+      unsure: [0, 1]
     }
   ]
 }
