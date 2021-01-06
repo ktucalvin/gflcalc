@@ -1,4 +1,5 @@
-'use strict'
+import React from 'react'
+
 const PresetSelector = ({ presets, selected, onChange }) => (
   <div id='preset-select' className='selection'>
     <label htmlFor='recipe-preset'>Recipe Preset: </label>

@@ -1,5 +1,3 @@
-'use strict'
-
 // use the OR (|) operator to join servers
 // use the AND (&) operator to check for availability
 // `availability === undefined` implies all servers

@@ -1,5 +1,3 @@
-'use strict'
-
 // Manpower, Ammo, Rations, Parts
 const standardPresets = {
   hgset1: { preset: [30, 30, 30, 30], text: 'HG Set #1' },

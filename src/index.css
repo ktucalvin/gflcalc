@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap'); */
 
 @font-face {
   font-family: 'Mohave Regular';
@@ -13,7 +13,9 @@ body {
   background: linear-gradient(45deg, #3d3d3d 25%, #4f4f4f 25%, #4f4f4f 50%, #3d3d3d 50%, #3d3d3d 75%, #4f4f4f 75%, #4f4f4f 100%) top left / 56.57px 56.57px;
   background-color: #121212;
   color: #eee;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+
+  /* System Fonts as used by Medium and WordPress */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 15px;
   text-align: center;
 }
@@ -27,14 +29,15 @@ body {
   background: #121212 url('./res/bg.jpg') top left / cover no-repeat fixed;
 }
 
-noscript {
+#no-js-warning {
   display: block;
   width: 100vw;
   padding: 1em;
   background-color: #e81123;
   color: #fff;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: bold;
+
+  /* System Fonts as used by Medium and WordPress */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 16px;
   text-align: center;
 }
@@ -174,6 +177,7 @@ main {
   display: inline-block;
   margin-top: 1%;
   background-color: rgba(0, 0, 0, 0.6);
+  max-width: 100%;
 }
 
 table {
@@ -563,6 +567,17 @@ footer p {
   .ingredient-name span {
     display: flex;
     align-self: center;
+  }
+
+  /* Override gatsby-image to prevent disappearing images / cropped images */
+  .ingredient-name .gatsby-image-wrapper {
+    min-width: 20px !important;
+    height: 20px !important;
+  }
+
+  .heavy-style .ingredient-name .gatsby-image-wrapper {
+    min-width: 50px !important;
+    height: 50px !important;
   }
 
   .recipe-input p {

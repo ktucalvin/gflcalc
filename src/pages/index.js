@@ -1,12 +1,11 @@
-'use strict'
-import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
-import { standardPresets, heavyPresets } from './data/presets.js'
-import Ingredient from './components/Ingredient.js'
-import ProductionTable from './components/ProductionTable.js'
-import ToggleSwitch from './components/ToggleSwitch.js'
-import PresetSelector from './components/PresetSelector'
-import ServerSelector from './components/ServerSelector'
+import { standardPresets, heavyPresets } from '../data/presets.js'
+import Ingredient from '../components/Ingredient.js'
+import ProductionTable from '../components/ProductionTable.js'
+import ToggleSwitch from '../components/ToggleSwitch.js'
+import PresetSelector from '../components/PresetSelector'
+import ServerSelector from '../components/ServerSelector'
+import Layout from '../components/Layout'
 
 class App extends Component {
   constructor (props) {
@@ -40,8 +39,10 @@ class App extends Component {
   }
 
   handleServerChange (event) {
-    this.state.server = event.target.value
-    this.setState(this.state)
+    const newState = Object.assign(this.state, {
+      server: event.target.value
+    })
+    this.setState(newState)
   }
 
   handlePresetChange (event) {
@@ -81,7 +82,7 @@ class App extends Component {
 
   render () {
     return (
-      <>
+      <Layout>
         <div id='recipe' className={this.state.sum >= 4000 ? 'heavy-style' : null}>
           <Ingredient name='manpower' updateRecipe={x => this.updateRecipe('manpower', x)} ingredient={this.state.manpower} />
           <Ingredient name='ammunition' updateRecipe={x => this.updateRecipe('ammunition', x)} ingredient={this.state.ammunition} />
@@ -104,11 +105,13 @@ class App extends Component {
             <p>(?) indicates speculated minimum requirements</p>
           </div>
 
-          <ProductionTable recipe={this.state} />
+          <div style={{ overflow: 'auto' }}>
+            <ProductionTable recipe={this.state} />
+          </div>
         </div>
-      </>
+      </Layout>
     )
   }
 }
 
-export default hot(App)
+export default App

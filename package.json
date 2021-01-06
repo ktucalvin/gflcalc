@@ -1,11 +1,13 @@
 {
   "name": "gflcalc",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A T-doll production calculator for the popular mobile game Girl's Frontline.",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "dev": "gatsby develop -p 3000",
+    "prebuild": "node ./scripts/prebuild.js",
+    "build": "gatsby build",
+    "serve": "gatsby serve -p 3000"
   },
   "author": "ktucalvin",
   "license": "MIT",
@@ -20,33 +22,18 @@
     ]
   },
   "devDependencies": {
-    "standard": "^14.3.4"
+    "standard": "^16.0.3"
   },
   "dependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.10.1",
-    "autoprefixer": "^9.8.2",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.0.2",
-    "css-loader": "^3.6.0",
-    "file-loader": "^6.0.0",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.3.0",
-    "imagemin-webp": "^6.0.0",
-    "mini-css-extract-plugin": "^0.9.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "react-hot-loader": "^4.12.21",
-    "style-loader": "^1.2.1",
-    "stylelint": "^13.6.1",
-    "stylelint-config-standard": "^20.0.0",
-    "terser-webpack-plugin": "^3.0.6",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.2.2"
+    "gatsby": "^2.29.2",
+    "gatsby-cli": "^2.16.2",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0"
   }
 }

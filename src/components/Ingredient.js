@@ -1,5 +1,6 @@
-'use strict'
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const ChevronSvg = () => (
   <svg viewBox='0 0 200 173' width={24} xmlns='http://www.w3.org/2000/svg'>
@@ -26,15 +27,29 @@ const ChangeButton = ({ ingredientProps, direction, delta }) => {
 
 const Ingredient = (props) => {
   const { ingredient, name } = props
+  const data = useStaticQuery(graphql`
+    query IngredientIcons {
+      allFile(filter: {absolutePath: {regex: "/png/"}}) {
+        nodes {
+          id
+          name
+          publicURL
+          childImageSharp {
+            fixed(width: 60) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+  `)
+
   const gridTemplateColumns = ingredient >= 1000 ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)'
   const isHeavy = ingredient >= 1000
   return (
     <div className='ingredient'>
       <div className='ingredient-name'>
-        <picture>
-          <source srcSet={`${name}.webp`} type='image/webp' />
-          <img src={`${name}.png`} alt={`${name} icon`} />
-        </picture>
+        <Img fixed={data.allFile.nodes.filter(e => e.name === name)[0].childImageSharp.fixed} alt={`${name} icon`} />
         <span>{name}</span>
       </div>
       <div className={`recipe-input ${name}`} style={{ gridTemplateColumns }}>

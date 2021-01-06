@@ -1,4 +1,5 @@
-'use strict'
+import React from 'react'
+
 const ServerSelector = ({ selected, onChange }) => (
   <div className='selection'>
     <label htmlFor='server-id'>Server: </label>
