@@ -772,6 +772,14 @@ const fourStar = {
       heavy: HeavySet3131
     },
     {
+      nameEN: 'Tabuk',
+      nameKR: '타부크 저격소총',
+      time: '4:25:00',
+      availability: ~JP,
+      standard: RFSet2,
+      heavy: HeavySet4141
+    },
+    {
       nameEN: 'PTRD',
       time: '4:30:00',
       standard: RFSet1,
@@ -1102,6 +1110,14 @@ const fiveStar = {
       unsure: [0, 1]
     },
     {
+      nameEN: 'AK-Alfa',
+      time: '3:56:00',
+      standard: ARSet2,
+      availability: ~JP,
+      heavy: HeavySet1441,
+      unsure: [0, 1]
+    },
+    {
       nameEN: 'SIG-556',
       time: '3:56:00',
       availability: EN | CN | KR | TW,
@@ -1250,6 +1266,14 @@ const fiveStar = {
     }
   ],
   mg: [
+    {
+      nameEN: 'ZB-26',
+      time: '6:26:00',
+      availability: ~JP,
+      standard: MGSet2,
+      heavy: HeavySet6613,
+      unsure: [0, 1]
+    },
     {
       nameEN: 'QJY-88',
       nameCN: '88式',
