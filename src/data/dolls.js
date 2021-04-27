@@ -1179,14 +1179,21 @@ const fiveStar = {
       time: '4:11:00',
       availability: EN | CN | TW | KR,
       standard: ARSet2,
-      heavy: HeavySet1441,
-      unsure: [0, 1]
+      heavy: HeavySet1441
     },
     {
       nameEN: 'AK-12',
       time: '4:12:00',
       standard: ARSet2,
       heavy: HeavySet1441
+    },
+    {
+      nameEN: 'AK-15',
+      time: '4:15:00',
+      availability: ~JP,
+      standard: ARSet2,
+      heavy: HeavySet144,
+      unsure: [0, 1]
     }
   ],
   rf: [
@@ -1266,6 +1273,14 @@ const fiveStar = {
     }
   ],
   mg: [
+    {
+      nameEN: 'RPK-16',
+      time: '6:16:00',
+      availability: ~JP,
+      standard: MGSet2,
+      heavy: HeavySet6613,
+      unsure: [0, 1]
+    },
     {
       nameEN: 'ZB-26',
       time: '6:26:00',
