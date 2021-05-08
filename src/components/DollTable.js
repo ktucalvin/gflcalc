@@ -83,7 +83,7 @@ const Doll = ({ doll, server, classes, unsure }) => {
   return (
     <li className={classes || null}>
       <span lang={lang}>{name}</span>
-      <span>{doll.time}{unsure && ' (?)'}</span>
+      <span>{doll.time}{unsure && ' (?)'}:00</span>
     </li>
   )
 }

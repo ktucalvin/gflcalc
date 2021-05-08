@@ -344,10 +344,12 @@ li span:last-child {
 
 .combat-fairy {
   color: #f3662d;
+  text-shadow: 0 0 3px #f3662d;
 }
 
 .strategy-fairy {
   color: #739de5;
+  text-shadow: 0 0 3px #739de5;
 }
 
 /* Controls Menu */
