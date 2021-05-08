@@ -1,5 +1,7 @@
 // use the OR (|) operator to join servers
 // use the AND (&) operator to check for availability
+import { Requirements } from '../types/gflcalc'
+
 // `availability === undefined` implies all servers
 const EN = 0b00001
 const KR = 0b00010
@@ -8,30 +10,52 @@ const TW = 0b01000
 const JP = 0b10000
 
 // Sets: Manpower, Ammo, Rations, Parts, Sum
-const HGSet1 = [30, 30, 30, 30, sum => sum <= 920]
-const HGSet2 = [130, 130, 130, 30, sum => sum <= 920]
-const SMGSet1 = [30, 30, 30, 30]
-const SMGSet2 = [400, 400, 30, 30]
-const ARSet1 = [30, 30, 30, 30, sum => sum >= 800]
-const ARSet2 = [30, 400, 400, 30]
-const RFSet1 = [300, 30, 300, 30]
-const RFSet2 = [400, 30, 400, 30]
-const MGSet1 = [400, 600, 30, 300]
-const MGSet2 = [600, 600, 100, 400]
-const HeavySet1111 = [1000, 1000, 1000, 1000]
-const HeavySet4411 = [4000, 4000, 1000, 1000]
-const HeavySet1441 = [1000, 4000, 4000, 1000]
-const HeavySet3131 = [3000, 1000, 3000, 1000]
-const HeavySet4141 = [4000, 1000, 4000, 1000]
-const HeavySet4613 = [4000, 6000, 1000, 3000]
-const HeavySet6613 = [6000, 6000, 1000, 3000]
-const HeavySet4163 = [4000, 1000, 6000, 3000]
-const HeavySet6164 = [6000, 1000, 6000, 4000]
+const HGSet1: Requirements = [30, 30, 30, 30, sum => sum <= 920]
+const HGSet2: Requirements = [130, 130, 130, 30, sum => sum <= 920]
+const SMGSet1: Requirements = [30, 30, 30, 30]
+const SMGSet2: Requirements = [400, 400, 30, 30]
+const ARSet1: Requirements = [30, 30, 30, 30, sum => sum >= 800]
+const ARSet2: Requirements = [30, 400, 400, 30]
+const RFSet1: Requirements = [300, 30, 300, 30]
+const RFSet2: Requirements = [400, 30, 400, 30]
+const MGSet1: Requirements = [400, 600, 30, 300]
+const MGSet2: Requirements = [600, 600, 100, 400]
+const HeavySet1111: Requirements = [1000, 1000, 1000, 1000]
+const HeavySet4411: Requirements = [4000, 4000, 1000, 1000]
+const HeavySet1441: Requirements = [1000, 4000, 4000, 1000]
+const HeavySet3131: Requirements = [3000, 1000, 3000, 1000]
+const HeavySet4141: Requirements = [4000, 1000, 4000, 1000]
+const HeavySet4613: Requirements = [4000, 6000, 1000, 3000]
+const HeavySet6613: Requirements = [6000, 6000, 1000, 3000]
+const HeavySet4163: Requirements = [4000, 1000, 6000, 3000]
+const HeavySet6164: Requirements = [6000, 1000, 6000, 4000]
 
 // unsure[0] = standard ; unsure[1] = heavy
 // names will default to nameEN
 
-const twoStar = {
+export type Doll = {
+  nameEN: string,
+  time: string,
+  standard: Requirements,
+  nameCN?: string,
+  nameKR?: string,
+  nameTW?: string,
+  nameJP?: string,
+  heavy?: Requirements,
+  availability?: number,
+  unsure?: [number, number]
+}
+
+export type RecipeByRarity = {
+  hg: Doll[],
+  smg: Doll[],
+  ar: Doll[],
+  rf: Doll[],
+  mg: Doll[],
+  sg?: Doll[]
+}
+
+const twoStar: RecipeByRarity = {
   hg: [
     {
       nameEN: 'M1911',

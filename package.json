@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "gatsby develop -p 3000",
-    "prebuild": "node ./scripts/prebuild.js",
     "build": "gatsby build",
     "serve": "gatsby serve -p 3000"
   },
