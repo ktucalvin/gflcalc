@@ -1,5 +1,6 @@
-'use strict'
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const ChevronSvg = () => (
   <svg viewBox='0 0 200 173' width={24} xmlns='http://www.w3.org/2000/svg'>
@@ -11,13 +12,14 @@ const ChevronSvg = () => (
   </svg>
 )
 
-const ChangeButton = ({ ingredientProps, direction, delta }) => {
+const ChangeButton = ({ ingredientProps, direction, delta, isDisabled }) => {
   const { ingredient, name, updateRecipe } = ingredientProps
   return (
     <button
       className={direction}
       aria-label={`${direction === 'up' ? 'Increase' : 'Decrease'} ${name} by ${Math.abs(delta)}. ${name} is currently ${ingredient}.`}
       onClick={() => updateRecipe(delta)}
+      disabled={isDisabled}
     >
       <ChevronSvg />
     </button>
@@ -25,33 +27,46 @@ const ChangeButton = ({ ingredientProps, direction, delta }) => {
 }
 
 const Ingredient = (props) => {
-  const { ingredient, name } = props
-  const gridTemplateColumns = ingredient >= 1000 ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)'
-  const isHeavy = ingredient >= 1000
+  const { ingredient, name, isHeavy, ignoreRecipe } = props
+  const data = useStaticQuery(graphql`
+    query IngredientIcons {
+      allFile(filter: {absolutePath: {regex: "/png/"}}) {
+        nodes {
+          id
+          name
+          publicURL
+          childImageSharp {
+            fixed(width: 60) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const gridTemplateColumns = isHeavy ? 'repeat(4, 1fr)' : 'repeat(3, 1fr)'
   return (
     <div className='ingredient'>
       <div className='ingredient-name'>
-        <picture>
-          <source srcSet={`${name}.webp`} type='image/webp' />
-          <img src={`${name}.png`} alt={`${name} icon`} />
-        </picture>
+        <Img fixed={data.allFile.nodes.filter(e => e.name === name)[0].childImageSharp.fixed} alt={`${name} icon`} />
         <span>{name}</span>
       </div>
       <div className={`recipe-input ${name}`} style={{ gridTemplateColumns }}>
         {isHeavy && <ChangeButton ingredientProps={props} direction='up' delta={1000} />}
-        <ChangeButton ingredientProps={props} direction='up' delta={100} />
-        <ChangeButton ingredientProps={props} direction='up' delta={10} />
-        <ChangeButton ingredientProps={props} direction='up' delta={1} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='up' delta={100} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='up' delta={10} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='up' delta={1} />
 
-        {isHeavy && <p>{Math.floor(ingredient / 1000 % 10)}</p>}
-        <p>{Math.floor(ingredient / 100 % 10)}</p>
-        <p>{Math.floor(ingredient / 10 % 10)}</p>
-        <p>{Math.floor(ingredient % 10)}</p>
+        {isHeavy && <p>{ignoreRecipe ? '-'  : Math.floor(ingredient / 1000 % 10)}</p>}
+        <p>{ignoreRecipe ? '-' : Math.floor(ingredient / 100 % 10)}</p>
+        <p>{ignoreRecipe ? '-' : Math.floor(ingredient / 10 % 10)}</p>
+        <p>{ignoreRecipe ? '-' : Math.floor(ingredient % 10)}</p>
 
         {isHeavy && <ChangeButton ingredientProps={props} direction='down' delta={-1000} />}
-        <ChangeButton ingredientProps={props} direction='down' delta={-100} />
-        <ChangeButton ingredientProps={props} direction='down' delta={-10} />
-        <ChangeButton ingredientProps={props} direction='down' delta={-1} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='down' delta={-100} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='down' delta={-10} />
+        <ChangeButton isDisabled={ignoreRecipe} ingredientProps={props} direction='down' delta={-1} />
       </div>
     </div>
   )

@@ -1,22 +1,21 @@
-'use strict'
 import React from 'react'
-import { Dolls, Servers } from '../data/dolls.js'
+import { Dolls, Servers } from '../data/dolls'
 
-const ProductionTable = ({ recipe }) => (
+const DollTable = ({ recipe }) => (
   <table>
     <thead>
       <tr>
         <th className='rarity'>Rarity</th>
-        {recipe.sum < 4000 && <th>HG</th>}
+        {recipe.productionLine !== 'heavy' && <th>HG</th>}
         <th>SMG</th>
         <th>AR</th>
         <th>RF</th>
         <th>MG</th>
-        {recipe.sum >= 4000 && <th>SG</th>}
+        {recipe.productionLine === 'heavy' && <th>SG</th>}
       </tr>
     </thead>
     <tbody>
-      {recipe.sum < 4000 && <Rarity rarity={2} dolls={Dolls.twoStar} recipe={recipe} />}
+      {recipe.productionLine !== 'heavy' && <Rarity rarity={2} dolls={Dolls.twoStar} recipe={recipe} />}
       <Rarity rarity={3} dolls={Dolls.threeStar} recipe={recipe} />
       <Rarity rarity={4} dolls={Dolls.fourStar} recipe={recipe} />
       <Rarity rarity={5} dolls={Dolls.fiveStar} recipe={recipe} />
@@ -31,14 +30,14 @@ const rarityClassNames = {
 }
 
 const Rarity = ({ rarity, dolls, recipe }) => (
-  <tr id={rarityClassNames[rarity]}>
+  <tr className={rarityClassNames[rarity]}>
     <td className='rarity'>{rarity}★</td>
-    {recipe.sum < 4000 && <Category dolls={dolls.hg} recipe={recipe} />}
+    {recipe.productionLine !== 'heavy' && <Category dolls={dolls.hg} recipe={recipe} />}
     <Category dolls={dolls.smg} recipe={recipe} />
     <Category dolls={dolls.ar} recipe={recipe} />
     <Category dolls={dolls.rf} recipe={recipe} />
     <Category dolls={dolls.mg} recipe={recipe} />
-    {recipe.sum >= 4000 && <Category dolls={dolls.sg} recipe={recipe} />}
+    {recipe.productionLine === 'heavy' && <Category dolls={dolls.sg} recipe={recipe} />}
   </tr>
 )
 
@@ -47,12 +46,12 @@ const Category = ({ dolls, recipe }) => {
   const result = dolls.map(doll => {
     let unsure = false
     let classes = ''
-    if (doll.unsure && ((recipe.sum < 4000 ? doll.unsure[0] : doll.unsure[1]))) {
+    if (doll.unsure && ((recipe.productioneLine !== 'heavy' ? doll.unsure[0] : doll.unsure[1]))) {
       unsure = true
     }
     if (verifyRecipe(recipe, doll, doll.availability)) {
       return <Doll key={doll.nameEN} doll={doll} server={recipe.server} classes={classes} unsure={unsure} />
-    } else if (recipe.showAll && verifyRecipe(recipe, doll, undefined)) { // check again against all servers
+    } else if (recipe.ignoreServer && verifyRecipe(recipe, doll, undefined)) { // check again against all servers
       classes += 'unavailable '
     } else {
       hidden++
@@ -84,7 +83,7 @@ const Doll = ({ doll, server, classes, unsure }) => {
   return (
     <li className={classes || null}>
       <span lang={lang}>{name}</span>
-      <span>{doll.time}{unsure && ' (?)'}</span>
+      <span>{doll.time}{unsure && ' (?)'}:00</span>
     </li>
   )
 }
@@ -92,14 +91,17 @@ const Doll = ({ doll, server, classes, unsure }) => {
 const None = () => (<li><span>NONE</span><span>-:--:--</span></li>)
 
 function verifyRecipe (recipe, doll, availability) {
-  const requirements = recipe.sum < 4000 ? doll.standard : doll.heavy
-  return requirements &&
-         recipe.manpower >= requirements[0] &&
-         recipe.ammunition >= requirements[1] &&
-         recipe.rations >= requirements[2] &&
-         recipe.parts >= requirements[3] &&
-         (requirements[4] ? requirements[4](recipe.sum) : true) && // check any recipe sum conditions
-         (availability === undefined || Servers[recipe.server] & availability) // check server availability
+  const sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
+  const requirements = sum < 4000 ? doll.standard : doll.heavy
+  const meetsRecipe = requirements &&
+    recipe.manpower >= requirements[0] &&
+    recipe.ammunition >= requirements[1] &&
+    recipe.rations >= requirements[2] &&
+    recipe.parts >= requirements[3] &&
+    (requirements[4] ? requirements[4](sum) : true) // check any recipe sum conditions
+
+  return (recipe.ignoreRecipe || meetsRecipe) &&
+    (availability === undefined || (Servers[recipe.server] & availability)) // check server availability
 }
 
-export default ProductionTable
+export default DollTable

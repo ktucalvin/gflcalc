@@ -1,11 +1,13 @@
-'use strict'
-const PresetSelector = ({ presets, selected, onChange }) => (
+import React from 'react'
+
+const PresetSelector = ({ presets, selected, onChange, line, ignoreRecipe }) => (
   <div id='preset-select' className='selection'>
     <label htmlFor='recipe-preset'>Recipe Preset: </label>
-    <select id='recipe-preset' value={selected} onChange={onChange}>
+    {/* eslint-disable-next-line jsx-a11y/no-onchange */}
+    <select id='recipe-preset' value={selected} onChange={onChange} disabled={ignoreRecipe}>
       {
-        Object.keys(presets).map(name =>
-          <option key={name} value={name}>{presets[name].text}</option>
+        presets.map((preset,index) =>
+          <option key={`${line}-${preset.text}`} value={index}>{preset.text}</option>
         )
       }
     </select>
