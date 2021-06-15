@@ -1,33 +1,17 @@
 import React, { PureComponent } from 'react'
-import type { Preset } from '../types/gflcalc'
+import type { AppState } from '../common/gflcalc'
 import { standardPresets, heavyPresets } from '../data/presets'
 import { fairyPresets } from '../data/fairies'
-import Ingredient from '../components/Ingredient.js'
-import DollTable from '../components/DollTable.js'
-// import EquipTable from '../components/EquipTable.js'
-import FairyTable from '../components/FairyTable.js'
-import ToggleSwitch from '../components/ToggleSwitch.js'
+import Ingredient from '../components/Ingredient'
+import DollTable from '../components/DollTable'
+import EquipTable from '../components/EquipTable'
+import FairyTable from '../components/FairyTable'
+import ToggleSwitch from '../components/ToggleSwitch'
 import PresetSelector from '../components/PresetSelector'
 import ServerSelector from '../components/ServerSelector'
 import Layout from '../components/Layout'
 
 type Ingredient = 'manpower' | 'ammunition' | 'rations' | 'parts'
-
-interface AppState {
-  min: number,
-  max: number,
-  manpower: number,
-  ammunition: number,
-  rations: number,
-  parts: number,
-  productionLine: 'doll' | 'heavy' | 'equip' | 'fairy'
-  server: 'EN' | 'KR' | 'TW' | 'CN' | 'JP',
-  presets: Preset[],
-  selectedPreset: number,
-  ignoreRecipe: boolean,
-  ignoreServer: boolean
-}
-
 
 class App extends PureComponent<null, AppState> {
   constructor (props: null) {
@@ -83,6 +67,8 @@ class App extends PureComponent<null, AppState> {
     const recipe = {
       ...this.state,
       productionLine,
+      ignoreServer: false,
+      ignoreRecipe: false,
       selectedPreset: 0
     }
 
@@ -139,12 +125,12 @@ class App extends PureComponent<null, AppState> {
                 onClick={this.handleProductionChange.bind(this, 'heavy')}
               >Heavy</button>
             </li>
-            {/* <li>
+            <li>
               <button
                 className={this.state.productionLine === 'equip' ? 'selected-production' : null}
                 onClick={this.handleProductionChange.bind(this, 'equip')}
               >Equipment</button>
-            </li> */}
+            </li>
             <li>
               <button
                 className={this.state.productionLine === 'fairy' ? 'selected-production' : null}
@@ -154,6 +140,7 @@ class App extends PureComponent<null, AppState> {
           </ul>
         </header>
 
+      <div id='body-wrapper'>
         <div id='recipe' className={`${this.state.productionLine}-style`}>
           {['manpower', 'ammunition', 'rations', 'parts'].map(resource => (
             <Ingredient
@@ -161,7 +148,7 @@ class App extends PureComponent<null, AppState> {
               key={resource}
               updateRecipe={this.updateRecipe.bind(this, resource)}
               ingredient={this.state[resource]}
-              isHeavy={this.state.productionLine === 'heavy' || this.state.productionLine === 'fairy'}
+              productionLine={this.state.productionLine}
               ignoreRecipe={this.state.ignoreRecipe}
             />
           ))}
@@ -171,42 +158,62 @@ class App extends PureComponent<null, AppState> {
           <div id='controls'>
             <div className='ctlgroup'>
               <ServerSelector onChange={this.handleServerChange} selected={this.state.server} />
-              <PresetSelector
-                onChange={this.handlePresetChange}
-                selected={this.state.selectedPreset}
-                presets={this.state.presets}
-                line={this.state.productionLine}
-                ignoreRecipe={this.state.ignoreRecipe}
-                />
+              {
+                this.state.productionLine !== 'equip' &&
+                <PresetSelector
+                  onChange={this.handlePresetChange}
+                  selected={this.state.selectedPreset}
+                  presets={this.state.presets}
+                  line={this.state.productionLine}
+                  ignoreRecipe={this.state.ignoreRecipe}
+                  />
+              }
+            </div>
+            
+            <div className='ctlgroup'>
+              {
+                this.state.productionLine !== 'equip' &&
+                <ToggleSwitch
+                  name='toggle-ignore-recipe' 
+                  update={this.toggleIgnoreRecipe}
+                  checked={this.state.ignoreRecipe}
+                  >
+                  Show All {isDoll ? 'Dolls' : 'Fairies'}
+                </ToggleSwitch>
+              }
+              {
+                this.state.productionLine !== 'fairy' &&
+                <ToggleSwitch
+                  name='toggle-ignore-server' 
+                  update={this.toggleIgnoreServer}
+                  checked={this.state.ignoreServer}
+                  >
+                  Show {this.state.productionLine === 'equip' ? 'Equips' : 'Dolls'} in Other Servers
+                </ToggleSwitch>
+              }
             </div>
             
             {
-              <div className='ctlgroup'>
-                <ToggleSwitch name='toggle-ignore-recipe' update={this.toggleIgnoreRecipe}>
-                  Show All {isDoll ? 'Dolls' : 'Fairies'}
-                </ToggleSwitch>
-                {
-                  isDoll &&
-                  <ToggleSwitch name='toggle-ignore-server' update={this.toggleIgnoreServer}>
-                    Show Dolls in Other Servers
-                  </ToggleSwitch>
-                }
-              </div>
+              this.state.productionLine !== 'equip' &&
+              <p>(?) indicates speculated minimum requirements</p>
             }
 
-            <p>(?) indicates speculated minimum requirements</p>
             {
-              this.state.productionLine === 'equip' &&
-              <p><b>Recipe only controls what 5-star drops appear!!</b></p>
+              this.state.server !== 'EN' &&
+              isDoll &&
+              <p className='text-warning'>
+                Availability in CN, KR, TW, and JP servers may be inaccurate!
+              </p>
             }
           </div>
 
           <div style={{ overflow: 'auto' }}>
-              {/* {this.state.productionLine === 'equip' && <EquipTable recipe={this.state} />} */}
+              {this.state.productionLine === 'equip' && <EquipTable server={this.state.server} ignoreServer={this.state.ignoreServer} />}
               {this.state.productionLine === 'fairy' && <FairyTable recipe={this.state} />}
-              {this.state.productionLine !== 'fairy' && this.state.productionLine !== 'equip' && <DollTable recipe={this.state}/>}
+              {isDoll && <DollTable recipe={this.state}/>}
           </div>
         </div>
+      </div>
       </Layout>
     )
   }

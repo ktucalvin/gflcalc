@@ -1,4 +1,4 @@
-import type { Preset } from '../types/gflcalc'
+import type { Preset } from '../common/gflcalc'
 
 // Manpower, Ammo, Rations, Parts
 export const standardPresets: Preset[] = [
@@ -16,7 +16,8 @@ export const standardPresets: Preset[] = [
   { preset: [400, 600, 30, 300], text: 'MG Set #1' },
   { preset: [600, 600, 100, 400], text: 'MG Set #2' },
   { preset: [730, 630, 130, 430], text: 'MG Voodoo' },
-  { preset: [800, 800, 100, 400], text: 'MG MICA Recommended' }
+  { preset: [800, 800, 100, 400], text: 'MG MICA Recommended' },
+  { preset: [522, 320, 404, 137], text: 'Uncensor Recipe' }
 ]
 
 export const heavyPresets: Preset[] = [

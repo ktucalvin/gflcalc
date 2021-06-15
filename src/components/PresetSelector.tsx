@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Preset } from '../common/gflcalc'
 
 const PresetSelector = ({ presets, selected, onChange, line, ignoreRecipe }) => (
   <div id='preset-select' className='selection'>
@@ -6,7 +7,7 @@ const PresetSelector = ({ presets, selected, onChange, line, ignoreRecipe }) => 
     {/* eslint-disable-next-line jsx-a11y/no-onchange */}
     <select id='recipe-preset' value={selected} onChange={onChange} disabled={ignoreRecipe}>
       {
-        presets.map((preset,index) =>
+        presets.map((preset: Preset, index: number) =>
           <option key={`${line}-${preset.text}`} value={index}>{preset.text}</option>
         )
       }

@@ -4,7 +4,7 @@ const path = require('path')
 
 exports.onPreBuild = function () {
   // Update last updated date
-  const layoutFile = path.join(__dirname, './src/components/Layout.js')
+  const layoutFile = path.join(__dirname, './src/components/Layout.tsx')
   let layout = fs.readFileSync(layoutFile).toString()
   const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   const date = new Date()

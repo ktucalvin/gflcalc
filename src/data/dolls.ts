@@ -1,13 +1,5 @@
-// use the OR (|) operator to join servers
-// use the AND (&) operator to check for availability
-import { Requirements } from '../types/gflcalc'
-
-// `availability === undefined` implies all servers
-const EN = 0b00001
-const KR = 0b00010
-const CN = 0b00100
-const TW = 0b01000
-const JP = 0b10000
+import type { RecipeByRarity, Requirements } from '../common/gflcalc'
+import { EN, CN, KR, TW, JP } from '../common/constants'
 
 // Sets: Manpower, Ammo, Rations, Parts, Sum
 const HGSet1: Requirements = [30, 30, 30, 30, sum => sum <= 920]
@@ -29,31 +21,6 @@ const HeavySet4613: Requirements = [4000, 6000, 1000, 3000]
 const HeavySet6613: Requirements = [6000, 6000, 1000, 3000]
 const HeavySet4163: Requirements = [4000, 1000, 6000, 3000]
 const HeavySet6164: Requirements = [6000, 1000, 6000, 4000]
-
-// unsure[0] = standard ; unsure[1] = heavy
-// names will default to nameEN
-
-export type Doll = {
-  nameEN: string,
-  time: string,
-  standard?: Requirements,
-  nameCN?: string,
-  nameKR?: string,
-  nameTW?: string,
-  nameJP?: string,
-  heavy?: Requirements,
-  availability?: number,
-  unsure?: [number, number]
-}
-
-export type RecipeByRarity = {
-  hg: Doll[],
-  smg: Doll[],
-  ar: Doll[],
-  rf: Doll[],
-  mg: Doll[],
-  sg?: Doll[]
-}
 
 const twoStar: RecipeByRarity = {
   hg: [
@@ -590,6 +557,12 @@ const fourStar: RecipeByRarity = {
   ],
   smg: [
     {
+      nameEN: 'SAF',
+      time: '2:10',
+      standard: SMGSet2,
+      heavy: HeavySet4411
+    },
+    {
       nameEN: 'UMP9',
       time: '2:15',
       standard: SMGSet2,
@@ -639,7 +612,8 @@ const fourStar: RecipeByRarity = {
       nameTW: 'KAC-PDW',
       time: '2:20',
       availability: ~JP,
-      standard: SMGSet2
+      standard: SMGSet2,
+      heavy: HeavySet4411
     }
   ],
   ar: [
@@ -968,7 +942,7 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'C-93',
       time: '1:09',
       availability: ~JP,
-      standard: HGSet1
+      standard: HGSet2
     },
     {
       nameEN: 'Grizzly',
@@ -983,6 +957,11 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'PA-15',
       time: '1:15',
       standard: HGSet1
+    },
+    {
+      nameEN: 'HP-35',
+      time: '1:35',
+      standard: HGSet2
     }
   ],
   smg: [
@@ -1187,6 +1166,17 @@ const fiveStar: RecipeByRarity = {
       nameTW: '64式自',
       nameJP: '64式自',
       time: '4:06',
+      standard: ARSet2,
+      heavy: HeavySet1441,
+      unsure: [0, 1]
+    },
+    {
+      nameEN: 'Howa Type 89',
+      nameCN: '89式自',
+      nameTW: '89式自',
+      nameKR: '89식 소총',
+      nameJP: '89式',
+      time: '4:08',
       standard: ARSet2,
       heavy: HeavySet1441,
       unsure: [0, 1]
@@ -1408,4 +1398,3 @@ const fiveStar: RecipeByRarity = {
 }
 
 export const Dolls = { twoStar, threeStar, fourStar, fiveStar }
-export const Servers = { EN, KR, CN, TW, JP }

@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
+declare global {
+  interface Window {
+    Modernizr: any     
+  }
+}
+
 const Layout = ({ children }) => {
   useEffect(() => {
     if (window && window.Modernizr) { document.querySelector('html').classList.add('webp') }
@@ -10,9 +16,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <html lang='en' class='no-js' />
+        <html lang='en' className='no-js' />
         <title>Girls' Frontline Recipe Calculator</title>
-        <meta charset='UTF-8' />
+        <meta charSet='UTF-8' />
         <meta name='description' content='Get all the T-dolls a recipe can produce and their timers. Supports all servers, standard and heavy production, with recipe presets.' />
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
         <link rel='apple-touch-icon' sizes='180x180' href='apple-touch-icon.png' />
@@ -26,7 +32,7 @@ const Layout = ({ children }) => {
         <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
       </Helmet>
       <noscript id='no-js-warning'>
-        <strong>JavaScript must be enabled make the calculator interactive. Otherwise, only dolls and their timers are shown but not their corresponding recipe.</strong>
+        <strong>JavaScript must be enabled make the calculator interactive.</strong>
       </noscript>
       {children}
       <footer>
@@ -41,7 +47,7 @@ const Layout = ({ children }) => {
           </ul>
         </div>
         <div>
-          {/* <hook:date> */}<p><b>Last Updated May 8, 2021</b></p>{/* <hook:date> */}
+          {/* <hook:date> */}<p><b>Last Updated June 15, 2021</b></p>{/* <hook:date> */}
         </div>
         <div>
           <p><a href='https://github.com/ktucalvin/gflcalc'>Github Link</a></p>

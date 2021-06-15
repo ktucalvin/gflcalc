@@ -1,7 +1,16 @@
 import React from 'react'
-import { Dolls, Servers } from '../data/dolls'
+import { Dolls } from '../data/dolls'
+import { serverToIso, rarityClassNames, Servers } from '../common/constants'
+import type { AppState, Doll as DollType, RecipeByRarity } from '../common/gflcalc'
 
-const DollTable = ({ recipe }) => (
+type Recipe = Pick<AppState, 'manpower' | 'ammunition' | 'rations' | 'parts' |
+  'productionLine' | 'ignoreRecipe' | 'ignoreServer' | 'server'>
+
+export type DollTableProps = {
+  recipe: Recipe
+}
+
+const DollTable = ({ recipe }: DollTableProps) => (
   <table>
     <thead>
       <tr>
@@ -23,13 +32,13 @@ const DollTable = ({ recipe }) => (
   </table>
 )
 
-const rarityClassNames = {
-  3: 'three-star',
-  4: 'four-star',
-  5: 'five-star'
+type RarityProps = {
+  rarity: number,
+  dolls: RecipeByRarity,
+  recipe: Recipe
 }
 
-const Rarity = ({ rarity, dolls, recipe }) => (
+const Rarity = ({ rarity, dolls, recipe }: RarityProps) => (
   <tr className={rarityClassNames[rarity]}>
     <td className='rarity'>{rarity}★</td>
     {recipe.productionLine !== 'heavy' && <Category dolls={dolls.hg} recipe={recipe} />}
@@ -41,12 +50,17 @@ const Rarity = ({ rarity, dolls, recipe }) => (
   </tr>
 )
 
-const Category = ({ dolls, recipe }) => {
+type CategoryProps = {
+  dolls: DollType[],
+  recipe: Recipe
+}
+
+const Category = ({ dolls, recipe }: CategoryProps) => {
   let hidden = 0
-  const result = dolls.map(doll => {
+  const result = dolls.map((doll: DollType) => {
     let unsure = false
     let classes = ''
-    if (doll.unsure && ((recipe.productioneLine !== 'heavy' ? doll.unsure[0] : doll.unsure[1]))) {
+    if (doll.unsure && ((recipe.productionLine !== 'heavy' ? doll.unsure[0] : doll.unsure[1]))) {
       unsure = true
     }
     if (verifyRecipe(recipe, doll, doll.availability)) {
@@ -55,42 +69,54 @@ const Category = ({ dolls, recipe }) => {
       classes += 'unavailable '
     } else {
       hidden++
-      classes += 'flat'
+      classes += 'flat' // flat class hides elements but preserves width
     }
     return <Doll key={doll.nameEN} doll={doll} server={recipe.server} classes={classes} unsure={unsure} />
   })
 
-  if (hidden !== dolls.length) {
-    return <td><ul>{result}</ul></td>
-  } else {
-    return <td><ul><None />{result}</ul></td>
-  }
+  return (
+    <>
+      <td>
+        <ul>
+          <None isHidden={hidden === dolls.length} />
+          {result}
+        </ul>
+      </td>
+    </>
+  )
 }
 
-// Note this method doesn't work if the doll's name is in a different language to its server
-const serverToIso = {
-  EN: 'en',
-  CN: 'zh-CN',
-  TW: 'zh-TW',
-  KR: 'ko',
-  JP: 'ja'
+type DollProps = {
+  doll: DollType,
+  server: 'EN' | 'CN' | 'KR' | 'TW' | 'JP',
+  classes: string,
+  unsure: boolean
 }
 
-const Doll = ({ doll, server, classes, unsure }) => {
+const Doll = ({ doll, server, classes, unsure }: DollProps) => {
   let name = doll['name' + server]
   if (!name) { name = doll.nameEN }
   const lang = name !== doll.nameEN ? serverToIso[server] : 'en'
   return (
     <li className={classes || null}>
       <span lang={lang}>{name}</span>
-      <span>{doll.time}{unsure && ' (?)'}:00</span>
+      <span>{unsure && '(?) '}{doll.time}:00</span>
     </li>
   )
 }
 
-const None = () => (<li><span>NONE</span><span>-:--:--</span></li>)
+type NoneProps = {
+  isHidden: boolean
+}
 
-function verifyRecipe (recipe, doll, availability) {
+const None = ({ isHidden }: NoneProps) => (
+  <li className={isHidden ? null : 'flat'}>
+    <span>NONE</span>
+    <span>-:--:--</span>
+  </li>
+)
+
+function verifyRecipe (recipe: Recipe, doll: DollType, availability: number) {
   const sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
   const requirements = sum < 4000 ? doll.standard : doll.heavy
   const meetsRecipe = requirements &&
@@ -100,7 +126,11 @@ function verifyRecipe (recipe, doll, availability) {
     recipe.parts >= requirements[3] &&
     (requirements[4] ? requirements[4](sum) : true) // check any recipe sum conditions
 
+  const onProductionLine = (doll.standard && recipe.productionLine === 'doll') ||
+    (doll.heavy && recipe.productionLine === 'heavy')
+
   return (recipe.ignoreRecipe || meetsRecipe) &&
+    onProductionLine &&
     (availability === undefined || (Servers[recipe.server] & availability)) // check server availability
 }
 

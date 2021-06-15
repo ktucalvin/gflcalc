@@ -1,17 +1,29 @@
-import type { Preset } from '../types/gflcalc'
+import type { Preset } from '../common/gflcalc'
 
 // recipe === undefined implies basic recipe 500/500/500/500
 const paraSet = [2000, 500, 2000, 1000]
 const landmineSet = [500, 2000, 2000, 1000]
 
-const combat = [
+export type Fairy = {
+  nameEN: string,
+  nameCN: string,
+  nameKR: string,
+  nameTW: string,
+  nameJP: string,
+  time: string,
+  isCombat: boolean,
+  recipe?: number[]
+}
+
+export const Fairies: Fairy[] = [
   {
     nameEN: 'Armor Fairy',
     nameCN: '盾甲妖精',
     nameKR: '방패요정',
     nameTW: '盾甲妖精',
     nameJP: '装甲妖精',
-    time: '3:00'
+    time: '3:00',
+    isCombat: true
   },
   {
     nameEN: 'Shield Fairy',
@@ -19,7 +31,8 @@ const combat = [
     nameKR: '수호요정',
     nameTW: '護盾妖精',
     nameJP: '守護妖精',
-    time: '3:05'
+    time: '3:05',
+    isCombat: true
   },
   {
     nameEN: 'Taunt Fairy',
@@ -27,7 +40,8 @@ const combat = [
     nameKR: '도발요정',
     nameTW: '嘲諷妖精',
     nameJP: '挑発妖精',
-    time: '3:10'
+    time: '3:10',
+    isCombat: true
   },
   {
     nameEN: 'Sniper Fairy',
@@ -35,7 +49,8 @@ const combat = [
     nameKR: '저격요정',
     nameTW: '狙擊妖精',
     nameJP: '狙撃妖精',
-    time: '3:30'
+    time: '3:30',
+    isCombat: true
   },
   {
     nameEN: 'Artillery Fairy',
@@ -43,7 +58,8 @@ const combat = [
     nameKR: '포격요정',
     nameTW: '炮擊妖精',
     nameJP: '砲撃妖精',
-    time: '3:35'
+    time: '3:35',
+    isCombat: true
   },
   {
     nameEN: 'Airstrike Fairy',
@@ -51,7 +67,8 @@ const combat = [
     nameKR: '공습요정',
     nameTW: '空襲妖精',
     nameJP: '空襲妖精',
-    time: '3:40'
+    time: '3:40',
+    isCombat: true
   },
   {
     nameEN: 'Barrier Fairy',
@@ -59,7 +76,8 @@ const combat = [
     nameKR: '장벽요정',
     nameTW: '立盾妖精',
     nameJP: '障壁妖精',
-    time: '4:15'
+    time: '4:15',
+    isCombat: true
   },
   {
     nameEN: 'Warrior Fairy',
@@ -67,7 +85,8 @@ const combat = [
     nameKR: '용사요정',
     nameTW: '勇士妖精',
     nameJP: '勇士妖精',
-    time: '4:30'
+    time: '4:30',
+    isCombat: true
   },
   {
     nameEN: 'Fury Fairy',
@@ -75,7 +94,8 @@ const combat = [
     nameKR: '격노요정',
     nameTW: '暴怒妖精',
     nameJP: '激怒妖精',
-    time: '4:35'
+    time: '4:35',
+    isCombat: true
   },
   {
     nameEN: 'Twin Fairy',
@@ -83,7 +103,8 @@ const combat = [
     nameKR: '쌍둥이요정',
     nameTW: '雙生妖精',
     nameJP: '双子妖精',
-    time: '4:40'
+    time: '4:40',
+    isCombat: true
   },
   {
     nameEN: 'Command Fairy',
@@ -91,7 +112,8 @@ const combat = [
     nameKR: '지휘요정',
     nameTW: '指揮妖精',
     nameJP: '指揮妖精',
-    time: '5:00'
+    time: '5:00',
+    isCombat: true
   },
   {
     nameEN: 'Rescue Fairy',
@@ -99,11 +121,9 @@ const combat = [
     nameKR: '수색요정',
     nameTW: '搜救妖精',
     nameJP: '捜索妖精',
-    time: '5:05'
-   }
-]
-
-const strategy = [
+    time: '5:05',
+    isCombat: true
+  },
   {
     nameEN: 'Reinforcement Fairy',
     nameCN: '增援妖精',
@@ -111,7 +131,8 @@ const strategy = [
     nameTW: '增援妖精',
     nameJP: '増援妖精',
     time: '4:00',
-    recipe: paraSet
+    recipe: paraSet,
+    isCombat: false
   },
   {
     nameEN: 'Parachute Fairy',
@@ -120,7 +141,8 @@ const strategy = [
     nameTW: '空降妖精',
     nameJP: '空挺妖精',
     time: '4:05',
-    recipe: paraSet
+    recipe: paraSet,
+    isCombat: false
   },
   {
     nameEN: 'Defense Fairy',
@@ -129,7 +151,8 @@ const strategy = [
     nameTW: '防禦妖精',
     nameJP: '防御妖精',
     time: '4:10',
-    recipe: paraSet
+    recipe: paraSet,
+    isCombat: false
   },
   {
     nameEN: 'Illumination Fairy',
@@ -137,7 +160,8 @@ const strategy = [
     nameKR: '조명요정',
     nameTW: '照明妖精',
     nameJP: '照明妖精',
-    time: '5:10'
+    time: '5:10',
+    isCombat: false
   },
   {
     nameEN: 'Combo Fairy',
@@ -146,7 +170,8 @@ const strategy = [
     nameTW: '連擊妖精',
     nameJP: '連撃妖精',
     time: '5:15',
-    recipe: landmineSet
+    recipe: landmineSet,
+    isCombat: false
   },
   {
     nameEN: 'Landmine Fairy',
@@ -155,7 +180,8 @@ const strategy = [
     nameTW: '佈雷妖精',
     nameJP: '地雷妖精',
     time: '5:30',
-    recipe: landmineSet
+    recipe: landmineSet,
+    isCombat: false
   },
   {
     nameEN: 'Rocket Fairy',
@@ -164,7 +190,8 @@ const strategy = [
     nameTW: '火箭妖精',
     nameJP: '火箭妖精',
     time: '5:35',
-    recipe: landmineSet
+    recipe: landmineSet,
+    isCombat: false
   },
   {
     nameEN: 'Construction Fairy',
@@ -173,11 +200,11 @@ const strategy = [
     nameTW: '工事妖精',
     nameJP: '工事妖精',
     time: '5:40',
-    recipe: landmineSet
+    recipe: landmineSet,
+    isCombat: false
   },
 ]
 
-export const Fairies = { combat, strategy }
 export const fairyPresets: Preset[] = [
   { preset: [500,500,500,500], text: 'Basic Set' },
   { preset: paraSet, text: 'Fairy Set #1 (w/ Parachute)' },
