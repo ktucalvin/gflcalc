@@ -895,6 +895,16 @@ const fourStar: RecipeByRarity = {
       nameEN: 'USAS-12',
       time: '7:55',
       heavy: HeavySet6164
+    },
+    {
+      nameEN: 'V-PM5',
+      time: '7:11',
+      heavy: HeavySet6164
+    },
+    {
+      nameEN: 'HK512',
+      time: '7:56',
+      heavy: HeavySet6164
     }
   ]
 }
@@ -1397,16 +1407,6 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'LTLX 7000',
       time: '8:17',
-      heavy: HeavySet6164
-    },
-    {
-      nameEN: 'V-PM5',
-      time: '7:11',
-      heavy: HeavySet6164
-    },
-    {
-      nameEN: 'HK512',
-      time: '7:56',
       heavy: HeavySet6164
     },
     {
