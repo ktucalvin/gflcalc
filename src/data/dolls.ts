@@ -1393,6 +1393,26 @@ const fiveStar: RecipeByRarity = {
       time: '8:15',
       heavy: HeavySet6164,
       unsure: [0, 1]
+    },
+    {
+      nameEN: 'LTLX 7000',
+      time: '8:17',
+      heavy: HeavySet6164
+    },
+    {
+      nameEN: 'V-PM5',
+      time: '7:11',
+      heavy: HeavySet6164
+    },
+    {
+      nameEN: 'HK512',
+      time: '7:56',
+      heavy: HeavySet6164
+    },
+    {
+      nameEN: 'M6 ASW',
+      time: '8:08',
+      heavy: HeavySet6164
     }
   ]
 }

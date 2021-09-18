@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
           <h3>Community Wiki Links</h3>
           <ul>
             <li><a href='https://en.gfwiki.com/wiki/Girls%27_Frontline_Wiki'>EN/Global Server</a></li>
-            <li><a href='https://zh.moegirl.org/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF'>CN Server</a></li>
+            <li><a href='https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF'>CN Server</a></li>
             <li><a href='https://namu.wiki/w/%EC%86%8C%EB%85%80%EC%A0%84%EC%84%A0'>KR Server</a></li>
             <li><a href='https://gf.fws.tw/'>TW Server</a></li>
             <li><a href='https://wiki.gamerclub.jp/dfwiki/index.php'>JP Server</a></li>
