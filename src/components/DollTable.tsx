@@ -116,7 +116,7 @@ const None = ({ isHidden }: NoneProps) => (
   </li>
 )
 
-function verifyRecipe (recipe: Recipe, doll: DollType, availability: number) {
+function verifyRecipe(recipe: Recipe, doll: DollType, availability: number) {
   const sum = recipe.manpower + recipe.ammunition + recipe.rations + recipe.parts
   const requirements = sum < 4000 ? doll.standard : doll.heavy
   const meetsRecipe = requirements &&
@@ -129,9 +129,12 @@ function verifyRecipe (recipe: Recipe, doll: DollType, availability: number) {
   const onProductionLine = (doll.standard && recipe.productionLine === 'doll') ||
     (doll.heavy && recipe.productionLine === 'heavy')
 
+  const isAvailable = availability === undefined ||
+    (Servers[recipe.server] & availability)
+
   return (recipe.ignoreRecipe || meetsRecipe) &&
     onProductionLine &&
-    (availability === undefined || (Servers[recipe.server] & availability)) // check server availability
+    isAvailable
 }
 
 export default DollTable

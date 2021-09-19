@@ -197,6 +197,7 @@ class App extends PureComponent<null, AppState> {
               this.state.productionLine !== 'equip' &&
               <p>(?) indicates speculated minimum requirements</p>
             }
+            <p>Found an inaccuracy or problem? Feel free to open an issue on <a style={{padding: 0}} href='https://github.com/ktucalvin/gflcalc'>GitHub</a>!</p>
 
             {
               this.state.server !== 'EN' &&

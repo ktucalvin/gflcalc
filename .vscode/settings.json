@@ -7,6 +7,5 @@
     "**/.DS_Store": true,
     ".cache": true,
     "public": true
-  },
-  "standard.enable": false
+  }
 }

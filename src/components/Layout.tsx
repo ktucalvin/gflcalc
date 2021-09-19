@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
           </ul>
         </div>
         <div>
-          {/* <hook:date> */}<p><b>Last Updated June 15, 2021</b></p>{/* <hook:date> */}
+          {/* <hook:date> */}<p><b>Last Updated September 19, 2021</b></p>{/* <hook:date> */}
         </div>
         <div>
           <p><a href='https://github.com/ktucalvin/gflcalc'>Github Link</a></p>

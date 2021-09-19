@@ -26,53 +26,53 @@ const twoStar: RecipeByRarity = {
   hg: [
     {
       nameEN: 'M1911',
-      time: '20',
+      time: '0:20',
       standard: HGSet1
     },
     {
       nameEN: 'M1895',
+      time: '0:20',
       nameCN: '纳甘左轮',
-      nameKR: '나강 리볼버',
       nameTW: '納甘左輪',
-      time: '20',
+      nameKR: '나강 리볼버',
       standard: HGSet1
     },
     {
       nameEN: 'P38',
-      time: '20',
+      time: '0:20',
       standard: HGSet1
     },
     {
       nameEN: 'PPK',
-      time: '22',
+      time: '0:22',
       standard: HGSet1
     },
     {
       nameEN: 'FF FNP9',
+      time: '0:25',
       nameCN: 'FNP-9',
-      nameKR: 'FNP-9',
       nameTW: 'FNP-9',
-      time: '25',
+      nameKR: 'FNP-9',
       standard: HGSet1
     },
     {
       nameEN: 'MP-446',
-      time: '25',
+      time: '0:25',
       standard: HGSet1
     },
     {
       nameEN: 'Gr USP Compact',
+      time: '0:28',
       nameCN: 'USP Compact',
-      nameKR: 'USP Compact',
       nameTW: 'USP Compact',
+      nameKR: 'USP Compact',
       nameJP: 'Gr USPコンパクト',
-      time: '28',
       standard: HGSet1
     },
     {
       nameEN: 'Bren Ten',
+      time: '0:28',
       nameJP: 'ブレン・テン',
-      time: '28',
       standard: HGSet1
     }
   ],
@@ -94,25 +94,25 @@ const twoStar: RecipeByRarity = {
     },
     {
       nameEN: 'Spectre M4',
-      nameJP: 'スペクトラM4',
       time: '1:20',
+      nameJP: 'スペクトラM4',
       standard: SMGSet1
     },
     {
       nameEN: 'Type 64',
-      nameCN: '64式',
-      nameKR: '64식',
-      nameTW: '64式',
-      nameJP: '64式',
       time: '1:25',
+      nameCN: '64式',
+      nameTW: '64式',
+      nameKR: '64식',
+      nameJP: '64式',
       standard: SMGSet1
     },
     {
       nameEN: 'M38',
-      nameCN: '伯莱塔38型',
-      nameKR: '베레타 38형',
-      nameTW: '伯萊塔38型',
       time: '1:30',
+      nameCN: '伯莱塔38型',
+      nameTW: '伯萊塔38型',
+      nameKR: '베레타 38형',
       standard: SMGSet1
     },
     {
@@ -134,11 +134,11 @@ const twoStar: RecipeByRarity = {
   ar: [
     {
       nameEN: 'Galil',
-      nameCN: '加利尔',
-      nameKR: '갈릴',
-      nameTW: '加利爾',
-      nameJP: 'ガリル',
       time: '2:40',
+      nameCN: '加利尔',
+      nameTW: '加利爾',
+      nameKR: '갈릴',
+      nameJP: 'ガリル',
       standard: ARSet1
     },
     {
@@ -148,27 +148,27 @@ const twoStar: RecipeByRarity = {
     },
     {
       nameEN: 'FF F2000',
-      nameCN: 'F2000',
-      nameKR: 'F2000',
-      nameTW: 'F2000',
       time: '2:45',
+      nameCN: 'F2000',
+      nameTW: 'F2000',
+      nameKR: 'F2000',
       standard: ARSet1
     },
     {
       nameEN: 'Type 63',
-      nameCN: '63式',
-      nameKR: '63식',
-      nameTW: '63式',
-      nameJP: '63式',
       time: '2:45',
+      nameCN: '63式',
+      nameTW: '63式',
+      nameKR: '63식',
+      nameJP: '63式',
       standard: ARSet1
     },
     {
       nameEN: 'Gr G3',
-      nameCN: 'G3',
-      nameKR: 'G3',
-      nameTW: 'G3',
       time: '2:50',
+      nameCN: 'G3',
+      nameTW: 'G3',
+      nameKR: 'G3',
       standard: ARSet1
     },
     {
@@ -185,19 +185,19 @@ const twoStar: RecipeByRarity = {
     },
     {
       nameEN: 'FF FN49',
-      nameCN: 'FN-49',
-      nameKR: 'FN-49',
-      nameTW: 'FN-49',
       time: '3:10',
+      nameCN: 'FN-49',
+      nameTW: 'FN-49',
+      nameKR: 'FN-49',
       standard: RFSet1
     },
     {
       nameEN: 'VM59',
-      nameCN: 'BM59',
-      nameKR: 'BM59',
-      nameTW: 'BM59',
-      nameJP: 'It BM59',
       time: '3:20',
+      nameCN: 'BM59',
+      nameTW: 'BM59',
+      nameKR: 'BM59',
+      nameJP: 'It BM59',
       standard: RFSet1
     },
     {
@@ -207,10 +207,11 @@ const twoStar: RecipeByRarity = {
     },
     {
       nameEN: 'SKS',
-      nameCN: '西蒙诺夫',
-      nameKR: '시모노프',
-      nameTW: '西蒙諾夫',
       time: '3:30',
+      nameCN: '西蒙诺夫',
+      nameTW: '西蒙諾夫',
+      nameKR: '시모노프',
+      nameJP: 'SKS',
       standard: RFSet1
     }
   ],
@@ -247,112 +248,110 @@ const threeStar: RecipeByRarity = {
   hg: [
     {
       nameEN: 'C96',
-      time: '30',
+      time: '0:30',
       standard: HGSet1
     },
     {
       nameEN: 'P08',
-      time: '30',
+      time: '0:30',
       standard: HGSet1
     },
     {
       nameEN: 'P99',
-      time: '35',
-      availability: ~JP,
+      time: '0:35',
       standard: HGSet1
     },
     {
       nameEN: 'Type 92',
+      time: '0:35',
       nameCN: '92式',
-      nameKR: '92식',
       nameTW: '92式',
+      nameKR: '92식',
       nameJP: '92式',
-      time: '35',
       standard: HGSet1
     },
     {
       nameEN: 'Astra',
+      time: '0:40',
       nameCN: '阿斯特拉左轮',
-      nameKR: '아스트라 리볼버',
       nameTW: '阿斯特拉左輪',
+      nameKR: '아스트라 리볼버',
       nameJP: 'アストラ',
-      time: '40',
       standard: HGSet1
     },
     {
       nameEN: 'M9',
-      time: '40',
+      time: '0:40',
       standard: HGSet1
     },
     {
       nameEN: 'Makarov',
+      time: '0:40',
       nameCN: '马卡洛夫',
-      nameKR: '마카로프',
       nameTW: '馬卡洛夫',
+      nameKR: '마카로프',
       nameJP: 'マカロフ',
-      time: '40',
       standard: HGSet1
     },
     {
       nameEN: 'Tokarev',
+      time: '0:45',
       nameCN: '托卡列夫',
-      nameKR: '토카레프',
       nameTW: '托卡列夫',
+      nameKR: '토카레프',
       nameJP: 'トカレフ',
-      time: '45',
       standard: HGSet1
     }
   ],
   smg: [
     {
       nameEN: 'Sten MkII',
-      nameCN: '司登MkⅡ',
-      nameKR: '스텐MkII',
-      nameTW: '斯登MkⅡ',
-      nameJP: 'ステンMK-Ⅱ',
       time: '1:40',
+      nameCN: '司登MkⅡ',
+      nameTW: '斯登MkⅡ',
+      nameKR: '스텐MkII',
+      nameJP: 'ステンMK-Ⅱ',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
     {
       nameEN: 'Micro Uzi',
-      nameCN: '微型乌兹',
-      nameKR: '마이크로 우지',
-      nameTW: '微型烏茲',
       time: '1:40',
+      nameCN: '微型乌兹',
+      nameTW: '微型烏茲',
+      nameKR: '마이크로 우지',
+      nameJP: 'Micro Uzi',
       standard: SMGSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'F1',
       time: '1:50',
-      availability: CN | TW | KR,
       heavy: HeavySet1111
     },
     {
       nameEN: 'Ingram',
-      nameCN: 'MAC-10',
-      nameKR: 'MAC-10',
-      nameTW: 'MAC-10',
-      nameJP: 'イングラム',
       time: '2:00',
+      nameCN: 'MAC-10',
+      nameTW: 'MAC-10',
+      nameKR: 'MAC-10',
+      nameJP: 'イングラム',
       standard: SMGSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'Skorpion',
-      nameCN: '蝎式',
-      nameKR: '스콜피온',
-      nameTW: '蠍式',
-      nameJP: 'スコーピオン',
       time: '2:00',
+      nameCN: '蝎式',
+      nameTW: '蠍式',
+      nameKR: '스콜피온',
+      nameJP: 'スコーピオン',
       standard: SMGSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'Z-62',
       time: '2:05',
-      availability: ~JP,
       heavy: HeavySet1111
     },
     {
@@ -378,7 +377,6 @@ const threeStar: RecipeByRarity = {
     {
       nameEN: 'ARX-160',
       time: '3:15',
-      availability: ~JP,
       heavy: HeavySet1111
     },
     {
@@ -388,9 +386,11 @@ const threeStar: RecipeByRarity = {
       heavy: HeavySet1111
     },
     {
-      nameEN: 'FNC',
-      nameJP: 'FF FNC',
+      nameEN: 'FF FNC',
       time: '3:20',
+      nameCN: 'FNC',
+      nameTW: 'FNC',
+      nameKR: 'FNC',
       standard: ARSet1,
       heavy: HeavySet1111
     }
@@ -410,27 +410,26 @@ const threeStar: RecipeByRarity = {
     },
     {
       nameEN: 'Type88',
-      nameCN: '汉阳造88式',
-      nameKR: '한양조 88식',
-      nameTW: '漢陽造88式',
-      nameJP: '漢陽88式',
       time: '3:50',
+      nameCN: '汉阳造88式',
+      nameTW: '漢陽造88式',
+      nameKR: '한양조 88식',
+      nameJP: '漢陽88式',
       standard: RFSet2,
       heavy: HeavySet4141
     },
     {
       nameEN: 'OTs-44',
       time: '3:50',
-      availability: CN | TW | KR,
       heavy: HeavySet4141
     },
     {
       nameEN: 'M1 Garand',
-      nameCN: 'M1加兰德',
-      nameKR: 'M1 개런드',
-      nameTW: 'M1加蘭德',
-      nameJP: 'M1ガーランド',
       time: '4:00',
+      nameCN: 'M1加兰德',
+      nameTW: 'M1加蘭德',
+      nameKR: 'M1 개런드',
+      nameJP: 'M1ガーランド',
       standard: RFSet1,
       heavy: HeavySet3131
     }
@@ -438,11 +437,11 @@ const threeStar: RecipeByRarity = {
   mg: [
     {
       nameEN: 'Bren',
-      nameCN: '布伦',
-      nameKR: '브렌',
-      nameTW: '布倫',
-      nameJP: 'ブレン',
       time: '5:20',
+      nameCN: '布伦',
+      nameTW: '布倫',
+      nameKR: '브렌',
+      nameJP: 'ブレン',
       standard: MGSet1,
       heavy: HeavySet4613
     },
@@ -465,7 +464,7 @@ const threeStar: RecipeByRarity = {
       heavy: HeavySet4613
     }
   ],
-  sg: [
+  "sg": [
     {
       nameEN: 'NS2000',
       time: '7:15',
@@ -498,60 +497,70 @@ const fourStar: RecipeByRarity = {
   hg: [
     {
       nameEN: 'Jericho',
+      time: '0:49',
       nameCN: '杰里科',
-      nameKR: '제리코',
       nameTW: '杰里科',
+      nameKR: '제리코',
       nameJP: 'ジェリコ',
-      time: '49',
       standard: HGSet2
     },
     {
       nameEN: 'SAA',
+      time: '0:50',
       nameCN: '柯尔特左轮',
-      nameKR: '콜트 리볼버',
       nameTW: '柯爾特左輪',
+      nameKR: '콜트 리볼버',
       nameJP: 'コルトSAA',
-      time: '50',
       standard: HGSet1
     },
     {
       nameEN: 'Gr Mk23',
+      time: '0:50',
       nameCN: 'Mk23',
-      nameKR: 'Mk23',
       nameTW: 'Mk23',
-      time: '50',
+      nameKR: 'Mk23',
       standard: HGSet1
     },
     {
       nameEN: 'Gr P30',
+      time: '0:50',
       nameCN: 'P30',
+      nameTW: 'P30',
       nameKR: 'P30',
-      time: '50',
-      availability: ~JP,
       standard: HGSet2
     },
     {
       nameEN: 'Spitfire',
-      time: '52',
+      time: '0:52',
       standard: HGSet2
     },
     {
       nameEN: 'K5',
-      time: '53',
+      time: '0:53',
+      standard: HGSet2
+    },
+    {
+      nameEN: 'Rex Zero 1',
+      time: '0:54',
+      availability: ~EN,
+      nameCN: 'Rex Zero 1',
+      nameTW: 'Rex Zero 1',
+      nameKR: 'Rex Zero 1',
+      nameJP: 'Rex Zero 1',
       standard: HGSet2
     },
     {
       nameEN: 'Stechkin',
+      time: '0:55',
       nameCN: '斯捷奇金',
-      nameKR: '스테츠킨',
       nameTW: '斯捷奇金',
+      nameKR: '스테츠킨',
       nameJP: 'スチェッキン',
-      time: '55',
       standard: HGSet2
     },
     {
       nameEN: 'P7',
-      time: '55',
+      time: '0:55',
       standard: HGSet1
     }
   ],
@@ -559,6 +568,16 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'SAF',
       time: '2:10',
+      standard: SMGSet2,
+      heavy: HeavySet4411
+    },
+    {
+      nameEN: 'PPD-40',
+      time: '2:10',
+      availability: CN | TW | KR,
+      nameCN: 'PPD-40',
+      nameTW: 'PPD-40',
+      nameKR: 'PPD-40',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -575,12 +594,22 @@ const fourStar: RecipeByRarity = {
       heavy: HeavySet4411
     },
     {
+      nameEN: 'AR-57',
+      time: '2:16',
+      availability: CN | TW | KR,
+      nameCN: 'AR-57',
+      nameTW: 'AR-57',
+      nameKR: 'AR-57',
+      standard: SMGSet2,
+      heavy: HeavySet4411
+    },
+    {
       nameEN: 'Shipka',
-      nameCN: '希普卡',
-      nameKR: '시프카',
-      nameTW: '希普卡',
-      nameJP: 'シプカ',
       time: '2:18',
+      nameCN: '希普卡',
+      nameTW: '希普卡',
+      nameKR: '시프카',
+      nameJP: 'シプカ',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -592,10 +621,10 @@ const fourStar: RecipeByRarity = {
     },
     {
       nameEN: 'Gr MP5',
-      nameCN: 'MP5',
-      nameKR: 'MP5',
-      nameTW: 'MP5',
       time: '2:20',
+      nameCN: 'MP5',
+      nameTW: 'MP5',
+      nameKR: 'MP5',
       standard: SMGSet1,
       heavy: HeavySet1111
     },
@@ -607,11 +636,10 @@ const fourStar: RecipeByRarity = {
     },
     {
       nameEN: 'K-PDW',
-      nameCN: 'KAC-PDW',
-      nameKR: 'KAC-PDW',
-      nameTW: 'KAC-PDW',
       time: '2:20',
-      availability: ~JP,
+      nameCN: 'KAC-PDW',
+      nameTW: 'KAC-PDW',
+      nameKR: 'KAC-PDW',
       standard: SMGSet2,
       heavy: HeavySet4411
     }
@@ -619,11 +647,11 @@ const fourStar: RecipeByRarity = {
   ar: [
     {
       nameEN: 'Type56-1',
-      nameCN: '56-1式',
-      nameKR: '56-1식',
-      nameTW: '56-1式',
-      nameJP: '56-1式',
       time: '3:25',
+      nameCN: '56-1式',
+      nameTW: '56-1式',
+      nameKR: '56-1식',
+      nameJP: '56-1式',
       standard: ARSet1,
       heavy: HeavySet1111
     },
@@ -636,7 +664,6 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'SAR-21',
       time: '3:25',
-      availability: ~JP,
       standard: ARSet1,
       heavy: HeavySet1111
     },
@@ -667,29 +694,40 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'EM-2',
       time: '3:35',
-      availability: ~JP,
       standard: ARSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'CR-21',
       time: '3:35',
-      availability: ~JP,
       standard: ARSet2
     },
     {
-      nameEN: 'G36',
+      nameEN: 'Gr G36',
       time: '3:40',
+      nameCN: 'G36',
+      nameTW: 'G36',
+      nameKR: 'G36',
       standard: ARSet2,
       heavy: HeavySet1441
     },
     {
       nameEN: 'Ribeyrolles',
-      nameCN: '利贝罗勒',
-      nameKR: '리베롤',
-      nameTW: '利貝羅勒',
-      nameJP: 'リベロール',
       time: '3:40',
+      nameCN: '利贝罗勒',
+      nameTW: '利貝羅勒',
+      nameKR: '리베롤',
+      nameJP: 'リベロール',
+      standard: ARSet2,
+      heavy: HeavySet1441
+    },
+    {
+      nameEN: 'FX-05',
+      time: '3:40',
+      availability: CN | TW | KR,
+      nameCN: 'FX-05',
+      nameTW: 'FX-05',
+      nameKR: 'FX-05',
       standard: ARSet2,
       heavy: HeavySet1441
     }
@@ -697,22 +735,21 @@ const fourStar: RecipeByRarity = {
   rf: [
     {
       nameEN: '4 Shiki',
-      nameCN: '四式',
-      nameKR: '4식',
-      nameTW: '四式',
-      nameJP: '四式',
       time: '4:04',
-      availability: ~JP,
+      nameCN: '四式',
+      nameTW: '四式',
+      nameKR: '4식',
+      nameJP: '四式',
       standard: RFSet2,
       heavy: HeavySet4141
     },
     {
       nameEN: 'Mosin-Nagant',
-      nameCN: '莫辛-纳甘',
-      nameKR: '모신나강',
-      nameTW: '莫辛-納甘',
-      nameJP: 'モシン・ナガン',
       time: '4:10',
+      nameCN: '莫辛-纳甘',
+      nameTW: '莫辛-納甘',
+      nameKR: '모신나강',
+      nameJP: 'モシン・ナガン',
       standard: RFSet1,
       heavy: HeavySet3131
     },
@@ -720,6 +757,14 @@ const fourStar: RecipeByRarity = {
       nameEN: 'T-5000',
       time: '4:10',
       standard: RFSet2,
+      heavy: HeavySet4141
+    },
+    {
+      nameEN: 'Gr PSG-1',
+      time: '4:10',
+      nameCN: 'PSG-1',
+      nameTW: 'PSG-1',
+      nameKR: 'PSG-1',
       heavy: HeavySet4141
     },
     {
@@ -732,49 +777,37 @@ const fourStar: RecipeByRarity = {
       nameEN: 'SPR A3G',
       time: '4:15',
       standard: RFSet2,
-      heavy: HeavySet4141,
-      unsure: [0, 1]
+      heavy: HeavySet4141
     },
     {
       nameEN: 'K31',
       time: '4:15',
       standard: RFSet2,
-      heavy: HeavySet4141,
-      unsure: [0, 1]
-    },
-    {
-      nameEN: 'Gr PSG-1',
-      nameCN: 'PSG-1',
-      nameKR: 'PSG-1',
-      nameTW: 'PSG-1',
-      time: '4:10',
-      availability: ~JP,
       heavy: HeavySet4141
     },
     {
       nameEN: 'Gr G28',
-      nameCN: 'G28',
-      nameKR: 'G28',
-      nameTW: 'G28',
       time: '4:20',
-      availability: CN | TW | KR,
+      nameCN: 'G28',
+      nameTW: 'G28',
+      nameKR: 'G28',
       heavy: HeavySet4141
     },
     {
       nameEN: 'Springfield',
-      nameCN: '春田',
-      nameKR: '스프링필드',
-      nameTW: '春田',
-      nameJP: 'スプリングフィールド',
       time: '4:25',
+      nameCN: '春田',
+      nameTW: '春田',
+      nameKR: '스프링필드',
+      nameJP: 'スプリングフィールド',
       standard: RFSet1,
       heavy: HeavySet3131
     },
     {
       nameEN: 'Tabuk',
-      nameKR: '타부크 저격소총',
       time: '4:25',
-      availability: ~JP,
+      nameKR: '타부크 저격소총',
+      nameJP: 'タブク',
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -787,7 +820,9 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'PzB39',
       time: '4:30',
-      availability: CN | TW | KR,
+      nameCN: 'PzB 39',
+      nameTW: 'PzB 39',
+      nameKR: 'PzB 39',
       heavy: HeavySet4141
     }
   ],
@@ -800,14 +835,13 @@ const fourStar: RecipeByRarity = {
     },
     {
       nameEN: 'Type 80',
-      nameCN: '80式',
-      nameKR: '80식',
-      nameTW: '80式',
-      nameJP: '80式',
       time: '6:15',
+      nameCN: '80式',
+      nameTW: '80式',
+      nameKR: '80식',
+      nameJP: '80式',
       standard: MGSet2,
-      heavy: HeavySet6613,
-      unsure: [0, 1]
+      heavy: HeavySet6613
     },
     {
       nameEN: 'Mk48',
@@ -829,20 +863,20 @@ const fourStar: RecipeByRarity = {
     },
     {
       nameEN: 'Ameli',
-      nameCN: '阿梅利',
-      nameKR: '아멜리',
-      nameTW: '阿梅利',
       time: '6:25',
+      nameCN: '阿梅利',
+      nameTW: '阿梅利',
+      nameKR: '아멜리',
       standard: MGSet2,
       heavy: HeavySet6613
     },
     {
       nameEN: 'Chauchat',
-      nameCN: '绍沙',
-      nameKR: '쇼샤',
-      nameTW: '紹沙',
-      nameJP: 'ショーシャ',
       time: '6:25',
+      nameCN: '绍沙',
+      nameTW: '紹沙',
+      nameKR: '쇼샤',
+      nameJP: 'ショーシャ',
       standard: MGSet2,
       heavy: HeavySet6613
     },
@@ -859,7 +893,16 @@ const fourStar: RecipeByRarity = {
       heavy: HeavySet4613
     }
   ],
-  sg: [
+  "sg": [
+    {
+      nameEN: 'V-PM5',
+      time: '7:11',
+      nameCN: 'V-PM5',
+      nameTW: 'V-PM5',
+      nameKR: 'V-PM5',
+      nameJP: 'PM5',
+      heavy: HeavySet6164
+    },
     {
       nameEN: 'M1014',
       time: '7:14',
@@ -883,8 +926,7 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'Liberator',
       time: '7:45',
-      heavy: HeavySet6164,
-      unsure: [0, 1]
+      heavy: HeavySet6164
     },
     {
       nameEN: 'Super-Shorty',
@@ -897,13 +939,12 @@ const fourStar: RecipeByRarity = {
       heavy: HeavySet6164
     },
     {
-      nameEN: 'V-PM5',
-      time: '7:11',
-      heavy: HeavySet6164
-    },
-    {
       nameEN: 'HK512',
       time: '7:56',
+      nameCN: 'HK512',
+      nameTW: 'HK512',
+      nameKR: 'HK512',
+      nameJP: '512',
       heavy: HeavySet6164
     }
   ]
@@ -913,29 +954,29 @@ const fiveStar: RecipeByRarity = {
   hg: [
     {
       nameEN: 'Welrod MkII',
-      nameCN: '维尔德MkⅡ',
-      nameKR: '웰로드 MkⅡ',
-      nameTW: '維爾德MkⅡ',
-      nameJP: 'ウェルロッドMKⅡ',
       time: '1:00',
+      nameCN: '维尔德MkⅡ',
+      nameTW: '維爾德MkⅡ',
+      nameKR: '웰로드 MkⅡ',
+      nameJP: 'ウェルロッドMKⅡ',
       standard: HGSet2
     },
     {
       nameEN: 'Contender',
-      nameCN: '竞争者',
-      nameKR: '컨텐더',
-      nameTW: '競爭者',
-      nameJP: 'コンテンダー',
       time: '1:02',
+      nameCN: '竞争者',
+      nameTW: '競爭者',
+      nameKR: '컨텐더',
+      nameJP: 'コンテンダー',
       standard: HGSet2
     },
     {
       nameEN: 'Px4 Storm',
-      nameCN: 'Px4 风暴',
-      nameKR: 'Px4 스톰',
-      nameTW: 'Px4 風暴',
-      nameJP: 'Px4ストーム',
       time: '1:04',
+      nameCN: 'Px4 风暴',
+      nameTW: 'Px4 風暴',
+      nameKR: 'Px4 스톰',
+      nameJP: 'Px4ストーム',
       standard: HGSet1
     },
     {
@@ -951,16 +992,15 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'C-93',
       time: '1:09',
-      availability: ~JP,
       standard: HGSet2
     },
     {
       nameEN: 'Grizzly',
-      nameCN: '灰熊Mk Ⅴ',
-      nameKR: '그리즐리 MkV',
-      nameTW: '灰熊MkⅤ',
-      nameJP: 'グリズリー',
       time: '1:10',
+      nameCN: '灰熊Mk Ⅴ',
+      nameTW: '灰熊MkⅤ',
+      nameKR: '그리즐리 MkV',
+      nameJP: 'グリズリー',
       standard: HGSet1
     },
     {
@@ -978,28 +1018,25 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'MP7',
       time: '2:18',
-      availability: ~JP,
-      heavy: HeavySet4411,
-      unsure: [0, 1]
+      heavy: HeavySet4411
     },
     {
       nameEN: '100 Shiki',
-      nameCN: '樱花',
-      nameKR: '100식',
-      nameTW: '一〇〇式',
-      nameJP: '一〇〇式',
       time: '2:19',
+      nameCN: '樱花',
+      nameTW: '一〇〇式',
+      nameKR: '100식',
+      nameJP: '一〇〇式',
       standard: SMGSet2,
-      heavy: HeavySet4411,
-      unsure: [0, 1]
+      heavy: HeavySet4411
     },
     {
       nameEN: 'Suomi',
-      nameCN: '索米',
-      nameKR: '수오미',
-      nameTW: '索米',
-      nameJP: 'スオミ',
       time: '2:25',
+      nameCN: '索米',
+      nameTW: '索米',
+      nameKR: '수오미',
+      nameJP: 'スオミ',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -1007,32 +1044,30 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'C-MS',
       time: '2:28',
       standard: SMGSet2,
-      heavy: HeavySet4411,
-      unsure: [0, 1]
+      heavy: HeavySet4411
     },
     {
       nameEN: 'P90',
       time: '2:29',
       standard: SMGSet2,
-      heavy: HeavySet4411,
-      unsure: [0, 1]
+      heavy: HeavySet4411
     },
     {
       nameEN: 'Gr G36C',
-      nameCN: 'G36C',
-      nameKR: 'G36C',
-      nameTW: 'G36C',
       time: '2:30',
+      nameCN: 'G36C',
+      nameTW: 'G36C',
+      nameKR: 'G36C',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
     {
       nameEN: 'Thompson',
-      nameCN: '汤姆森',
-      nameKR: '톰슨',
-      nameTW: '湯姆森',
-      nameJP: 'トンプソン',
       time: '2:30',
+      nameCN: '汤姆森',
+      nameTW: '湯姆森',
+      nameKR: '톰슨',
+      nameJP: 'トンプソン',
       standard: SMGSet1,
       heavy: HeavySet1111
     },
@@ -1044,11 +1079,11 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: 'Type 79',
-      nameCN: '79式',
-      nameKR: '79식',
-      nameTW: '79式',
-      nameJP: '79式',
       time: '2:35',
+      nameCN: '79式',
+      nameTW: '79式',
+      nameKR: '79식',
+      nameJP: '79式',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -1074,21 +1109,21 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: 'Type 95',
-      nameCN: '95式',
-      nameKR: '95식',
-      nameTW: '95式',
-      nameJP: '95式',
       time: '3:50',
+      nameCN: '95式',
+      nameTW: '95式',
+      nameKR: '95식',
+      nameJP: '95式',
       standard: ARSet2,
       heavy: HeavySet1441
     },
     {
       nameEN: 'Type 97',
-      nameCN: '97式',
-      nameKR: '97식',
-      nameTW: '97式',
-      nameJP: '97式',
       time: '3:50',
+      nameCN: '97式',
+      nameTW: '97式',
+      nameKR: '97식',
+      nameJP: '97式',
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1106,60 +1141,65 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: '416',
-      nameCN: 'HK416',
-      nameKR: 'HK416',
-      nameTW: 'HK416',
       time: '3:55',
+      nameCN: 'HK416',
+      nameTW: 'HK416',
+      nameKR: 'HK416',
       standard: ARSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'ADS',
       time: '3:55',
-      availability: ~JP,
       standard: ARSet2,
-      heavy: HeavySet1441,
-      unsure: [0, 1]
+      heavy: HeavySet1441
     },
     {
       nameEN: 'AK-Alfa',
       time: '3:56',
       standard: ARSet2,
-      availability: ~JP,
-      heavy: HeavySet1441,
-      unsure: [0, 1]
+      heavy: HeavySet1441
     },
     {
       nameEN: 'SIG-556',
       time: '3:56',
-      availability: ~JP,
+      standard: ARSet2,
+      heavy: HeavySet1441
+    },
+    {
+      nameEN: 'SIG MCX',
+      time: '3:56',
+      availability: CN | TW | KR,
+      nameCN: 'SIG MCX',
+      nameTW: 'SIG MCX',
+      nameKR: 'SIG MCX',
       standard: ARSet2,
       heavy: HeavySet1441
     },
     {
       nameEN: 'Am RFB',
-      nameCN: 'RFB',
-      nameKR: 'RFB',
-      nameTW: 'RFB',
       time: '3:58',
+      nameCN: 'RFB',
+      nameTW: 'RFB',
+      nameKR: 'RFB',
       standard: ARSet2,
       heavy: HeavySet1441
     },
     {
       nameEN: 'Gr G11',
-      nameCN: 'G11',
-      nameKR: 'G11',
-      nameTW: 'G11',
       time: '4:04',
+      nameCN: 'G11',
+      nameTW: 'G11',
+      nameKR: 'G11',
       standard: ARSet1,
       heavy: HeavySet1111
     },
     {
       nameEN: 'Gr G41',
-      nameCN: 'G41',
-      nameKR: 'G41',
-      nameTW: 'G41',
       time: '4:05',
+      nameCN: 'G41',
+      nameTW: 'G41',
+      nameKR: 'G41',
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1171,25 +1211,34 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: '64 Shiki',
-      nameCN: '64式自',
-      nameKR: '64식 소총',
-      nameTW: '64式自',
-      nameJP: '64式自',
       time: '4:06',
+      nameCN: '64式自',
+      nameTW: '64式自',
+      nameKR: '64식 소총',
+      nameJP: '64式自',
       standard: ARSet2,
-      heavy: HeavySet1441,
-      unsure: [0, 1]
+      heavy: HeavySet1441
     },
     {
       nameEN: 'Howa Type 89',
+      time: '4:08',
       nameCN: '89式自',
       nameTW: '89式自',
       nameKR: '89식 소총',
       nameJP: '89式',
+      standard: ARSet2,
+      heavy: HeavySet1441
+    },
+    {
+      nameEN: 'Steyr ACR',
       time: '4:08',
+      availability: ~EN,
+      nameCN: 'S-ACR',
+      nameTW: 'S-ACR',
+      nameKR: 'S-ACR',
+      nameJP: 'S-ACR',
       standard: ARSet2,
       heavy: HeavySet1441,
-      unsure: [0, 1]
     },
     {
       nameEN: 'AN-94',
@@ -1200,7 +1249,6 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'K11',
       time: '4:11',
-      availability: ~JP,
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1215,8 +1263,7 @@ const fiveStar: RecipeByRarity = {
       time: '4:15',
       availability: ~JP,
       standard: ARSet2,
-      heavy: HeavySet1441,
-      unsure: [0, 1]
+      heavy: HeavySet1441
     }
   ],
   rf: [
@@ -1224,16 +1271,15 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'M200',
       time: '4:32',
       standard: RFSet2,
-      heavy: HeavySet4141,
-      unsure: [0, 1]
+      heavy: HeavySet4141
     },
     {
       nameEN: 'Carcano M1891',
-      nameCN: '卡尔卡诺M1891',
-      nameKR: '카르카노 M1891',
-      nameTW: '卡爾卡諾M1891',
-      nameJP: 'カルカノM1891',
       time: '4:38',
+      nameCN: '卡尔卡诺M1891',
+      nameTW: '卡爾卡諾M1891',
+      nameKR: '카르카노 M1891',
+      nameJP: 'カルカノM1891',
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1245,11 +1291,22 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: 'Carcano M91/38',
-      nameCN: '卡尔卡诺M91/38',
-      nameKR: '카르카노 M91/38',
-      nameTW: '卡爾卡諾M91/38',
-      nameJP: 'カルカノM91/38',
       time: '4:42',
+      nameCN: '卡尔卡诺M91/38',
+      nameTW: '卡爾卡諾M91/38',
+      nameKR: '카르카노 M91/38',
+      nameJP: 'カルカノM91/38',
+      standard: RFSet2,
+      heavy: HeavySet4141
+    },
+    {
+      nameEN: 'VSK-94',
+      time: '4:43',
+      availability: ~EN,
+      nameCN: 'VSK-94',
+      nameTW: 'VSK-94',
+      nameKR: 'VSK-94',
+      nameJP: 'VSK-94',
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1260,9 +1317,18 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet3131
     },
     {
+      nameEN: 'SVCh',
+      time: '4:47',
+      availability: CN | TW | KR,
+      nameCN: 'SVCh',
+      nameTW: 'SVCh',
+      nameKR: 'SVCh',
+      standard: RFSet2,
+      heavy: HeavySet4141
+    },
+    {
       nameEN: 'QBU-88',
       time: '4:48',
-      availability: ~JP,
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1286,11 +1352,21 @@ const fiveStar: RecipeByRarity = {
     },
     {
       nameEN: 'Lee Enfield',
-      nameCN: '李-恩菲尔德',
-      nameKR: '리엔필드',
-      nameTW: '李-恩菲爾德',
-      nameJP: 'リー・エンフィールド',
       time: '5:00',
+      nameCN: '李-恩菲尔德',
+      nameTW: '李-恩菲爾德',
+      nameKR: '리엔필드',
+      nameJP: 'リー・エンフィールド',
+      standard: RFSet2,
+      heavy: HeavySet4141
+    },
+    {
+      nameEN: 'De Lisle',
+      time: '5:00',
+      availability: CN | TW | KR,
+      nameCN: '德利尔',
+      nameTW: '德利爾',
+      nameKR: '드 라일',
       standard: RFSet2,
       heavy: HeavySet4141
     }
@@ -1301,57 +1377,68 @@ const fiveStar: RecipeByRarity = {
       time: '6:16',
       availability: ~JP,
       standard: MGSet2,
+      heavy: HeavySet6613
+    },
+    {
+      nameEN: 'RPK-203',
+      time: '6:16',
+      availability: CN | TW | KR,
+      nameCN: 'RPK-203',
+      nameTW: 'RPK-203',
+      nameKR: 'RPK-203',
+      standard: MGSet2,
       heavy: HeavySet6613,
-      unsure: [0, 1]
     },
     {
       nameEN: 'ZB-26',
       time: '6:26',
-      availability: ~JP,
       standard: MGSet2,
-      heavy: HeavySet6613,
-      unsure: [0, 1]
+      heavy: HeavySet6613
     },
     {
       nameEN: 'QJY-88',
-      nameCN: '88式',
-      nameKR: '88식',
-      nameTW: '88式',
-      nameJP: '88式',
       time: '6:28',
+      nameCN: '88式',
+      nameTW: '88式',
+      nameKR: '88식',
+      nameJP: '88式',
       standard: MGSet2,
       heavy: HeavySet6613
     },
     {
       nameEN: 'Negev',
-      nameCN: '内格夫',
-      nameKR: '네게브',
-      nameTW: '內蓋夫',
-      nameJP: 'ネゲヴ',
       time: '6:35',
+      nameCN: '内格夫',
+      nameTW: '內蓋夫',
+      nameKR: '네게브',
+      nameJP: 'ネゲヴ',
       standard: MGSet2,
       heavy: HeavySet6613
     },
     {
       nameEN: 'Gr MG36',
-      nameCN: 'MG36',
-      nameKR: 'MG36',
-      nameTW: 'MG36',
       time: '6:36',
-      availability: ~JP,
-      standard: MGSet2,
-      heavy: HeavySet6613,
-      unsure: [1, 1]
-    },
-    {
-      nameEN: 'MG4',
-      time: '6:40',
+      nameCN: 'MG36',
+      nameTW: 'MG36',
+      nameKR: 'MG36',
       standard: MGSet2,
       heavy: HeavySet6613
     },
     {
-      nameEN: 'MG5',
+      nameEN: 'Gr MG4',
+      time: '6:40',
+      nameCN: 'MG4',
+      nameTW: 'MG4',
+      nameKR: 'MG4',
+      standard: MGSet2,
+      heavy: HeavySet6613
+    },
+    {
+      nameEN: 'Gr MG5',
       time: '6:45',
+      nameCN: 'MG5',
+      nameTW: 'MG5',
+      nameKR: 'MG5',
       standard: MGSet1,
       heavy: HeavySet4613
     },
@@ -1362,13 +1449,13 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet6613
     }
   ],
-  sg: [
+  "sg": [
     {
       nameEN: 'Am KSG',
-      nameCN: 'KSG',
-      nameKR: 'KSG',
-      nameTW: 'KSG',
       time: '8:00',
+      nameCN: 'KSG',
+      nameTW: 'KSG',
+      nameKR: 'KSG',
       heavy: HeavySet4163
     },
     {
@@ -1382,6 +1469,15 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet6164
     },
     {
+      nameEN: 'M6 ASW',
+      time: '8:08',
+      nameCN: 'M6 ASW',
+      nameTW: 'M6 ASW',
+      nameKR: 'M6 ASW',
+      nameJP: 'M6 ASW',
+      heavy: HeavySet6164
+    },
+    {
       nameEN: 'S.A.T.8',
       time: '8:10',
       heavy: HeavySet6164
@@ -1389,29 +1485,25 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'AA-12',
       time: '8:12',
-      availability: ~JP,
       heavy: HeavySet6164
     },
     {
       nameEN: 'DP-12',
       time: '8:13',
-      heavy: HeavySet6164,
-      unsure: [0, 1]
+      heavy: HeavySet6164
     },
     {
       nameEN: 'CAWS',
       time: '8:15',
-      heavy: HeavySet6164,
-      unsure: [0, 1]
+      heavy: HeavySet6164
     },
     {
       nameEN: 'LTLX 7000',
       time: '8:17',
-      heavy: HeavySet6164
-    },
-    {
-      nameEN: 'M6 ASW',
-      time: '8:08',
+      nameCN: 'LTLX7000',
+      nameTW: 'LTLX7000',
+      nameKR: 'LTLX7000',
+      nameJP: 'LTLX7000',
       heavy: HeavySet6164
     }
   ]
