@@ -10,7 +10,6 @@ export type EquipTableProps = {
 }
 
 const EquipTable = ({ server, ignoreServer }) => {
-  console.log(`ignore server is ${ignoreServer}`)
   const result = equips.map((equip: EquipType) => {
     let classes = rarityClassNames[equip.rarity] || ''
     if (verifyRecipe(equip, server, equip.availability)) {
@@ -42,6 +41,10 @@ const Equip = ({ equip, classes, server }) => {
   let name = equip['name' + server]
   if (!name) { name = equip.nameEN }
   const lang = name !== equip.nameEN ? serverToIso[server] : 'en'
+
+  if(server === 'CN' && equip.availability === 14 && !equip.nameCN) {
+    console.log(`Needs CN/TW translation: ${equip.nameEN}`)
+  }
 
   return (
     <li className={classes || null}>
