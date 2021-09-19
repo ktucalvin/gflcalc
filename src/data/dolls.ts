@@ -543,10 +543,6 @@ const fourStar: RecipeByRarity = {
       nameEN: 'Rex Zero 1',
       time: '0:54',
       availability: ~EN,
-      nameCN: 'Rex Zero 1',
-      nameTW: 'Rex Zero 1',
-      nameKR: 'Rex Zero 1',
-      nameJP: 'Rex Zero 1',
       standard: HGSet2
     },
     {
@@ -575,9 +571,6 @@ const fourStar: RecipeByRarity = {
       nameEN: 'PPD-40',
       time: '2:10',
       availability: CN | TW | KR,
-      nameCN: 'PPD-40',
-      nameTW: 'PPD-40',
-      nameKR: 'PPD-40',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -597,9 +590,6 @@ const fourStar: RecipeByRarity = {
       nameEN: 'AR-57',
       time: '2:16',
       availability: CN | TW | KR,
-      nameCN: 'AR-57',
-      nameTW: 'AR-57',
-      nameKR: 'AR-57',
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -725,9 +715,6 @@ const fourStar: RecipeByRarity = {
       nameEN: 'FX-05',
       time: '3:40',
       availability: CN | TW | KR,
-      nameCN: 'FX-05',
-      nameTW: 'FX-05',
-      nameKR: 'FX-05',
       standard: ARSet2,
       heavy: HeavySet1441
     }
@@ -895,12 +882,11 @@ const fourStar: RecipeByRarity = {
   ],
   "sg": [
     {
-      nameEN: 'V-PM5',
+      nameEN: 'PM5',
       time: '7:11',
       nameCN: 'V-PM5',
       nameTW: 'V-PM5',
       nameKR: 'V-PM5',
-      nameJP: 'PM5',
       heavy: HeavySet6164
     },
     {
@@ -939,12 +925,11 @@ const fourStar: RecipeByRarity = {
       heavy: HeavySet6164
     },
     {
-      nameEN: 'HK512',
+      nameEN: '512',
       time: '7:56',
       nameCN: 'HK512',
       nameTW: 'HK512',
       nameKR: 'HK512',
-      nameJP: '512',
       heavy: HeavySet6164
     }
   ]
@@ -1170,9 +1155,6 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'SIG MCX',
       time: '3:56',
       availability: CN | TW | KR,
-      nameCN: 'SIG MCX',
-      nameTW: 'SIG MCX',
-      nameKR: 'SIG MCX',
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1303,10 +1285,6 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'VSK-94',
       time: '4:43',
       availability: ~EN,
-      nameCN: 'VSK-94',
-      nameTW: 'VSK-94',
-      nameKR: 'VSK-94',
-      nameJP: 'VSK-94',
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1320,9 +1298,6 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'SVCh',
       time: '4:47',
       availability: CN | TW | KR,
-      nameCN: 'SVCh',
-      nameTW: 'SVCh',
-      nameKR: 'SVCh',
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1383,9 +1358,6 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'RPK-203',
       time: '6:16',
       availability: CN | TW | KR,
-      nameCN: 'RPK-203',
-      nameTW: 'RPK-203',
-      nameKR: 'RPK-203',
       standard: MGSet2,
       heavy: HeavySet6613,
     },
@@ -1471,10 +1443,6 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'M6 ASW',
       time: '8:08',
-      nameCN: 'M6 ASW',
-      nameTW: 'M6 ASW',
-      nameKR: 'M6 ASW',
-      nameJP: 'M6 ASW',
       heavy: HeavySet6164
     },
     {
@@ -1498,12 +1466,8 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet6164
     },
     {
-      nameEN: 'LTLX 7000',
+      nameEN: 'LTLX7000',
       time: '8:17',
-      nameCN: 'LTLX7000',
-      nameTW: 'LTLX7000',
-      nameKR: 'LTLX7000',
-      nameJP: 'LTLX7000',
       heavy: HeavySet6164
     }
   ]
