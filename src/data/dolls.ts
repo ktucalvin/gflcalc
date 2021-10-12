@@ -464,7 +464,7 @@ const threeStar: RecipeByRarity = {
       heavy: HeavySet4613
     }
   ],
-  "sg": [
+  sg: [
     {
       nameEN: 'NS2000',
       time: '7:15',
@@ -880,7 +880,7 @@ const fourStar: RecipeByRarity = {
       heavy: HeavySet4613
     }
   ],
-  "sg": [
+  sg: [
     {
       nameEN: 'PM5',
       time: '7:11',
@@ -1297,7 +1297,7 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'SVCh',
       time: '4:47',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: RFSet2,
       heavy: HeavySet4141
     },
@@ -1338,7 +1338,7 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'De Lisle',
       time: '5:00',
-      availability: CN | TW | KR,
+      availability: ~JP,
       nameCN: '德利尔',
       nameTW: '德利爾',
       nameKR: '드 라일',
@@ -1421,7 +1421,7 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet6613
     }
   ],
-  "sg": [
+  sg: [
     {
       nameEN: 'Am KSG',
       time: '8:00',
