@@ -542,7 +542,6 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'Rex Zero 1',
       time: '0:54',
-      availability: ~EN,
       standard: HGSet2
     },
     {
@@ -1214,7 +1213,6 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'Steyr ACR',
       time: '4:08',
-      availability: ~EN,
       nameCN: 'S-ACR',
       nameTW: 'S-ACR',
       nameKR: 'S-ACR',
@@ -1284,7 +1282,6 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'VSK-94',
       time: '4:43',
-      availability: ~EN,
       standard: RFSet2,
       heavy: HeavySet4141
     },
