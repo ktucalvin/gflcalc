@@ -1,5 +1,5 @@
 import type { Equip } from '../common/gflcalc'
-import { CN, KR, TW } from '../common/constants'
+import { JP } from '../common/constants'
 
 const zeroSet = [0, 0, 0, 0] // min/max not known for slap, rmr, and chips
 const opticsSet = [0, 150, 0, 150]
@@ -177,14 +177,14 @@ export const Equipment: Equip[] = [
     recipe: armorSet
   },
   {
-    nameEN: 'Experimental Processing Chip',
+    nameEN: 'Experimental Processor',
     rarity: 3,
     time: '26',
     type: 'chip',
     nameKR: '시제품 연산칩',
     nameJP: '実験用処理チップ',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'IOP X2 Exoskeleton',
@@ -283,7 +283,7 @@ export const Equipment: Equip[] = [
     nameKR: 'RMR 레드닷',
     nameJP: 'RMRレッドドットサイト',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'PSO-1',
@@ -325,6 +325,14 @@ export const Equipment: Equip[] = [
     recipe: opticsSet
   },
   {
+    nameEN: 'M33 Sniper Rounds',
+    rarity: 4,
+    time: '40',
+    type: 'ap ammo',
+    recipe: ammoSet,
+    availability: ~JP
+  },
+  {
     nameEN: 'Type 2 Armor Plate',
     rarity: 4,
     time: '41',
@@ -336,14 +344,14 @@ export const Equipment: Equip[] = [
     recipe: armorSet
   },
   {
-    nameEN: '#1 Processing Chip',
+    nameEN: '#1 Processor',
     rarity: 4,
     time: '41',
     type: 'chip',
     nameKR: '#1 연산칩',
     nameJP: '#1 加工チップ',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'IOP X3 Exoskeleton',
@@ -419,6 +427,16 @@ export const Equipment: Equip[] = [
     recipe: ammoSet
   },
   {
+    nameEN: '#6 Birdshot',
+    rarity: 4,
+    time: '45',
+    type: 'birdshot',
+    nameKR: '#6 버드샷',
+    nameJP: '#6号バードショット',
+    recipe: zeroSet,
+    availability: ~JP
+  },
+  {
     nameEN: 'Urban Camouflage Cape',
     rarity: 4,
     time: '46',
@@ -475,7 +493,7 @@ export const Equipment: Equip[] = [
     time: '48',
     type: 'slap ammo',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'PEQ-16A',
@@ -493,7 +511,7 @@ export const Equipment: Equip[] = [
     nameKR: 'RMR T2 레드닷',
     nameJP: 'RMR T2レッドドットサイト',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'ITI Mars',
@@ -510,7 +528,7 @@ export const Equipment: Equip[] = [
     nameKR: 'M1022 저격탄',
     nameJP: 'M1022スナイパーラウンド',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'Type 3 Armor Plate',
@@ -524,14 +542,14 @@ export const Equipment: Equip[] = [
     recipe: armorSet
   },
   {
-    nameEN: '#2 Processing Chip',
+    nameEN: '#2 Processor',
     rarity: 5,
     time: '51',
     type: 'chip',
     nameKR: '#2 연산칩',
     nameJP: '#2 加工チップ',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'IOP X4 Exoskeleton',
@@ -607,7 +625,7 @@ export const Equipment: Equip[] = [
     nameKR: '#7.5 버드샷',
     nameJP: '#7.5号バードショット',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'Thermoptic Camouflage Cape',
@@ -632,24 +650,24 @@ export const Equipment: Equip[] = [
     recipe: ammoBoxSet
   },
   {
-    nameEN: 'Shotgun Flashbang',
+    nameEN: 'Shotgun Flash Shells',
     rarity: 5,
     time: '57',
     type: 'sg ammo',
     nameKR: '산탄총 섬광탄',
     nameJP: 'ショットガンフラッシュバン',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'Signal Flare',
     rarity: 5,
     time: '57',
-    type: 'status ammo',
+    type: 'hp ammo',
     nameKR: '신호탄',
     nameJP: 'シグナルフレア',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'APCR High-Velocity Ammo',
@@ -668,7 +686,7 @@ export const Equipment: Equip[] = [
     time: '58',
     type: 'slap ammo',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   },
   {
     nameEN: 'RMR T4 Red Dot Sight',
@@ -680,6 +698,6 @@ export const Equipment: Equip[] = [
     nameKR: 'RMR T4 레드닷',
     nameJP: 'RMR T4レッドドットサイト',
     recipe: zeroSet,
-    availability: 14
+    availability: ~JP
   }
 ]
