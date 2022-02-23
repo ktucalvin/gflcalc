@@ -569,7 +569,7 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'PPD-40',
       time: '2:10',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -588,7 +588,7 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'AR-57',
       time: '2:16',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: SMGSet2,
       heavy: HeavySet4411
     },
@@ -713,7 +713,7 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'FX-05',
       time: '3:40',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: ARSet2,
       heavy: HeavySet1441
     }
@@ -1153,7 +1153,7 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'SIG MCX',
       time: '3:56',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: ARSet2,
       heavy: HeavySet1441
     },
@@ -1354,7 +1354,7 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'RPK-203',
       time: '6:16',
-      availability: CN | TW | KR,
+      availability: ~JP,
       standard: MGSet2,
       heavy: HeavySet6613,
     },
