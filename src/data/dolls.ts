@@ -881,6 +881,12 @@ const fourStar: RecipeByRarity = {
   ],
   sg: [
     {
+      nameEN: 'MAG-7',
+      time: '7:10',
+      heavy: HeavySet6164,
+      availability: ~JP
+    },
+    {
       nameEN: 'PM5',
       time: '7:11',
       nameCN: 'V-PM5',
@@ -912,6 +918,13 @@ const fourStar: RecipeByRarity = {
       nameEN: 'Liberator',
       time: '7:45',
       heavy: HeavySet6164
+    },
+    {
+      nameEN: 'Supernova',
+      nameCN: '新星',
+      time: '7:48',
+      heavy: HeavySet6164,
+      availability: ~JP
     },
     {
       nameEN: 'Super-Shorty',
@@ -1466,6 +1479,18 @@ const fiveStar: RecipeByRarity = {
       nameEN: 'LTLX7000',
       time: '8:17',
       heavy: HeavySet6164
+    },
+    {
+      nameEN: 'M26-MASS',
+      time: '8:18',
+      heavy: HeavySet6164,
+      availability: ~JP
+    },
+    {
+      nameEN: 'FO-12',
+      time: '8:20',
+      heavy: HeavySet6164,
+      availability: ~JP
     }
   ]
 }
