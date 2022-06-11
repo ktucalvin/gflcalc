@@ -496,6 +496,12 @@ const threeStar: RecipeByRarity = {
 const fourStar: RecipeByRarity = {
   hg: [
     {
+      nameEN: 'CZ 100',
+      time: '0:48',
+      standard: HGSet2,
+      availability: ~JP
+    },
+    {
       nameEN: 'Jericho',
       time: '0:49',
       nameCN: '杰里科',
@@ -713,6 +719,16 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'FX-05',
       time: '3:40',
+      availability: ~JP,
+      standard: ARSet2,
+      heavy: HeavySet1441
+    },
+    {
+      nameEN: 'AK-74M',
+      nameCN: 'AK74M',
+      nameTW: 'AK74M',
+      nameKR: 'AK74M',
+      time: '3:45',
       availability: ~JP,
       standard: ARSet2,
       heavy: HeavySet1441
@@ -1075,6 +1091,13 @@ const fiveStar: RecipeByRarity = {
       heavy: HeavySet4411
     },
     {
+      nameEN: 'SR-2',
+      time: '2:33',
+      availability: ~JP,
+      standard: SMGSet2,
+      heavy: HeavySet4411
+    },
+    {
       nameEN: 'Type 79',
       time: '2:35',
       nameCN: '79式',
@@ -1316,6 +1339,13 @@ const fiveStar: RecipeByRarity = {
       time: '4:48',
       standard: RFSet2,
       heavy: HeavySet4141
+    },
+    {
+      nameEN: 'HS.50',
+      time: '4:49',
+      standard: RFSet2,
+      heavy: HeavySet4141,
+      availability: ~JP
     },
     {
       nameEN: 'WA2000',
