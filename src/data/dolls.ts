@@ -563,6 +563,12 @@ const fourStar: RecipeByRarity = {
       nameEN: 'P7',
       time: '0:55',
       standard: HGSet1
+    },
+    {
+      nameEN: 'ZiP .22',
+      time: '0:55',
+      availability: ~JP,
+      standard: HGSet2
     }
   ],
   smg: [
@@ -575,6 +581,13 @@ const fourStar: RecipeByRarity = {
     {
       nameEN: 'PPD-40',
       time: '2:10',
+      availability: ~JP,
+      standard: SMGSet2,
+      heavy: HeavySet4411
+    },
+    {
+      nameEN: 'Vigneron M2',
+      time: '2:12',
       availability: ~JP,
       standard: SMGSet2,
       heavy: HeavySet4411
@@ -1271,6 +1284,13 @@ const fiveStar: RecipeByRarity = {
     {
       nameEN: 'AK-12',
       time: '4:12',
+      standard: ARSet2,
+      heavy: HeavySet1441
+    },
+    {
+      nameEN: 'SCR',
+      time: '4:12',
+      availability: ~JP,
       standard: ARSet2,
       heavy: HeavySet1441
     },
